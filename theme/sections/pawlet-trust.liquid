@@ -1,0 +1,202 @@
+{% comment %}
+  Section contract.
+  Pawlet Club trust bar: a compact row of store promises (shipping, guarantee,
+  secure checkout, support), each with an icon, a short title and an optional line.
+  @example
+  <!-- Theme editor: add "Pawlet trust bar" under the hero or on product pages -->
+{% endcomment %}
+{% render 'pawlet-styles' %}
+{%- liquid
+  assign s = section.settings
+-%}
+<section
+  class="pc-section pc-trust pc-trust--{{ s.style }}"
+  style="--pc-trust-bg: {{ s.background_color }}; --pc-trust-columns: {{ section.blocks.size | at_least: 1 }};"
+  aria-label="{{ s.label | escape }}"
+>
+  <div class="pc-container">
+    <ul class="pc-trust__list" role="list">
+      {% for block in section.blocks %}
+        {%- assign b = block.settings -%}
+        <li class="pc-trust__item" {{ block.shopify_attributes }}>
+          <span class="pc-trust__icon">{% render 'pawlet-icon', icon: b.icon %}</span>
+          <span class="pc-trust__copy">
+            {% if b.title != blank %}
+              <strong class="pc-trust__title">{{ b.title | escape }}</strong>
+            {% endif %}
+            {% if b.text != blank %}
+              <span class="pc-trust__text">{{ b.text | escape }}</span>
+            {% endif %}
+          </span>
+        </li>
+      {% endfor %}
+    </ul>
+  </div>
+</section>
+
+{% stylesheet %}
+  .pc-trust {
+    padding-block: clamp(1.5rem, 3vw, 2.25rem);
+    background: var(--pc-trust-bg, #ffffff);
+  }
+
+  .pc-trust--bordered {
+    border-block: 1px solid var(--pc-line);
+  }
+
+  .pc-trust__list {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 1.25rem 1rem;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+  }
+
+  .pc-trust__item {
+    display: flex;
+    align-items: center;
+    gap: 0.875rem;
+    min-width: 0;
+  }
+
+  .pc-trust__icon {
+    display: grid;
+    flex-shrink: 0;
+    place-items: center;
+    width: 2.75rem;
+    height: 2.75rem;
+    border-radius: 50%;
+    background: var(--pc-peach-soft);
+    color: var(--pc-navy);
+  }
+
+  .pc-trust__icon .pc-svg {
+    width: 1.375rem;
+    height: 1.375rem;
+  }
+
+  .pc-trust__copy {
+    display: grid;
+    gap: 0.125rem;
+    min-width: 0;
+    line-height: 1.3;
+  }
+
+  .pc-trust__title {
+    font-size: 0.9375rem;
+    font-weight: 600;
+  }
+
+  .pc-trust__text {
+    font-size: 0.8125rem;
+    color: var(--pc-ink-soft);
+  }
+
+  .pc-trust--navy {
+    color: #ffffff;
+  }
+
+  .pc-trust--navy .pc-trust__icon {
+    background: rgb(255 255 255 / 0.12);
+    color: var(--pc-peach);
+  }
+
+  .pc-trust--navy .pc-trust__text {
+    color: rgb(255 255 255 / 0.78);
+  }
+
+  @media screen and (min-width: 990px) {
+    .pc-trust__list {
+      grid-template-columns: repeat(var(--pc-trust-columns, 4), minmax(0, 1fr));
+      gap: 1.5rem;
+    }
+
+    .pc-trust__item {
+      justify-content: center;
+    }
+  }
+{% endstylesheet %}
+
+{% schema %}
+{
+  "name": "Pawlet trust bar",
+  "tag": "div",
+  "class": "pc-shopify-section",
+  "settings": [
+    {
+      "type": "text",
+      "id": "label",
+      "label": "Accessible label",
+      "default": "Why shop with Pawlet Club"
+    },
+    {
+      "type": "color",
+      "id": "background_color",
+      "label": "Background",
+      "default": "#ffffff"
+    },
+    {
+      "type": "select",
+      "id": "style",
+      "label": "Style",
+      "options": [
+        { "value": "plain", "label": "Plain" },
+        { "value": "bordered", "label": "With top and bottom lines" },
+        { "value": "navy", "label": "Light text (for dark backgrounds)" }
+      ],
+      "default": "bordered"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "item",
+      "name": "Promise",
+      "settings": [
+        {
+          "type": "select",
+          "id": "icon",
+          "label": "Icon",
+          "options": [
+            { "value": "truck", "label": "Truck" },
+            { "value": "shield", "label": "Shield" },
+            { "value": "lock", "label": "Lock" },
+            { "value": "refresh", "label": "Returns" },
+            { "value": "chat", "label": "Chat" },
+            { "value": "pin", "label": "Location" },
+            { "value": "tag", "label": "Price tag" },
+            { "value": "heart", "label": "Heart" },
+            { "value": "paw", "label": "Paw" },
+            { "value": "box", "label": "Box" },
+            { "value": "star", "label": "Star" }
+          ],
+          "default": "truck"
+        },
+        {
+          "type": "text",
+          "id": "title",
+          "label": "Title",
+          "default": "Free shipping over $30"
+        },
+        {
+          "type": "text",
+          "id": "text",
+          "label": "Text"
+        }
+      ]
+    }
+  ],
+  "max_blocks": 4,
+  "presets": [
+    {
+      "name": "Pawlet trust bar",
+      "blocks": [
+        { "type": "item", "settings": { "icon": "truck", "title": "Free shipping over $30", "text": "Ships from US warehouses" } },
+        { "type": "item", "settings": { "icon": "refresh", "title": "30-day happiness guarantee", "text": "Easy returns, no fuss" } },
+        { "type": "item", "settings": { "icon": "lock", "title": "Secure checkout", "text": "Pay safely with PayPal" } },
+        { "type": "item", "settings": { "icon": "chat", "title": "Real humans", "text": "English & español support" } }
+      ]
+    }
+  ]
+}
+{% endschema %}

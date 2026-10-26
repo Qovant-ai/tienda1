@@ -1,13 +1,13 @@
 # Tienda a la carta (artículos por separado) — EE. UU.
 
-Además del Club (cajas) y los regalos, la tienda vende **artículos individuales**: camas, juguetes, correas,
-rascadores y accesorios. Fecha: 26-oct-2026.
+Además del Club (cajas, lanzamiento en enero de 2027) y los regalos, la tienda vende **artículos
+individuales**: camas, correas, arneses, rascadores y artículos de aseo. Fecha: 26-oct-2026.
 
 ## 1. Dos tipos de artículo
 
 | Tipo | Cómo se despacha | Ejemplos | Ventaja |
 |---|---|---|---|
-| **Extras "Add to Your Box"** (inventario propio) | Desde el 3PL, dentro de la caja o solos | Placa grabada, bolsas, kit dental, bandana, varita, toallitas, juguete resistente | Margen alto (60–80%); viajan gratis con la caja |
+| ~~Extras "Add to Your Box"~~ (inventario propio) | Desde el 3PL, dentro de la caja | Placa grabada, bolsas, kit dental, bandana, varita, toallitas, juguete resistente | **Eliminados el 26-oct** (sin inventario ni 3PL). Se pueden volver a crear cuando se lance el Club |
 | **Shop (dropshipping con AutoDS)** | Directo del proveedor con bodega en EE. UU. | Correas, camas, rascadores, cepillos | Catálogo amplio sin inventario |
 
 ## 2. Cómo se eligieron los "ganadores"
@@ -60,6 +60,13 @@ estos precios (desactivar el ajuste automático de precio o usar costo × 2.2 co
 | Láser y juguetes electrónicos | Baterías, fallas y devoluciones |
 | Aceite de cáñamo calmante | Suplemento con reclamos de salud |
 
+### Cómo se ven en la tienda (26-oct)
+- **Colecciones publicadas:** Shop All, Shop for Dogs, Shop for Cats, Walk: Leashes & Harnesses (etiqueta
+  `walk`), Play & Scratch (`play`) y Sleep & Groom (`rest`). Las de tipo se llenan solas con la etiqueta.
+- **Descripciones:** introducción, "Why you'll love it" y "Details", con SEO propio y traducción al español.
+- **Fotos:** el arnés tiene una sola foto, con el logo VEVOR del fabricante. Conviene cambiar de proveedor o
+  pedirle fotos sin marca.
+
 ## 4. Reglas de operación
 - **Envío al cliente:** gratis desde $30; $5.99 por debajo (Shopify ya configurado).
 - **Precios:** revisar cada mes; si el costo del proveedor sube, AutoDS lo detecta (monitoreo de precio y stock).
@@ -69,7 +76,9 @@ estos precios (desactivar el ajuste automático de precio o usar costo × 2.2 co
   **Si cancelas AutoDS, estos pedidos habría que hacerlos a mano en CJ y en cada proveedor.**
 
 ## 5. Próximos pasos
-- Revisar fotos y textos de cada producto (los títulos de proveedor se reescriben en inglés claro y se traducen al español).
+- ~~Revisar fotos y textos de cada producto~~ Hecho el 26-oct (descripciones, SEO, textos alternativos y traducción).
+- Al agregar un producto nuevo: ponerle las etiquetas `a-la-carte` (Shop All), `shop-dog` y/o `shop-cat`, y una de `walk`, `play` o `rest`
+  para que entre solo en sus colecciones.
 - Agregar más ganadores cuando haya datos propios de ventas: camas ortopédicas, toallas de microfibra,
   dispensador de bolsas y transportadoras, siempre con la regla de margen.
 - Comprar al por mayor los artículos baratos más vendidos y pasarlos al 3PL.

@@ -128,7 +128,8 @@
       "color9": "#f6efe8",
       "color10": "{{ settings.color_palette.color7 }}",
       "color11": "{{ settings.color_palette.color3 }}"
-    }
+    },
+    "mobile_quick_add": true
   },
   "presets": {
     "Horizon": {

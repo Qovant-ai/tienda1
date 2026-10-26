@@ -2,6 +2,8 @@
   Section contract.
   Subscription plan cards for Pawlet Club (Club Dog, Club Cat). Each block links to a
   product; the price comes from the product, with a text fallback while it is unpublished.
+  While a plan's product isn't on sale, its button jumps to an optional waitlist form
+  that signs the visitor up as a customer with the waitlist tags.
   @example
   <!-- Theme editor: add "Pawlet plans" and pick the Club Dog and Club Cat products -->
 {% endcomment %}
@@ -11,6 +13,9 @@
 -%}
 <section
   class="pc-section pc-plans"
+  {% if s.anchor != blank %}
+    id="{{ s.anchor | handleize }}"
+  {% endif %}
   style="--pc-plans-bg: {{ s.background_color }};"
   {% if s.heading != blank %}
     aria-labelledby="PcPlansTitle-{{ section.id }}"
@@ -44,6 +49,13 @@
           if plan_url == blank and plan_product != blank
             assign plan_url = plan_product.url
           endif
+          assign plan_button = b.button_label
+          assign plan_soon = false
+          if plan_url == blank and s.show_waitlist
+            assign plan_soon = true
+            assign plan_url = '#PcWaitlist-' | append: section.id
+            assign plan_button = s.waitlist_card_button
+          endif
           if plan_product != blank and plan_product.price > 0
             assign plan_price = plan_product.price | money
           else
@@ -60,7 +72,9 @@
 
           <div class="pc-plan__top">
             <span class="pc-plan__icon">{% render 'pawlet-icon', icon: 'paws' %}</span>
-            {% if b.badge != blank %}
+            {% if plan_soon and s.soon_badge != blank %}
+              <span class="pc-plan__badge pc-plan__badge--soon">{{ s.soon_badge | escape }}</span>
+            {% elsif b.badge != blank %}
               <span class="pc-plan__badge">{{ b.badge | escape }}</span>
             {% endif %}
           </div>
@@ -91,15 +105,59 @@
             </ul>
           {% endif %}
 
-          {% if b.button_label != blank and plan_url != blank %}
+          {% if plan_button != blank and plan_url != blank %}
             <a class="pc-btn {{ button_class }}" href="{{ plan_url }}">
-              {{ b.button_label | escape }}
+              {{ plan_button | escape }}
               {% render 'pawlet-icon', icon: 'arrow' %}
             </a>
           {% endif %}
         </article>
       {% endfor %}
     </div>
+
+    {% if s.show_waitlist %}
+      {%- assign waitlist_form_id = 'PcWaitlistForm-' | append: section.id -%}
+      <div class="pc-waitlist" id="PcWaitlist-{{ section.id }}">
+        <div class="pc-waitlist__copy">
+          {% if s.waitlist_heading != blank %}
+            <h3 class="pc-waitlist__title">{{ s.waitlist_heading | escape }}</h3>
+          {% endif %}
+          {% if s.waitlist_text != blank %}
+            <div class="pc-waitlist__text">{{ s.waitlist_text }}</div>
+          {% endif %}
+        </div>
+
+        {% form 'customer', id: waitlist_form_id, class: 'pc-waitlist__form' %}
+          <input type="hidden" name="contact[tags]" value="{{ s.waitlist_tags | escape }}">
+          {% if form.posted_successfully? %}
+            <p class="pc-waitlist__success" role="status">
+              {% render 'pawlet-icon', icon: 'check' %}
+              {{ s.waitlist_success | escape }}
+            </p>
+          {% else %}
+            <label class="pc-sr-only" for="PcWaitlistEmail-{{ section.id }}">{{ s.waitlist_placeholder | escape }}</label>
+            <div class="pc-waitlist__row">
+              <input
+                id="PcWaitlistEmail-{{ section.id }}"
+                class="pc-waitlist__input"
+                type="email"
+                name="contact[email]"
+                value="{{ form.email }}"
+                placeholder="{{ s.waitlist_placeholder | escape }}"
+                autocomplete="email"
+                autocorrect="off"
+                autocapitalize="off"
+                required
+              >
+              <button type="submit" class="pc-btn pc-btn--peach">{{ s.waitlist_button | escape }}</button>
+            </div>
+            {% if form.errors %}
+              <p class="pc-waitlist__error" role="alert">{{ form.errors | default_errors }}</p>
+            {% endif %}
+          {% endif %}
+        {% endform %}
+      </div>
+    {% endif %}
 
     {% if s.note != blank %}
       <div class="pc-plans__note">{{ s.note }}</div>
@@ -109,6 +167,7 @@
 
 {% stylesheet %}
   .pc-plans {
+    scroll-margin-top: 4rem;
     background: var(--pc-plans-bg, var(--pc-cream));
   }
 
@@ -258,6 +317,100 @@
     margin-block-start: auto;
   }
 
+  .pc-plan__badge--soon {
+    background: var(--pc-peach-soft);
+  }
+
+  .pc-plan--peach .pc-plan__badge--soon {
+    background: #ffffff;
+  }
+
+  .pc-waitlist {
+    display: grid;
+    gap: 1.25rem 2.5rem;
+    align-items: center;
+    max-width: 62rem;
+    margin: 1.5rem auto 0;
+    padding: clamp(1.5rem, 3.5vw, 2.25rem) clamp(1.5rem, 3.5vw, 2.75rem);
+    border: 2px dashed var(--pc-peach);
+    border-radius: 2rem;
+    background: #ffffff;
+    scroll-margin-top: 6rem;
+  }
+
+  .pc-waitlist__title {
+    margin: 0 0 0.375rem;
+    font-family: var(--font-heading--family);
+    font-size: clamp(1.375rem, 2.4vw, 1.75rem);
+    font-weight: var(--font-heading--weight);
+    line-height: 1.15;
+  }
+
+  .pc-waitlist__text {
+    color: var(--pc-ink-soft);
+    line-height: 1.5;
+  }
+
+  .pc-waitlist__text p {
+    margin: 0;
+  }
+
+  .pc-waitlist__form {
+    min-width: 0;
+  }
+
+  .pc-waitlist__row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.625rem;
+  }
+
+  .pc-waitlist__input {
+    flex: 1 1 14rem;
+    min-width: 0;
+    min-height: 3.25rem;
+    padding: 0 1.25rem;
+    border: 2px solid var(--pc-line);
+    border-radius: 999px;
+    background: #ffffff;
+    color: var(--pc-navy);
+    font: inherit;
+  }
+
+  .pc-waitlist__input:focus-visible {
+    border-color: var(--pc-navy);
+    outline: 3px solid var(--pc-peach);
+    outline-offset: 2px;
+  }
+
+  .pc-waitlist__success {
+    display: flex;
+    align-items: center;
+    gap: 0.625rem;
+    margin: 0;
+    font-weight: 500;
+  }
+
+  .pc-waitlist__success .pc-svg {
+    width: 1.5rem;
+    height: 1.5rem;
+    padding: 0.25rem;
+    border-radius: 50%;
+    background: var(--pc-navy);
+    color: #ffffff;
+  }
+
+  .pc-waitlist__error {
+    margin: 0.625rem 0 0;
+    color: #b42318;
+    font-size: 0.9375rem;
+  }
+
+  .pc-waitlist__error ul {
+    margin: 0;
+    padding-inline-start: 1.25rem;
+  }
+
   .pc-plans__note {
     max-width: 40rem;
     margin: 2.5rem auto 0;
@@ -280,6 +433,12 @@
   @media screen and (min-width: 750px) {
     .pc-plans__grid {
       grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+  }
+
+  @media screen and (min-width: 990px) {
+    .pc-waitlist {
+      grid-template-columns: minmax(0, 1fr) minmax(0, 1.1fr);
     }
   }
 {% endstylesheet %}
@@ -318,6 +477,73 @@
       "type": "richtext",
       "id": "note",
       "label": "Note below the plans"
+    },
+    {
+      "type": "text",
+      "id": "anchor",
+      "label": "Section anchor",
+      "info": "Lets links jump here, e.g. /#club.",
+      "default": "club"
+    },
+    {
+      "type": "header",
+      "content": "Waitlist"
+    },
+    {
+      "type": "checkbox",
+      "id": "show_waitlist",
+      "label": "Show waitlist form",
+      "info": "Plans whose product isn't on sale yet link to this form.",
+      "default": true
+    },
+    {
+      "type": "text",
+      "id": "soon_badge",
+      "label": "Badge on plans not on sale yet",
+      "default": "Launching January 2027"
+    },
+    {
+      "type": "text",
+      "id": "waitlist_card_button",
+      "label": "Plan button label",
+      "default": "Join the waitlist"
+    },
+    {
+      "type": "text",
+      "id": "waitlist_heading",
+      "label": "Heading",
+      "default": "Be first in line"
+    },
+    {
+      "type": "richtext",
+      "id": "waitlist_text",
+      "label": "Text",
+      "default": "<p>Leave your email and we'll send you a launch-day welcome offer.</p>"
+    },
+    {
+      "type": "text",
+      "id": "waitlist_placeholder",
+      "label": "Email placeholder",
+      "default": "Your email"
+    },
+    {
+      "type": "text",
+      "id": "waitlist_button",
+      "label": "Submit button",
+      "default": "Notify me"
+    },
+    {
+      "type": "text",
+      "id": "waitlist_success",
+      "label": "Success message",
+      "default": "You're on the list! We'll email you when the Club opens."
+    },
+    {
+      "type": "text",
+      "id": "waitlist_tags",
+      "label": "Customer tags",
+      "info": "Comma-separated. Use them to find waitlist sign-ups in Customers.",
+      "default": "newsletter, club-waitlist"
     }
   ],
   "blocks": [

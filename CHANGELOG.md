@@ -2,6 +2,64 @@
 
 Registro de todos los cambios en la tienda (Shopify, AutoDS y configuración). El más reciente va primero.
 
+## 2026-10-26 (8) — Catálogo limpio y rediseño para vender (tema "Pawlet Club v2")
+
+Pedido del dueño: "que se vea dónde están los productos, intuitivo y profesional" y "todo lo que tiene que
+estar publicado, publicado; lo que no sirve, eliminado".
+
+### Catálogo
+| Acción | Detalle |
+|---|---|
+| **Eliminados** (Shopify) | Holiday Box · Limited Edition y los 7 extras "Add to Your Box" (placa grabada, bolsas, juguete resistente, kit dental, bandana, varita, toallitas). Nunca se vendieron y no tenían inventario. Quedan registrados en `data/catalogo-shopify.csv` |
+| **Colecciones eliminadas** | `frontpage` (vacía, del tema), `limited-edition`, `add-to-your-box` |
+| **Página eliminada** | Track Order (sin uso) |
+| **Activos y publicados** | Los 8 artículos dropship, todos con fotos |
+| **Borradores que se mantienen** | Club Dog, Club Cat, Gift the Club Dog y Gift the Club Cat (lanzamiento enero 2027) y sus colecciones `the-club` y `gift-the-club`, sin publicar |
+| **Fotos nuevas** | Correa retráctil: 13 fotos desde AutoDS (una por color, asignada a su variante; se descartaron 2 con textos "US Seller"/"HOT"). Arnés: 1 foto (el proveedor solo tiene esa y muestra el logo VEVOR) |
+| **Textos alternativos** | 60 fotos con el título del proveedor (texto de relleno) pasan a una descripción corta en inglés |
+
+### Colecciones nuevas (publicadas, automáticas por etiqueta)
+`shop-all` (etiqueta `a-la-carte`, 8), `leashes-harnesses` (etiqueta `walk`, 3), `play-scratch` (`play`, 3), `sleep-groom`
+(`rest`, 2). `shop-for-dogs` y `shop-for-cats` ahora están publicadas (antes no). Todas con imagen,
+descripción, SEO y traducción al español.
+
+### Descripciones de producto
+Las 8 reescritas con la misma estructura: introducción, "Why you'll love it", "Details". Título y
+descripción SEO nuevos. Traducción al español actualizada (cuerpo y SEO). El envío y las devoluciones
+salen ahora de un bloque del tema, no del texto de cada producto.
+
+### Menús
+| Menú | Ahora |
+|---|---|
+| `main-menu` | Shop All (Todos, Leashes & Harnesses, Play & Scratch, Sleep & Groom) · Dogs · Cats · The Club · FAQ |
+| `footer-club` "Shop" | Shop All, Shop for Dogs, Shop for Cats, The Club, About Us |
+
+Antes enlazaban a Club Dog, Club Cat y Gift the Club, que están en borrador (daban error 404).
+Todos los enlaces del menú tienen traducción al español.
+
+### Páginas
+- FAQ: reorganizada en Pedidos y envíos, Devoluciones, El Club y Ayuda. Sin el juguete resistente eliminado.
+- How It Works: aviso de lanzamiento en enero 2027 y enlace a la lista de espera (`/#club`); "Extras" se
+  cambia por "While you wait" con enlace a la tienda.
+- Refund Policy: sin la sección de placas grabadas. Shipping Policy: sin "Add to Your Box" ni "limited
+  edition". About Us: incluye la tienda.
+- Traducidas al español: FAQ, How It Works, Refund Policy, Shipping Policy, About Us y el título de Contact.
+
+### Tema "Pawlet Club v2" (`gid://shopify/OnlineStoreTheme/189339795518`, sin publicar)
+Copia del tema publicado. Ver [`theme/README.md`](theme/README.md).
+- **Inicio**: portada con botones "Shop dogs" / "Shop cats", barra de confianza, categorías con foto
+  (perros, gatos, paseo, juego, descanso, todo), grilla con los 8 productos y compra rápida, franja
+  "Why Pawlet Club", el Club con **lista de espera** (correo → cliente con etiquetas
+  `newsletter, club-waitlist`) y preguntas frecuentes.
+- **Producto**: galería con miniaturas, selector de variantes con botones, beneficios junto al botón de
+  compra (envío, origen, devoluciones, pago seguro), acordeón de envío / devoluciones / ayuda,
+  "You may also like" y barra de confianza.
+- **Colección**: barra de confianza al final.
+- Compra rápida también en celular.
+- Theme Check sin errores en los archivos propios.
+- Shopify rechazó (sin mensaje) un rótulo con el tipo de producto sobre el título; se quitó. Quedó una
+  plantilla de prueba `product.ta` en el tema que la API no permite borrar.
+
 ## 2026-10-26 (7) — Tienda a la carta publicada
 
 - El dueño confirma que **mantiene AutoDS** (pedidos automáticos de la tienda a la carta).

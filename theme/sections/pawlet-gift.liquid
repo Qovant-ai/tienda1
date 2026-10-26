@@ -32,7 +32,9 @@
       {% else %}
         {{ 'lifestyle-2' | placeholder_svg_tag: 'pc-band__img pc-band__placeholder' }}
       {% endif %}
-      <span class="pc-band__sticker">{% render 'pawlet-icon', icon: 'gift' %}</span>
+      {% if s.sticker_icon != 'none' %}
+        <span class="pc-band__sticker">{% render 'pawlet-icon', icon: s.sticker_icon %}</span>
+      {% endif %}
     </div>
 
     <div class="pc-band__copy">
@@ -204,6 +206,19 @@
         { "value": "right", "label": "Right" }
       ],
       "default": "left"
+    },
+    {
+      "type": "select",
+      "id": "sticker_icon",
+      "label": "Sticker on the photo",
+      "options": [
+        { "value": "gift", "label": "Gift" },
+        { "value": "heart", "label": "Heart" },
+        { "value": "star", "label": "Star" },
+        { "value": "paw", "label": "Paw" },
+        { "value": "none", "label": "None" }
+      ],
+      "default": "gift"
     },
     {
       "type": "text",

@@ -1,0 +1,141 @@
+{% doc %}
+  Pawlet Club product perks: a short list of store promises shown next to the buy
+  buttons. The shipping line switches to "free on this item" when the product price
+  reaches the free-shipping threshold.
+
+  @example
+  {% content_for 'block', type: 'pawlet-product-perks', id: 'perks' %}
+{% enddoc %}
+{% render 'pawlet-styles' %}
+{%- liquid
+  assign bs = block.settings
+  assign product = closest.product
+  assign threshold = bs.free_shipping_threshold | times: 100
+  assign shipping_text = bs.shipping_text
+  if product != blank and product.price >= threshold and bs.shipping_free_text != blank
+    assign shipping_text = bs.shipping_free_text
+  endif
+-%}
+<ul class="pc-perks" role="list" {{ block.shopify_attributes }}>
+  {% if shipping_text != blank %}
+    <li class="pc-perks__item">
+      <span class="pc-perks__icon">{% render 'pawlet-icon', icon: 'truck' %}</span>
+      <span>{{ shipping_text | escape }}</span>
+    </li>
+  {% endif %}
+  {% if bs.origin_text != blank %}
+    <li class="pc-perks__item">
+      <span class="pc-perks__icon">{% render 'pawlet-icon', icon: 'pin' %}</span>
+      <span>{{ bs.origin_text | escape }}</span>
+    </li>
+  {% endif %}
+  {% if bs.guarantee_text != blank %}
+    <li class="pc-perks__item">
+      <span class="pc-perks__icon">{% render 'pawlet-icon', icon: 'refresh' %}</span>
+      <span>{{ bs.guarantee_text | escape }}</span>
+    </li>
+  {% endif %}
+  {% if bs.checkout_text != blank %}
+    <li class="pc-perks__item">
+      <span class="pc-perks__icon">{% render 'pawlet-icon', icon: 'lock' %}</span>
+      <span>{{ bs.checkout_text | escape }}</span>
+    </li>
+  {% endif %}
+</ul>
+
+{% stylesheet %}
+  .pc-perks {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 0.625rem;
+    width: 100%;
+    margin: 0;
+    padding: 1rem;
+    border-radius: 1rem;
+    background: var(--pc-cream);
+    color: var(--pc-navy);
+    list-style: none;
+    font-family: var(--font-body--family);
+  }
+
+  .pc-perks__item {
+    display: flex;
+    align-items: center;
+    gap: 0.625rem;
+    min-width: 0;
+    font-size: 0.875rem;
+    font-weight: 500;
+    line-height: 1.3;
+  }
+
+  .pc-perks__icon {
+    display: grid;
+    flex-shrink: 0;
+    place-items: center;
+    width: 2.25rem;
+    height: 2.25rem;
+    border-radius: 50%;
+    background: #ffffff;
+  }
+
+  .pc-perks__icon .pc-svg {
+    width: 1.125rem;
+    height: 1.125rem;
+  }
+
+  @media screen and (max-width: 389px) {
+    .pc-perks {
+      grid-template-columns: minmax(0, 1fr);
+    }
+  }
+{% endstylesheet %}
+
+{% schema %}
+{
+  "name": "Pawlet perks",
+  "tag": null,
+  "settings": [
+    {
+      "type": "number",
+      "id": "free_shipping_threshold",
+      "label": "Free shipping threshold (USD)",
+      "default": 30
+    },
+    {
+      "type": "text",
+      "id": "shipping_text",
+      "label": "Shipping (below threshold)",
+      "default": "Free shipping over $30"
+    },
+    {
+      "type": "text",
+      "id": "shipping_free_text",
+      "label": "Shipping (at or above threshold)",
+      "default": "Free US shipping"
+    },
+    {
+      "type": "text",
+      "id": "origin_text",
+      "label": "Origin",
+      "default": "Ships from the US"
+    },
+    {
+      "type": "text",
+      "id": "guarantee_text",
+      "label": "Guarantee",
+      "default": "30-day returns"
+    },
+    {
+      "type": "text",
+      "id": "checkout_text",
+      "label": "Checkout",
+      "default": "Secure PayPal checkout"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Pawlet perks"
+    }
+  ]
+}
+{% endschema %}

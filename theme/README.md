@@ -1,44 +1,65 @@
-# Tema "Pawlet Club"
+# Tema "Pawlet Club v2"
 
-Copia sin publicar del tema **Helio** (familia Horizon 4.3.0), creada el 26-oct-2026.
+Copia del tema publicado "Pawlet Club" (familia Horizon 4.3.0), con la tienda y los productos al frente.
+Creada el 26-oct-2026.
 
 | | |
 |---|---|
-| ID del tema | `gid://shopify/OnlineStoreTheme/189338452030` |
-| Origen | Helio (`189253615678`, tema publicado hasta ahora) |
-| Estado | **Sin publicar.** Se publica desde *Tienda online → Temas → Pawlet Club → Publicar* |
+| ID del tema | `gid://shopify/OnlineStoreTheme/189339795518` |
+| Origen | "Pawlet Club" (`189338452030`, publicado) |
+| Estado | **Sin publicar.** Se revisa en *Tienda online → Temas → Pawlet Club v2 → Vista previa* y se publica desde ahí |
 
 Esta carpeta guarda **solo los archivos modificados o nuevos**, con el mismo contenido que se subió al tema.
 
-## Archivos modificados
+## Páginas
 
-| Archivo | Cambio |
-|---|---|
-| `config/settings_data.json` | Logo, logo blanco y favicon; tipografía Rubik; paleta azul noche + durazno; botones, tarjetas y campos redondeados |
-| `sections/header-group.json` | Encabezado blanco (sin transparencia en inicio, producto y colección), línea divisoria, sin selector de país |
-| `sections/footer-group.json` | Bloque de suscripción al boletín sobre durazno, columnas de enlaces sobre azul (menús `footer-club` y `footer`), sin "Powered by Shopify" ni redes sociales vacías |
-| `templates/index.json` | Página de inicio nueva (7 secciones) |
+**Inicio** (`templates/index.json`), en este orden:
+1. Portada: "Everyday favorites for your best friend, delivered." con botones *Shop dogs* y *Shop cats*.
+2. Barra de confianza: envío gratis desde $30, garantía de 30 días, pago seguro con PayPal, atención en
+   inglés y español.
+3. Categorías con foto: Shop for Dogs y Shop for Cats (grandes), Walk, Play & Scratch, Sleep & Groom y
+   Shop All.
+4. "Our best sellers": grilla con los 8 productos (compra rápida en computador y celular).
+5. "Why Pawlet Club": franja azul con foto.
+6. El Club: tarjetas de Club Dog y Club Cat con el sello "Launching January 2027" y **lista de espera**.
+   El correo crea un cliente con las etiquetas `newsletter, club-waitlist` (filtrar en *Clientes*).
+   Cuando los productos del Club se activen, los botones llevan solos al producto.
+7. Preguntas frecuentes.
 
-## Archivos nuevos
+**Producto** (`templates/product.json`): galería con miniaturas, título y precio, variantes con botones,
+botón de compra, beneficios (`pawlet-product-perks`), descripción, acordeón de envío / devoluciones / ayuda
+(`pawlet-product-accordion`), "You may also like" y barra de confianza.
+
+**Colección** (`templates/collection.json`): la del tema más la barra de confianza al final.
+
+## Archivos
 
 | Archivo | Qué es |
 |---|---|
-| `snippets/pawlet-styles.liquid` | Colores de marca (leídos de la paleta del tema) y estilos compartidos: botones, títulos, enlaces |
-| `snippets/pawlet-icon.liquid` | Íconos de marca en SVG: huellas, caja, camión, regalo, etc. |
-| `sections/pawlet-hero.liquid` | Portada: título con subrayado durazno, 2 botones, 3 beneficios, foto en arco, sello de precio |
-| `sections/pawlet-steps.liquid` | Cómo funciona (pasos numerados) |
-| `sections/pawlet-plans.liquid` | Tarjetas de Club Dog y Club Cat (precio desde el producto, con texto de respaldo) |
-| `sections/pawlet-inside.liquid` | Qué trae cada caja |
-| `sections/pawlet-shop.liquid` | Mosaicos de la tienda a la carta (perros, gatos, extras) |
-| `sections/pawlet-gift.liquid` | Franja "Regala el Club" con foto |
-| `sections/pawlet-faq.liquid` | Preguntas frecuentes en acordeón |
+| `config/settings_data.json` | Logo, colores, Rubik y compra rápida también en celular |
+| `sections/header-group.json`, `sections/footer-group.json` | Encabezado y pie (sin cambios en v2) |
+| `templates/index.json` | Página de inicio |
+| `templates/product.json` | Página de producto |
+| `templates/collection.json` | Página de colección |
+| `snippets/pawlet-styles.liquid` | Colores de marca y estilos compartidos |
+| `snippets/pawlet-icon.liquid` | Íconos en SVG (huellas, caja, camión, escudo, candado, devolución, etc.) |
+| `sections/pawlet-hero.liquid` | Portada |
+| `sections/pawlet-trust.liquid` | Barra de confianza (hasta 4 promesas) |
+| `sections/pawlet-categories.liquid` | Tarjetas de categoría: usan la imagen de la colección y muestran cuántos productos tiene |
+| `sections/pawlet-plans.liquid` | Planes del Club con lista de espera |
+| `sections/pawlet-gift.liquid` | Franja con foto y puntos (se usa para "Why Pawlet Club") |
+| `sections/pawlet-faq.liquid` | Preguntas frecuentes |
+| `sections/pawlet-steps.liquid`, `pawlet-inside.liquid`, `pawlet-shop.liquid` | Secciones de la v1 (cómo funciona, qué trae la caja, mosaicos). Siguen disponibles en el editor |
+| `blocks/pawlet-product-perks.liquid` | Beneficios junto al botón de compra. Dice "Free US shipping" si el producto cuesta $30 o más |
+| `blocks/pawlet-product-accordion.liquid` | Envío, devoluciones y ayuda, desplegables |
 
-Todas las secciones se editan desde el editor de temas (textos, colores, fotos, enlaces y bloques) y se
-pueden agregar a otras páginas. Pasaron **Theme Check** sin errores.
+Todo se edita desde el editor de temas. Los archivos propios pasaron **Theme Check** sin errores.
 
-## Antes de publicar
+## Notas
 
-- Los productos están en **borrador**: los botones de Club Dog y Club Cat llevan a páginas que todavía no
-  se ven en la tienda, y los planes muestran el precio de respaldo. Al activar los productos, el precio sale
-  del producto.
-- Revisar la vista previa en computador y en celular.
+- Shopify rechazó, sin mensaje, un rótulo con el tipo de producto (`{{ closest.product.type }}`) sobre el
+  título; se quitó.
+- Quedó una plantilla de prueba `templates/product.ta.json`. La API no permite borrar archivos del tema:
+  se puede borrar en *Editar código*. No afecta a nada.
+- Los textos del tema están en inglés. Para traducirlos: *Configuración → Idiomas → Español → Traducir*
+  (o la app Translate & Adapt).

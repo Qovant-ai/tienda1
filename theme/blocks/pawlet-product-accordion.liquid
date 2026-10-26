@@ -1,0 +1,233 @@
+{% doc %}
+  Pawlet Club product info accordion: up to three collapsible rows (shipping,
+  returns, help) built with native details/summary, so it works without JavaScript.
+
+  @example
+  {% content_for 'block', type: 'pawlet-product-accordion', id: 'info' %}
+{% enddoc %}
+{% render 'pawlet-styles' %}
+{%- assign bs = block.settings -%}
+<div class="pc-info" {{ block.shopify_attributes }}>
+  {% for i in (1..3) %}
+    {%- liquid
+      assign title_key = 'title_' | append: i
+      assign content_key = 'content_' | append: i
+      assign icon_key = 'icon_' | append: i
+      assign row_title = bs[title_key]
+      assign row_content = bs[content_key]
+    -%}
+    {% if row_title != blank and row_content != blank %}
+      <details class="pc-info__row">
+        <summary class="pc-info__summary">
+          <span class="pc-info__icon">{% render 'pawlet-icon', icon: bs[icon_key] %}</span>
+          <span class="pc-info__title">{{ row_title | escape }}</span>
+          <span class="pc-info__toggle" aria-hidden="true"></span>
+        </summary>
+        <div class="pc-info__content">{{ row_content }}</div>
+      </details>
+    {% endif %}
+  {% endfor %}
+</div>
+
+{% stylesheet %}
+  .pc-info {
+    width: 100%;
+    border-block-start: 1px solid var(--pc-line);
+    color: var(--pc-navy);
+    font-family: var(--font-body--family);
+  }
+
+  .pc-info__row {
+    border-block-end: 1px solid var(--pc-line);
+  }
+
+  .pc-info__summary {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    padding-block: 1rem;
+    cursor: pointer;
+    list-style: none;
+  }
+
+  .pc-info__summary::-webkit-details-marker {
+    display: none;
+  }
+
+  .pc-info__summary:focus-visible {
+    outline: 3px solid var(--pc-peach);
+    outline-offset: 2px;
+  }
+
+  .pc-info__icon .pc-svg {
+    width: 1.25rem;
+    height: 1.25rem;
+  }
+
+  .pc-info__title {
+    flex: 1 1 auto;
+    font-weight: 600;
+  }
+
+  .pc-info__toggle {
+    position: relative;
+    flex-shrink: 0;
+    width: 0.875rem;
+    height: 0.875rem;
+  }
+
+  .pc-info__toggle::before,
+  .pc-info__toggle::after {
+    content: '';
+    position: absolute;
+    inset-block-start: 50%;
+    inset-inline: 0;
+    height: 2px;
+    border-radius: 2px;
+    background: currentColor;
+    transform: translateY(-50%);
+    transition: transform 0.2s ease;
+  }
+
+  .pc-info__toggle::after {
+    transform: translateY(-50%) rotate(90deg);
+  }
+
+  .pc-info__row[open] .pc-info__toggle::after {
+    transform: translateY(-50%) rotate(0deg);
+  }
+
+  .pc-info__content {
+    padding: 0 0 1.125rem 2rem;
+    color: var(--pc-ink-soft);
+    font-size: 0.9375rem;
+    line-height: 1.6;
+  }
+
+  .pc-info__content p {
+    margin: 0;
+  }
+
+  .pc-info__content p + p {
+    margin-block-start: 0.625em;
+  }
+
+  .pc-info__content a {
+    color: var(--pc-navy);
+    font-weight: 500;
+    text-decoration-color: var(--pc-peach);
+    text-decoration-thickness: 2px;
+    text-underline-offset: 0.2em;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .pc-info__toggle::before,
+    .pc-info__toggle::after {
+      transition: none;
+    }
+  }
+{% endstylesheet %}
+
+{% schema %}
+{
+  "name": "Pawlet info accordion",
+  "tag": null,
+  "settings": [
+    {
+      "type": "header",
+      "content": "Row 1"
+    },
+    {
+      "type": "select",
+      "id": "icon_1",
+      "label": "Icon",
+      "options": [
+        { "value": "truck", "label": "Truck" },
+        { "value": "refresh", "label": "Returns" },
+        { "value": "chat", "label": "Chat" },
+        { "value": "shield", "label": "Shield" },
+        { "value": "box", "label": "Box" },
+        { "value": "paw", "label": "Paw" }
+      ],
+      "default": "truck"
+    },
+    {
+      "type": "text",
+      "id": "title_1",
+      "label": "Title",
+      "default": "Shipping & delivery"
+    },
+    {
+      "type": "richtext",
+      "id": "content_1",
+      "label": "Content",
+      "default": "<p>Free shipping on orders of $30 or more; $5.99 below that. Ships from a US warehouse within 1–3 business days and usually arrives 3–7 business days later, with tracking by email.</p>"
+    },
+    {
+      "type": "header",
+      "content": "Row 2"
+    },
+    {
+      "type": "select",
+      "id": "icon_2",
+      "label": "Icon",
+      "options": [
+        { "value": "truck", "label": "Truck" },
+        { "value": "refresh", "label": "Returns" },
+        { "value": "chat", "label": "Chat" },
+        { "value": "shield", "label": "Shield" },
+        { "value": "box", "label": "Box" },
+        { "value": "paw", "label": "Paw" }
+      ],
+      "default": "refresh"
+    },
+    {
+      "type": "text",
+      "id": "title_2",
+      "label": "Title",
+      "default": "Returns & happiness guarantee"
+    },
+    {
+      "type": "richtext",
+      "id": "content_2",
+      "label": "Content",
+      "default": "<p>Not the right fit? Return unused items within 30 days of delivery. Arrived damaged? Send us a photo and we'll replace it or refund you.</p>"
+    },
+    {
+      "type": "header",
+      "content": "Row 3"
+    },
+    {
+      "type": "select",
+      "id": "icon_3",
+      "label": "Icon",
+      "options": [
+        { "value": "truck", "label": "Truck" },
+        { "value": "refresh", "label": "Returns" },
+        { "value": "chat", "label": "Chat" },
+        { "value": "shield", "label": "Shield" },
+        { "value": "box", "label": "Box" },
+        { "value": "paw", "label": "Paw" }
+      ],
+      "default": "chat"
+    },
+    {
+      "type": "text",
+      "id": "title_3",
+      "label": "Title",
+      "default": "Questions?"
+    },
+    {
+      "type": "richtext",
+      "id": "content_3",
+      "label": "Content",
+      "default": "<p>We're happy to help in English or Spanish. Check our FAQ or send us a message.</p>"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Pawlet info accordion"
+    }
+  ]
+}
+{% endschema %}

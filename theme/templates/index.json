@@ -4,71 +4,359 @@
       "type": "pawlet-hero",
       "settings": {
         "background_color": "#fff3ea",
-        "eyebrow": "Monthly boxes for dogs & cats",
-        "heading": "A happy box for your best friend,",
-        "heading_highlight": "every month.",
-        "text": "<p>Toys, treats and care picked for your pet's size, age and play style, delivered to your door.</p>",
-        "button_1_label": "Start Club Dog",
-        "button_1_link": "shopify://products/club-dog-monthly-box",
-        "button_2_label": "Start Club Cat",
-        "button_2_link": "shopify://products/club-cat-monthly-box",
-        "check_1": "Free US shipping",
-        "check_2": "Skip or cancel anytime",
+        "eyebrow": "Hand-picked for dogs & cats",
+        "heading": "Everyday favorites for your best friend,",
+        "heading_highlight": "delivered.",
+        "text": "<p>Leashes, cozy beds, scratchers and grooming tools, hand-picked for comfort, quality and value. Shipped from US warehouses, with free shipping on orders over $30.</p>",
+        "button_1_label": "Shop dogs",
+        "button_1_link": "shopify://collections/shop-for-dogs",
+        "button_2_label": "Shop cats",
+        "button_2_link": "shopify://collections/shop-for-cats",
+        "check_1": "Free shipping over $30",
+        "check_2": "30-day happiness guarantee",
         "check_3": "Hablamos español",
         "image": "shopify://shop_images/photo-1599194921977-f89d8bd0eefb.jpg",
-        "badge_top": "From",
-        "badge_price": "$32.99",
-        "badge_bottom": "per month"
+        "badge_top": "Free shipping",
+        "badge_price": "$30+",
+        "badge_bottom": "US orders"
       }
     },
-    "steps": {
-      "type": "pawlet-steps",
+    "trust": {
+      "type": "pawlet-trust",
       "blocks": {
-        "step_profile": {
-          "type": "step",
-          "settings": {
-            "icon": "paw",
-            "title": "Tell us about your pet",
-            "text": "Choose Club Dog or Club Cat, then share their size, age, allergies and play style."
-          }
-        },
-        "step_box": {
-          "type": "step",
-          "settings": {
-            "icon": "box",
-            "title": "We build their box",
-            "text": "Every month we pick 5 to 6 goodies around a fun new theme, matched to their profile."
-          }
-        },
-        "step_delivery": {
-          "type": "step",
+        "trust_shipping": {
+          "type": "item",
           "settings": {
             "icon": "truck",
-            "title": "Delivered every month",
-            "text": "Renewals are charged on the 1st and boxes ship between the 8th and 10th, with free US shipping."
+            "title": "Free shipping over $30",
+            "text": "Fast delivery from US warehouses"
           }
         },
-        "step_control": {
-          "type": "step",
+        "trust_returns": {
+          "type": "item",
           "settings": {
-            "icon": "pause",
-            "title": "You stay in control",
-            "text": "Pause, skip a month or cancel online anytime. No calls, no fees."
+            "icon": "refresh",
+            "title": "30-day happiness guarantee",
+            "text": "Easy returns, no fuss"
+          }
+        },
+        "trust_checkout": {
+          "type": "item",
+          "settings": {
+            "icon": "lock",
+            "title": "Secure checkout",
+            "text": "Pay safely with PayPal"
+          }
+        },
+        "trust_help": {
+          "type": "item",
+          "settings": {
+            "icon": "chat",
+            "title": "Real humans",
+            "text": "Support in English & español"
           }
         }
       },
-      "block_order": ["step_profile", "step_box", "step_delivery", "step_control"],
+      "block_order": [
+        "trust_shipping",
+        "trust_returns",
+        "trust_checkout",
+        "trust_help"
+      ],
       "settings": {
+        "label": "Why shop with Pawlet Club",
         "background_color": "#ffffff",
-        "card_color": "#fff3ea",
-        "eyebrow": "How it works",
-        "heading": "Four easy steps to a happier pet",
-        "text": "",
-        "link_label": "See how the Club works",
-        "link": "shopify://pages/how-it-works"
+        "style": "bordered"
       }
     },
-    "plans": {
+    "categories": {
+      "type": "pawlet-categories",
+      "blocks": {
+        "cat_dogs": {
+          "type": "category",
+          "settings": {
+            "collection": "shop-for-dogs",
+            "title": "Shop for Dogs",
+            "text": "Leashes, harnesses, beds and grooming",
+            "image": "",
+            "link": "",
+            "size": "large",
+            "button_label": "Shop dogs"
+          }
+        },
+        "cat_cats": {
+          "type": "category",
+          "settings": {
+            "collection": "shop-for-cats",
+            "title": "Shop for Cats",
+            "text": "Scratchers, tunnels and cozy beds",
+            "image": "",
+            "link": "",
+            "size": "large",
+            "button_label": "Shop cats"
+          }
+        },
+        "cat_walk": {
+          "type": "category",
+          "settings": {
+            "collection": "leashes-harnesses",
+            "title": "Walk",
+            "text": "",
+            "image": "",
+            "link": "",
+            "size": "small",
+            "button_label": ""
+          }
+        },
+        "cat_play": {
+          "type": "category",
+          "settings": {
+            "collection": "play-scratch",
+            "title": "Play & Scratch",
+            "text": "",
+            "image": "",
+            "link": "",
+            "size": "small",
+            "button_label": ""
+          }
+        },
+        "cat_rest": {
+          "type": "category",
+          "settings": {
+            "collection": "sleep-groom",
+            "title": "Sleep & Groom",
+            "text": "",
+            "image": "",
+            "link": "",
+            "size": "small",
+            "button_label": ""
+          }
+        },
+        "cat_all": {
+          "type": "category",
+          "settings": {
+            "collection": "shop-all",
+            "title": "Shop All",
+            "text": "See every product",
+            "image": "",
+            "link": "",
+            "size": "small",
+            "button_label": ""
+          }
+        }
+      },
+      "block_order": [
+        "cat_dogs",
+        "cat_cats",
+        "cat_walk",
+        "cat_play",
+        "cat_rest",
+        "cat_all"
+      ],
+      "settings": {
+        "background_color": "#ffffff",
+        "eyebrow": "Shop by pet",
+        "heading": "Find what they'll love",
+        "text": "",
+        "product_label_one": "product",
+        "product_label_other": "products"
+      }
+    },
+    "best_sellers": {
+      "settings": {
+        "collection": "shop-all",
+        "max_products": 8,
+        "layout_type": "grid",
+        "carousel_on_mobile": false,
+        "columns": 4,
+        "mobile_columns": "2",
+        "columns_gap": 16,
+        "rows_gap": 32,
+        "icons_style": "arrow",
+        "icons_shape": "none",
+        "section_width": "page-width",
+        "gap": 32,
+        "padding-block-start": 72,
+        "padding-block-end": 72,
+        "background_color": "#fff3ea"
+      },
+      "blocks": {
+        "static-header": {
+          "type": "_product-list-content",
+          "name": "t:names.header",
+          "static": true,
+          "settings": {
+            "content_direction": "row",
+            "vertical_on_mobile": false,
+            "horizontal_alignment": "space-between",
+            "vertical_alignment": "flex-end",
+            "align_baseline": true,
+            "horizontal_alignment_flex_direction_column": "flex-start",
+            "vertical_alignment_flex_direction_column": "center",
+            "gap": 12,
+            "width": "fill",
+            "custom_width": 100,
+            "width_mobile": "fill",
+            "custom_width_mobile": 100,
+            "height": "fit",
+            "custom_height": 100,
+            "background_media": "none",
+            "video_position": "cover",
+            "background_image_position": "cover",
+            "border": "none",
+            "border_width": 1,
+            "border_opacity": 100,
+            "border_radius": 0,
+            "padding-block-start": 0,
+            "padding-block-end": 0,
+            "padding-inline-start": 0,
+            "padding-inline-end": 0
+          },
+          "blocks": {
+            "product_list_text": {
+              "type": "_product-list-text",
+              "name": "t:names.collection_title",
+              "settings": {
+                "text": "<h2>Our best sellers</h2>",
+                "type_preset": "h2",
+                "font": "var(--font-body--family)",
+                "font_size": "",
+                "line_height": "normal",
+                "letter_spacing": "normal",
+                "case": "none",
+                "wrap": "pretty",
+                "width": "fit-content",
+                "max_width": "normal",
+                "alignment": "left",
+                "padding-block-start": 0,
+                "padding-block-end": 0,
+                "padding-inline-start": 0,
+                "padding-inline-end": 0
+              }
+            },
+            "product_list_button": {
+              "type": "_product-list-button",
+              "name": "t:names.product_list_button",
+              "settings": {
+                "label": "Shop all",
+                "open_in_new_tab": false,
+                "style_class": "button-secondary",
+                "width": "fit-content",
+                "custom_width": 100,
+                "width_mobile": "fit-content",
+                "custom_width_mobile": 100
+              }
+            }
+          },
+          "block_order": [
+            "product_list_text",
+            "product_list_button"
+          ]
+        },
+        "static-product-card": {
+          "type": "_product-card",
+          "name": "t:names.product_card",
+          "static": true,
+          "settings": {
+            "product_card_gap": 6,
+            "border": "none",
+            "border_width": 1,
+            "border_opacity": 100,
+            "border_radius": 0,
+            "padding-block-start": 0,
+            "padding-block-end": 0,
+            "padding-inline-start": 0,
+            "padding-inline-end": 0
+          },
+          "blocks": {
+            "product-card-gallery": {
+              "type": "_product-card-gallery",
+              "name": "t:names.product_card_media",
+              "settings": {
+                "image_ratio": "square",
+                "border": "none",
+                "border_width": 1,
+                "border_opacity": 100,
+                "border_radius": 16,
+                "padding-block-start": 0,
+                "padding-block-end": 0,
+                "padding-inline-start": 0,
+                "padding-inline-end": 0
+              }
+            },
+            "product_title": {
+              "type": "product-title",
+              "name": "t:names.product_title",
+              "settings": {
+                "width": "fit-content",
+                "max_width": "normal",
+                "alignment": "left",
+                "type_preset": "paragraph",
+                "font": "var(--font-body--family)",
+                "font_size": "1rem",
+                "line_height": "normal",
+                "letter_spacing": "normal",
+                "case": "none",
+                "wrap": "pretty",
+                "background": false,
+                "background_color": "#00000026",
+                "corner_radius": 0,
+                "padding-block-start": 8,
+                "padding-block-end": 0,
+                "padding-inline-start": 0,
+                "padding-inline-end": 0
+              }
+            },
+            "price": {
+              "type": "price",
+              "name": "t:names.product_price",
+              "settings": {
+                "show_sale_price_first": true,
+                "show_installments": false,
+                "show_tax_info": false,
+                "type_preset": "h6",
+                "width": "100%",
+                "alignment": "left",
+                "font": "var(--font-body--family)",
+                "font_size": "1rem",
+                "line_height": "normal",
+                "letter_spacing": "normal",
+                "case": "none",
+                "padding-block-start": 0,
+                "padding-block-end": 0,
+                "padding-inline-start": 0,
+                "padding-inline-end": 0
+              }
+            }
+          },
+          "block_order": [
+            "product-card-gallery",
+            "product_title",
+            "price"
+          ]
+        }
+      },
+      "block_order": [],
+      "type": "product-list"
+    },
+    "why": {
+      "type": "pawlet-gift",
+      "settings": {
+        "background_color": "#1b2b48",
+        "image": "shopify://shop_images/photo-1686419682443-5050ca21098d.jpg",
+        "image_position": "left",
+        "eyebrow": "Why Pawlet Club",
+        "heading": "Picked by pet people, for pet people",
+        "text": "<p>We compare materials, supplier track records and customer reviews before anything goes in our shop, so you don't have to scroll through hundreds of look-alikes.</p>",
+        "point_1": "Hand-picked for comfort, safety and quality",
+        "point_2": "Fair prices, checked against the big marketplaces",
+        "point_3": "30-day happiness guarantee on every order",
+        "button_label": "Shop all products",
+        "button_link": "shopify://collections/shop-all",
+        "sticker_icon": "heart"
+      }
+    },
+    "club": {
       "type": "pawlet-plans",
       "blocks": {
         "plan_dog": {
@@ -104,157 +392,57 @@
           }
         }
       },
-      "block_order": ["plan_dog", "plan_cat"],
+      "block_order": [
+        "plan_dog",
+        "plan_cat"
+      ],
       "settings": {
         "background_color": "#fff3ea",
-        "eyebrow": "Choose your Club",
-        "heading": "One box, made for your pet",
-        "text": "<p>5 to 6 goodies every month, picked for your pet's profile. Free shipping and no commitment.</p>",
-        "note": "<p>Prefer to pay once? <a href=\"/collections/gift-the-club\" title=\"Gift the Club\">Gift the Club</a> lets you prepay 1, 3 or 6 months.</p>"
-      }
-    },
-    "inside": {
-      "type": "pawlet-inside",
-      "blocks": {
-        "item_toys": {
-          "type": "item",
-          "settings": {
-            "icon": "ball",
-            "count": "2",
-            "title": "Toys",
-            "text": "Matched to their size and play style, from tough chewers to feather chasers."
-          }
-        },
-        "item_treats": {
-          "type": "item",
-          "settings": {
-            "icon": "bone",
-            "count": "2",
-            "title": "Treats",
-            "text": "Tasty snacks from trusted US brands. We skip anything on their allergy list."
-          }
-        },
-        "item_care": {
-          "type": "item",
-          "settings": {
-            "icon": "brush",
-            "count": "1",
-            "title": "Care item",
-            "text": "Dental, grooming or paw care to keep them healthy between vet visits."
-          }
-        },
-        "item_surprise": {
-          "type": "item",
-          "settings": {
-            "icon": "sparkle",
-            "count": "1",
-            "title": "Surprise",
-            "text": "A themed accessory or extra that makes every box feel brand new."
-          }
-        }
-      },
-      "block_order": ["item_toys", "item_treats", "item_care", "item_surprise"],
-      "settings": {
-        "background_color": "#ffffff",
-        "eyebrow": "Inside every box",
-        "heading": "5 to 6 goodies, every single month",
-        "text": "",
-        "theme_note": "<p><strong>A new theme every month.</strong> Each box is built around a playful theme, so every delivery feels like a new adventure.</p>"
-      }
-    },
-    "shop": {
-      "type": "pawlet-shop",
-      "blocks": {
-        "tile_dogs": {
-          "type": "tile",
-          "settings": {
-            "collection": "shop-for-dogs",
-            "link": "",
-            "title": "Shop for Dogs",
-            "text": "Leashes, harnesses, beds and grooming picks for every pup.",
-            "link_label": "Shop dogs",
-            "icon": "paws",
-            "style": "navy"
-          }
-        },
-        "tile_cats": {
-          "type": "tile",
-          "settings": {
-            "collection": "shop-for-cats",
-            "link": "",
-            "title": "Shop for Cats",
-            "text": "Scratchers, tunnels and cozy beds for happy cats.",
-            "link_label": "Shop cats",
-            "icon": "paw",
-            "style": "peach"
-          }
-        },
-        "tile_extras": {
-          "type": "tile",
-          "settings": {
-            "collection": "add-to-your-box",
-            "link": "",
-            "title": "Add to Your Box",
-            "text": "Little extras that ride along in your monthly box.",
-            "link_label": "See extras",
-            "icon": "box",
-            "style": "white"
-          }
-        }
-      },
-      "block_order": ["tile_dogs", "tile_cats", "tile_extras"],
-      "settings": {
-        "background_color": "#fff3ea",
-        "eyebrow": "Shop à la carte",
-        "heading": "Beds, leashes, toys and more",
-        "text": "<p>Hand-picked favorites you can buy one at a time. Free shipping on orders of $30 or more.</p>"
-      }
-    },
-    "gift": {
-      "type": "pawlet-gift",
-      "settings": {
-        "background_color": "#1b2b48",
-        "image": "shopify://shop_images/photo-1686419682443-5050ca21098d.jpg",
-        "image_position": "left",
-        "eyebrow": "Gift the Club",
-        "heading": "The gift that wags (and purrs) for months",
-        "text": "<p>Give a dog or cat lover 1, 3 or 6 months of happy boxes with a single payment.</p>",
-        "point_1": "No automatic renewal",
-        "point_2": "Ship straight to them, with a gift message",
-        "point_3": "Save up to 10% on 6 months",
-        "button_label": "Give the Club",
-        "button_link": "shopify://collections/gift-the-club"
+        "eyebrow": "Coming January 2027",
+        "heading": "The Pawlet Club monthly box",
+        "text": "<p>5 to 6 goodies every month, picked for your pet's size, age and play style. Free shipping, skip or cancel anytime.</p>",
+        "note": "",
+        "show_waitlist": true,
+        "soon_badge": "Launching January 2027",
+        "waitlist_card_button": "Join the waitlist",
+        "waitlist_heading": "Be first in line",
+        "waitlist_text": "<p>Join the waitlist and get a launch-day welcome offer for your first box. No spam, just the good stuff.</p>",
+        "waitlist_placeholder": "Your email",
+        "waitlist_button": "Notify me",
+        "waitlist_success": "You're on the list! We'll email you when the Club opens.",
+        "waitlist_tags": "newsletter, club-waitlist",
+        "anchor": "club"
       }
     },
     "faq": {
       "type": "pawlet-faq",
       "blocks": {
-        "q_box": {
+        "q_shipping": {
           "type": "question",
           "settings": {
-            "question": "What's in each box?",
-            "answer": "<p>5 to 6 products: 2 toys, 2 treats or snacks, 1 care item and 1 surprise from the monthly theme, all picked for your pet's size, age and profile.</p>"
+            "question": "How long does shipping take?",
+            "answer": "<p>Orders ship from US warehouses within 1–3 business days and usually arrive 3–7 business days later. Shipping is free on orders of $30 or more ($5.99 below that), and you'll get tracking by email.</p>"
           }
         },
-        "q_price": {
+        "q_returns": {
           "type": "question",
           "settings": {
-            "question": "How much does it cost?",
-            "answer": "<p>Club Dog is $39.99/month and Club Cat is $32.99/month. Shipping to the contiguous US is free. Sales tax is added at checkout where applicable.</p>"
+            "question": "What if my pet doesn't like it?",
+            "answer": "<p>Return unused items within 30 days of delivery. If something arrives damaged, send us a photo and we'll replace it or refund you.</p>"
           }
         },
-        "q_cancel": {
+        "q_pay": {
           "type": "question",
           "settings": {
-            "question": "Can I pause, skip or cancel?",
-            "answer": "<p>Yes, anytime from your account. No calls, no fees. Changes made by the last day of the month apply to the next box.</p>"
+            "question": "How do I pay?",
+            "answer": "<p>We accept PayPal. Your payment is processed securely by PayPal, and we never see your card details.</p>"
           }
         },
-        "q_allergies": {
+        "q_club": {
           "type": "question",
           "settings": {
-            "question": "My pet has allergies. Can you work around them?",
-            "answer": "<p>Yes. Tell us in your pet's profile and we'll avoid those ingredients in treats. Always check the label before giving your pet a new treat.</p>"
+            "question": "When does the monthly Club launch?",
+            "answer": "<p>Club Dog ($39.99/month) and Club Cat ($32.99/month) launch in January 2027. Join the waitlist above and we'll email you on launch day.</p>"
           }
         },
         "q_spanish": {
@@ -265,17 +453,31 @@
           }
         }
       },
-      "block_order": ["q_box", "q_price", "q_cancel", "q_allergies", "q_spanish"],
+      "block_order": [
+        "q_shipping",
+        "q_returns",
+        "q_pay",
+        "q_club",
+        "q_spanish"
+      ],
       "settings": {
         "background_color": "#ffffff",
         "eyebrow": "Questions",
         "heading": "Good questions, honest answers",
-        "text": "<p>Everything you need to know before your first box.</p>",
+        "text": "<p>Everything you need to know before you order.</p>",
         "link_label": "See all FAQs",
         "link": "shopify://pages/faqs",
         "open_first": true
       }
     }
   },
-  "order": ["hero", "steps", "plans", "inside", "shop", "gift", "faq"]
+  "order": [
+    "hero",
+    "trust",
+    "categories",
+    "best_sellers",
+    "why",
+    "club",
+    "faq"
+  ]
 }
