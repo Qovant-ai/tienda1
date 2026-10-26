@@ -1,0 +1,27 @@
+# name  supplier photo (inside src/)  crop_top  [model]
+# Post-steps done by hand: brush_* keep only the largest shape (drops the zoom circle);
+# mitt_card = right half of the 'Set' photo, cropped below the size text, on a white rounded card.
+tree christmas-tree-cat-scratching-post/00_17599a32a11481ce0156c2d47bdda68a.png 0
+pad cat-scratch-pad-interactive-balls/00_2c02255cb9ca1d3af97a296bb1267cdb.png 0 u2net
+brush_grey stainless-steel-grooming-comb/00_ea21005db1afdc8b350ed097ce1956df.png 0
+brush_pink stainless-steel-grooming-comb/04_b0713a7bd13306907bdf7f7dd8a45edf.png 0
+brush_green stainless-steel-grooming-comb/05_e716dfc463fc1cb45dd7251db8904717.png 0
+rope heavy-duty-rope-leash-6ft/00_ad2b4cbad974b97a2acd69c89bef9041.png 0
+tunnel_blue collapsible-cat-tunnel/20_991d5755b1501ee7a90d389ffae57d54.png 0
+tunnel_brown collapsible-cat-tunnel/21_f2c80d0b85ca664a206de38cdb3256fe.png 0
+tunnel_green collapsible-cat-tunnel/22_a04f5b2bee6aab79cba079d8b3ccfbb3.png 0
+bed_gray calming-plush-cave-bed/00_510c484b60369ddcea92c840c11bda5a.png 0.13
+bed_green calming-plush-cave-bed/07_4091563f59488caa2b85a8f4ad8457cd.png 0.17
+bed_brown calming-plush-cave-bed/08_01a8e4e1ca5a3cb19d5ffb8e86fa6205.png 0.17
+bed_pink calming-plush-cave-bed/09_ff797e806022d7dd5bad8776ab00c3b1.png 0.17
+bed_pink_long calming-plush-cave-bed/10_9eed2923d956d1becc78cb46a63bf129.png 0.20
+bed_gray_long calming-plush-cave-bed/11_fd1ff3ba3385da3927a82ca3df08c077.png 0.20
+bed_brown_long calming-plush-cave-bed/12_e4d0ec5f7e78d1570a35a78870eb4afb.png 0.20
+bed_green_long calming-plush-cave-bed/13_f0ba3c2425f01cfb026f54b13ff80696.png 0.20
+harness no-pull-harness-leash-set/00_14f126045f46e74a04adcf696e524905.png 0
+leash_main retractable-dog-leash-16ft/00_740f5cd41c195945a077185b656c8ace.png 0
+leash_pink retractable-dog-leash-16ft/01_0b0abaa65e2d73136a4ccf2708f9edd3.png 0
+leash_red retractable-dog-leash-16ft/02_0479669009cbe22daa4e1b489970c302.png 0
+leash_yellow retractable-dog-leash-16ft/03_29890284570f3ec1ad455e8bfd4ed407.png 0
+leash_blue retractable-dog-leash-16ft/04_103d768070101f3da00ae70b04d060ce.png 0
+leash_green retractable-dog-leash-16ft/05_aca146a139fde58694d69f727d6986ad.png 0

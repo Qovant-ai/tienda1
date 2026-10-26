@@ -1,0 +1,111 @@
+{
+  "products": {
+    "christmas-tree-cat-scratching-post": {
+      "name": "Christmas Tree Cat Scratcher",
+      "hero": ["tree"],
+      "benefits": [
+        {"icon": "paw", "title": "Natural sisal post", "text": "Satisfies the urge to scratch and stretch"},
+        {"icon": "star", "title": "Holiday-ready design", "text": "Festive decor that doubles as a cat toy"},
+        {"icon": "shield", "title": "Saves your furniture", "text": "Gives claws a better place to go"},
+        {"icon": "heart", "title": "Extra-large base", "text": "A cozy spot to lounge between scratches"}
+      ],
+      "size": {"type": "dims", "title": "Tall enough for a full stretch", "subtitle": "Natural sisal post on a soft, extra-large base", "height": "31.5 in · 80 cm", "width": "15.7 in · 40 cm", "note": "Dimensions are approximate"}
+    },
+    "cat-scratch-pad-interactive-balls": {
+      "name": "Interactive Cat Play Box",
+      "hero": ["pad"],
+      "benefits": [
+        {"icon": "ball", "title": "Hide-and-seek balls", "text": "Cats fish for rolling balls through the holes"},
+        {"icon": "sparkle", "title": "Spring pom-pom", "text": "Bounces back for endless batting"},
+        {"icon": "heart", "title": "Beats boredom", "text": "Solo play while you're busy or away"},
+        {"icon": "box", "title": "Soft felt edges", "text": "Sides cats love to rub and scratch"}
+      ],
+      "size": {"type": "dims", "title": "Compact size, big fun", "subtitle": "Fits any corner of your home", "width": "About 12 in · 30 cm", "note": "Dimensions are approximate"}
+    },
+    "stainless-steel-grooming-comb": {
+      "name": "Self-Cleaning Slicker Brush",
+      "hero": ["brush_grey"],
+      "benefits": [
+        {"icon": "brush", "title": "Lifts loose undercoat", "text": "Fine stainless steel pins reach deep"},
+        {"icon": "check", "title": "One-touch cleaning", "text": "Press the button and the fur slides off"},
+        {"icon": "heart", "title": "Gentle on skin", "text": "Rounded pin tips and a comfy grip"},
+        {"icon": "paw", "title": "For cats and dogs", "text": "Short and long coats"}
+      ],
+      "variants": {
+        "grey": ["brush_grey"],
+        "pink": ["brush_pink"],
+        "green": ["brush_green"],
+        "green2": ["brush_green", "brush_green"],
+        "set": ["brush_grey", "mitt_card"]
+      }
+    },
+    "heavy-duty-rope-leash-6ft": {
+      "name": "Heavy-Duty Rope Leash",
+      "hero": ["rope"],
+      "benefits": [
+        {"icon": "shield", "title": "Strong braided rope", "text": "1/2 in thick, 6 ft long, made for big pullers"},
+        {"icon": "heart", "title": "Padded handle", "text": "Comfortable grip, less hand strain"},
+        {"icon": "sparkle", "title": "Reflective threads", "text": "Stay visible on night walks"},
+        {"icon": "refresh", "title": "360° swivel clip", "text": "Easy to hook and tangle-free"}
+      ]
+    },
+    "collapsible-cat-tunnel": {
+      "name": "Peek-a-Boo Cat Tunnel",
+      "hero": ["tunnel_blue"],
+      "benefits": [
+        {"icon": "paw", "title": "Peek-a-boo holes", "text": "Paws poke, swat and play right through"},
+        {"icon": "sparkle", "title": "Tunnel, hideout or mat", "text": "Snaps into shape, lies flat to store"},
+        {"icon": "heart", "title": "Cozy hideout", "text": "A safe spot for naps and ambushes"},
+        {"icon": "check", "title": "No batteries", "text": "Soft felt, nothing to charge or break"}
+      ],
+      "variants": {
+        "blue": ["tunnel_blue"],
+        "brown": ["tunnel_brown"],
+        "green": ["tunnel_green"]
+      }
+    },
+    "calming-plush-cave-bed": {
+      "name": "Calming Plush Cave Bed",
+      "hero": ["bed_gray"],
+      "benefits": [
+        {"icon": "heart", "title": "Calming raised rim", "text": "A secure spot to curl up and rest"},
+        {"icon": "sparkle", "title": "Extra-soft plush", "text": "Holds body heat on chilly nights"},
+        {"icon": "box", "title": "2-in-1 cave or bed", "text": "Use the hood up or fold it down"},
+        {"icon": "shield", "title": "Non-slip bottom", "text": "Stays put on smooth floors"}
+      ],
+      "size": {"type": "scale", "title": "Pick the perfect fit", "subtitle": "Measure your pet curled up, then choose the next size up", "note": "Weights are a guide for cats and small dogs",
+        "sizes": [
+          {"label": "S · 16 in", "text": "40 cm<br>Pets up to 9 lb", "rel": 40},
+          {"label": "M · 20 in", "text": "50 cm<br>Pets up to 13 lb", "rel": 50},
+          {"label": "L · 24 in", "text": "60 cm<br>Pets up to 22 lb", "rel": 60}
+        ]},
+      "variants": {
+        "gray": ["bed_gray"], "green": ["bed_green"], "brown": ["bed_brown"], "pink": ["bed_pink"],
+        "pink_long": ["bed_pink_long"], "gray_long": ["bed_gray_long"], "brown_long": ["bed_brown_long"], "green_long": ["bed_green_long"]
+      }
+    },
+    "no-pull-harness-leash-set": {
+      "name": "No-Pull Harness + Leash Set",
+      "hero": ["harness"],
+      "benefits": [
+        {"icon": "shield", "title": "Front clip stops pulling", "text": "Gently turns your dog back toward you"},
+        {"icon": "heart", "title": "Padded, adjustable fit", "text": "4 straps for a snug, comfy fit"},
+        {"icon": "check", "title": "Handle + 5 ft leash", "text": "Quick control, ready to walk"},
+        {"icon": "sparkle", "title": "Reflective stitching", "text": "Safer early and late walks"}
+      ]
+    },
+    "retractable-dog-leash-16ft": {
+      "name": "16.5 ft Retractable Leash",
+      "hero": ["leash_main"],
+      "benefits": [
+        {"icon": "paw", "title": "Room to explore", "text": "Up to 16.5 ft (5 m) of leash"},
+        {"icon": "lock", "title": "One-button brake", "text": "Stop and lock at any length"},
+        {"icon": "heart", "title": "Ergonomic grip", "text": "Comfortable on long walks"},
+        {"icon": "refresh", "title": "360° swivel clip", "text": "Helps prevent tangles"}
+      ],
+      "variants": {
+        "pink": ["leash_pink"], "red": ["leash_red"], "yellow": ["leash_yellow"], "blue": ["leash_blue"], "green": ["leash_green"]
+      }
+    }
+  }
+}

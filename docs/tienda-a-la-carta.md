@@ -40,9 +40,9 @@ baratos conviene comprarlos al por mayor y guardarlos en el 3PL junto con las ca
 | 15445490499646 | No-Pull Harness + 5 ft Leash Set · Large Dogs | Privado (Jackson Qin) | $12.95 (envío gratis) | 6–8 días | $29.99 | ~49% |
 | 15445488009278 | Calming Plush Cave Bed for Cats & Small Dogs | Privado (A. Nouri) | S $9.78–11.02 · M $12.74–13.98 · L $20.15–20.57, + $7.29 | 4–6 días | S $34.99 · M $42.99 · L $52.99 | ~39–42% |
 | 15445481357374 | Christmas Tree Cat Scratching Post · 31.5 in | CJdropshipping | $16.97 (envío gratis) | 7 días | $39.99 | ~49% |
-| 15445481455678 | Cat Scratch Pad with Interactive Balls | CJdropshipping | $16.27 (envío gratis) | 5 días | $34.99 | ~46% |
-| 15445487943742 | Collapsible Cat Tunnel & Hideout | Privado (A. Nouri) | 24 in $7.24–8.62 · 35 in $9.87–11.27, + $7.29 | 4–6 días | 24 in $29.99 · 35 in $34.99 | ~38% |
-| 15445482274878 | Stainless Steel Grooming Comb for Cats & Dogs | CJdropshipping | $1.99 + $6.10 (2 peines: $7.72 + envío) | 7–8 días | $16.99 (2 peines $24.99) | ~45% |
+| 15445481455678 | Interactive Cat Play Box with Balls & Pom-Pom | CJdropshipping | $16.27 (envío gratis) | 5 días | $34.99 | ~46% |
+| 15445487943742 | Peek-a-Boo Felt Cat Tunnel & Hideout | Privado (A. Nouri) | 24 in $7.24–8.62 · 35 in $9.87–11.27, + $7.29 | 4–6 días | 24 in $29.99 · 35 in $34.99 | ~38% |
+| 15445482274878 | Self-Cleaning Slicker Brush for Cats & Dogs | CJdropshipping | $1.99 + $6.10 (2 cepillos: $7.72 + envío) | 7–8 días | $16.99 (2 cepillos $24.99) | ~45% |
 
 \* Con el costo más alto de cada talla, después de las comisiones de PayPal (~5–6% + 30¢) y Shopify (2%). Sin publicidad.
 
@@ -64,8 +64,12 @@ estos precios (desactivar el ajuste automático de precio o usar costo × 2.2 co
 - **Colecciones publicadas:** Shop All, Shop for Dogs, Shop for Cats, Walk: Leashes & Harnesses (etiqueta
   `walk`), Play & Scratch (`play`) y Sleep & Groom (`rest`). Las de tipo se llenan solas con la etiqueta.
 - **Descripciones:** introducción, "Why you'll love it" y "Details", con SEO propio y traducción al español.
-- **Fotos:** el arnés tiene una sola foto, con el logo VEVOR del fabricante. Conviene cambiar de proveedor o
-  pedirle fotos sin marca.
+- **Fotos (27-oct):** cada producto abre con una foto principal propia (producto recortado sobre fondo crema,
+  mismo encuadre en todos), sigue con una foto en uso, una infografía de beneficios, guía de tallas cuando aplica,
+  las mejores fotos del proveedor, una foto limpia por cada color y cierra con la garantía Pawlet. Ver
+  [`brand/product-images/README.md`](../brand/product-images/README.md).
+- El arnés solo tiene una foto del proveedor y muestra el logo VEVOR del fabricante. Conviene pedirle más fotos
+  sin marca o cambiar de proveedor.
 
 ## 4. Reglas de operación
 - **Envío al cliente:** gratis desde $30; $5.99 por debajo (Shopify ya configurado).

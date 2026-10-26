@@ -2,6 +2,35 @@
 
 Registro de todos los cambios en la tienda (Shopify, AutoDS y configuración). El más reciente va primero.
 
+## 2026-10-27 (10) — Fotos de producto nuevas y textos corregidos
+
+Pedido del dueño: mejorar la presentación de los productos ("las fotos por defecto son horribles y nada
+estratégicas") según 4 videos de YouTube. **No se pudieron ver los videos**: YouTube está bloqueado en este
+entorno. Se aplicaron las prácticas habituales de fotos de producto para e-commerce.
+
+### Fotos (ver [`brand/product-images/README.md`](brand/product-images/README.md))
+- 38 imágenes nuevas de 1600 × 1600 px: 8 fotos principales (producto recortado sobre fondo crema), 8
+  infografías de beneficios, 3 guías de tallas o medidas, 18 fotos limpias por color o versión y 1 imagen de
+  garantía Pawlet (en los 8 productos).
+- Galerías reordenadas: principal → en uso → beneficios → tallas → fotos del proveedor → colores → garantía.
+- Cada variante muestra su foto limpia (cama 8 colores, túnel 3, correa retráctil 5, cepillo 5).
+- **41 fotos del proveedor eliminadas**: texto en chino, collages, etiquetas de color, medidas que no
+  coincidían con las variantes y duplicadas. Textos alternativos descriptivos en las que quedan.
+- Imágenes de colección: Sleep & Groom usa la nueva foto de la cama; Play & Scratch, un gato dentro del túnel.
+- Herramientas: `brand/tools/cutout_products.py` (recorte con rembg), `make_product_images.py` y
+  `render_product_images.js` (HTML → JPG con la paleta, Rubik y el logo).
+
+### Textos corregidos al revisar las fotos
+| Antes | Ahora | Por qué |
+|---|---|---|
+| Stainless Steel Grooming Comb (`stainless-steel-grooming-comb`) | **Self-Cleaning Slicker Brush for Cats & Dogs** (`self-cleaning-slicker-brush`) | Es un cepillo con botón autolimpiable; la versión "Set" trae un guante de aseo |
+| Cat Scratch Pad with Interactive Balls (`cat-scratch-pad-interactive-balls`) | **Interactive Cat Play Box with Balls & Pom-Pom** (`interactive-cat-play-box`) | Es una caja tipo laberinto con pelotas y pompón con resorte |
+| Collapsible Cat Tunnel & Hideout (`collapsible-cat-tunnel`) | **Peek-a-Boo Felt Cat Tunnel & Hideout** (`peek-a-boo-cat-tunnel`) | Es de fieltro con agujeros y broches; se arma como túnel o queda plano |
+| Cama L "small-to-medium dogs" | S hasta 9 lb, M hasta 13 lb, **L hasta 22 lb** | Tabla de tallas del proveedor |
+
+Los handles viejos redirigen a los nuevos. Descripción, SEO y traducción al español actualizados en los 5
+productos tocados (también el rascador árbol: base de 15.7 in).
+
 ## 2026-10-26 (9) — Tema v2 publicado y revisión
 
 - El dueño publicó **"Pawlet Club v2"** (`189339795518`, ahora MAIN). "Pawlet Club" (`189338452030`) quedó
