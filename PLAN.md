@@ -1,24 +1,25 @@
 # Plan maestro: club mensual de cajas para perros y gatos
 
-**Mercados:** 🇨🇱 Chile → 🇺🇸 Estados Unidos → 🇲🇽 México.
-**Actualizado:** 26-oct-2026 · **Estructura legal y pagos:** [`docs/estructura-paises-y-pagos.md`](docs/estructura-paises-y-pagos.md) ·
-**Estado inicial:** [`docs/auditoria-2026-10-26.md`](docs/auditoria-2026-10-26.md) · **Cambios:** [`CHANGELOG.md`](CHANGELOG.md)
+**Secuencia:** 🇺🇸 Estados Unidos → 🇲🇽 México → 🇨🇱 Chile · **Cobro:** PayPal · **Entidad:** SpA chilena · **Una sola tienda**
+**Actualizado:** 26-oct-2026 · **Fase actual:** [`docs/fase-1-estados-unidos.md`](docs/fase-1-estados-unidos.md) ·
+**Cambios:** [`CHANGELOG.md`](CHANGELOG.md) · **Estado inicial:** [`docs/auditoria-2026-10-26.md`](docs/auditoria-2026-10-26.md)
 
 > Las cifras de costos y precios son **supuestos de trabajo** que hay que validar con cotizaciones reales.
 > Se marcan con *(supuesto)*.
 
 ---
 
-## 0. Estado y acciones urgentes
+## 0. Estado
 
 | # | Acción | Estado |
 |---|---|---|
-| 1 | Reconectar Shopify · eliminar los 10 productos de AutoDS · crear el catálogo del club | ✅ Hecho |
-| 2 | Publicar el tema Horizon | ✅ Hecho (por ti) |
-| 3 | Definir la estructura por países | ✅ 2 entidades, 2 tiendas (ver documento de estructura) |
-| 4 | Convertir esta tienda en la **tienda Chile** | 🟡 Mercado Chile, idioma y textos listos · **falta: moneda CLP, zona horaria, idioma predeterminado y políticas (en el admin)** |
-| 5 | **Decidir sobre AutoDS antes del 29-oct 00:16 UTC** (se cobra ese día) | ⏳ Recomendación: cancelar; no se usa en Chile |
-| 6 | Iniciar la **LLC en EE. UU.** (tarda 3–8 semanas) | ⏳ Pendiente |
+| 1 | Eliminar los 10 productos de AutoDS y crear el catálogo del club | ✅ |
+| 2 | Publicar el tema Horizon | ✅ (por ti) |
+| 3 | Configurar la tienda para EE. UU.: mercado, envíos, catálogo en inglés y USD, traducción al español | ✅ |
+| 4 | **Moneda de la tienda → USD** | ⏳ Tú, en el admin |
+| 5 | **PayPal Business + transacciones de referencia** (necesarias para suscripciones) | ⏳ Tú: es lo más lento, pídelo ya |
+| 6 | Shopify Subscriptions · políticas en inglés · marca | ⏳ Tú |
+| 7 | **AutoDS: cancelar antes del 29-oct 00:16 UTC** | ⏳ Tú |
 
 ---
 
@@ -27,45 +28,37 @@
 **Un club mensual, como los clubes de vino, para perros y gatos:** cada mes llega una caja temática con
 5–6 productos elegidos según el perfil de la mascota (especie, tamaño, edad, alergias, tipo de mordida).
 
-**Diferenciadores:** personalización real · temas locales por país (Fiestas Patrias en Chile, Día de Muertos
-en México, Thanksgiving en EE. UU.) · marca bilingüe que atiende también a la comunidad latina de EE. UU. ·
-donación a refugios · pausar, saltar o cancelar en 2 clics · línea **Senior** (en Chile, el 35% de los
-perros y el 32% de los gatos son senior, según Cadem 2026).
+**Diferenciadores:** personalización real · temas por país (Thanksgiving, Día de Muertos, Fiestas Patrias) ·
+**tienda bilingüe** que atiende también a la comunidad latina de EE. UU. (BarkBox y Meowbox no lo hacen) ·
+donación a refugios · pausar, saltar o cancelar en 2 clics · línea Senior.
 
-**Marca:** pendiente (proveedor provisional "Club Mascotas"). Ideas para validar: *Pawsito Club*, *Colita Box*,
-*Huellita Club*, *Bigotes & Colitas*. Debe funcionar en los tres países.
+**Marca:** pendiente (proveedor provisional "Club Mascotas"). Debe funcionar en inglés y en español:
+*Pawsito Club*, *Colita Box*, *Huellita Club*, *Bigotes & Colitas*.
 
 ---
 
-## 2. Productos y precios por país
+## 2. Productos y precios
 
-### 2.1 Catálogo (creado en esta tienda, en borrador)
-Detalle: [`data/catalogo-shopify.csv`](data/catalogo-shopify.csv)
+Detalle con IDs y SKU: [`data/catalogo-shopify.csv`](data/catalogo-shopify.csv). Hoy la tienda tiene
+cargados los precios en **USD**.
 
-| Producto | 🇨🇱 CLP (IVA incl.) | 🇲🇽 MXN (IVA incl.) | 🇺🇸 USD |
+| Producto (EN / ES) | 🇺🇸 USD | 🇲🇽 MXN | 🇨🇱 CLP |
 |---|---|---|---|
-| Club Perro · mensual | 29.990 | 649 | 39.99 |
-| Club Gato · mensual | 26.990 | 579 | 32.99 |
-| Regala el Club Perro · 1 caja / 3 meses / 6 meses | 32.990 / 85.490 / 163.990 | 699 / 1,857 / 3,534 | 44.99 / 113.97 / 215.94 |
-| Regala el Club Gato · 1 caja / 3 meses / 6 meses | 29.990 / 76.990 / 147.990 | 629 / 1,650 / 3,150 | 36.99 / 94.47 / 179.94 |
-| Caja Navideña · perro / gato | 36.990 / 32.990 | 799 / 699 | 44.99 / 39.99 |
-| Placa de identificación grabada | 8.990 | 199 | 14.99 |
-| Bolsas biodegradables · 8 rollos + dispensador | 6.990 | 149 | 9.99 |
-| Juguete extra resistente | 11.990 | 249 | 16.99 |
-| Kit dental | 7.990 | 169 | 11.99 |
-| Bandana temática | 6.990 | 149 | 9.99 |
-| Varita con plumas + 3 repuestos | 6.490 | 139 | 9.99 |
-| Toallitas · 100 piezas | 5.490 | 119 | 8.99 |
+| Club Dog / Club Perro · mensual | 39.99 | 649 | 29.990 |
+| Club Cat / Club Gato · mensual | 32.99 | 579 | 26.990 |
+| Gift the Club Dog / Regala el Club Perro · 1 / 3 / 6 meses | 44.99 / 113.97 / 215.94 | 699 / 1,857 / 3,534 | 32.990 / 85.490 / 163.990 |
+| Gift the Club Cat / Regala el Club Gato · 1 / 3 / 6 meses | 36.99 / 94.47 / 179.94 | 629 / 1,650 / 3,150 | 29.990 / 76.990 / 147.990 |
+| Holiday Box / Caja Navideña · perro / gato | 44.99 / 39.99 | 799 / 699 | 36.990 / 32.990 |
+| Engraved Pet ID Tag / Placa grabada | 14.99 | 199 | 8.990 |
+| Waste Bags / Bolsas · 8 rollos + dispensador | 9.99 | 149 | 6.990 |
+| Heavy-Duty Chew Toy / Juguete extra resistente | 16.99 | 249 | 11.990 |
+| Dental Kit / Kit dental | 11.99 | 169 | 7.990 |
+| Monthly Theme Bandana / Bandana temática | 9.99 | 149 | 6.990 |
+| Feather Wand / Varita + 3 repuestos | 9.99 | 139 | 6.490 |
+| Paw & Coat Wipes / Toallitas · 100 | 8.99 | 119 | 5.490 |
 
-Hoy los precios cargados en la tienda son los de México (MXN). **Cuando cambies la moneda a CLP, cargo la columna de Chile.**
-
-### 2.2 Cómo se cobra en cada país
-
-| | Mensual con renovación | Prepagos, regalos, Navidad y extras |
-|---|---|---|
-| 🇨🇱 Chile | **Flow Suscripciones** (tarjeta inscrita, cobro automático) → pedido en Shopify vía n8n | Checkout de Shopify con Flow, Mercado Pago o Khipu |
-| 🇺🇸 EE. UU. | Shopify Subscriptions + Shopify Payments US | Checkout de Shopify |
-| 🇲🇽 México | Shopify Subscriptions + Shopify Payments MX (filial) | Checkout de Shopify + OXXO/SPEI |
+**Opciones de compra:** mensual con renovación automática · regalo o prepago de 1, 3 o 6 meses (pago
+único) · edición limitada · extras que viajan dentro de la caja.
 
 ---
 
@@ -84,139 +77,117 @@ Hoy los precios cargados en la tienda son los de México (MXN). **Cuando cambies
 | Universal por talla | Sirve a la mayoría de perfiles | ×1 |
 
 ### 3.2 Lo que NO entra
-Alimento completo y arena (pesados, regulados) · camas y árboles (voluminosos) · electrónicos con batería
-(fallas y devoluciones) · premios importados (permisos sanitarios: SAG en Chile, SENASICA en México, FDA en
-EE. UU.) · juguetes con piezas pequeñas · productos genéricos de dropshipping.
+Alimento completo y arena · camas y árboles · electrónicos con batería · premios importados (permisos
+sanitarios: FDA en EE. UU., SENASICA en México, SAG en Chile) · juguetes con piezas pequeñas · productos
+genéricos de dropshipping.
+
+**Ojo con los reclamos "eco" en EE. UU.:** no usar "biodegradable" ni "compostable" en bolsas u otros
+plásticos sin una certificación (ASTM D6400); California lo restringe. Por eso el texto en inglés solo dice
+"leak-proof".
 
 ### 3.3 Por qué está cada producto
-- **Club Perro y Club Gato:** ingreso recurrente; los perros son la mayoría del mercado.
-- **Regalos y prepagos (pago único):** captan a quien no quiere suscripción o no usa tarjeta de crédito, y en Chile cubren el hueco del cobro recurrente.
-- **Caja Navideña:** validación rápida con la temporada alta de diciembre.
-- **Extras "Añade a tu caja":** viajan en el mismo paquete (sin envío extra) y casi duplican el margen del pedido. Placa grabada (personalizada, margen ~80%), bolsas, kit dental y toallitas (recompra), juguete resistente (dolor nº 1 de los dueños), bandana (coleccionable) y varita (el juguete de gato más vendido).
+- **Club Dog y Club Cat:** ingreso recurrente.
+- **Regalos y prepagos:** captan a quien no quiere suscripción y no dependen de la aprobación de cobros automáticos de PayPal.
+- **Holiday Box:** opcional, si el inventario llega a tiempo.
+- **Extras:** viajan en la misma caja (sin envío extra) y casi duplican el margen del pedido.
 
-### 3.4 Primeras cajas *(propuesta, Chile)*
+### 3.4 Primeras cajas en EE. UU. *(propuesta)*
 
-| Mes | Tema | Club Perro | Club Gato |
+| Mes | Tema | Club Dog | Club Cat |
 |---|---|---|---|
-| Dic 2026 | Navidad de verano | Peluche navideño con sonido · cuerda · 2 snacks · toallitas · bandana | Ratón con catnip · varita de estrella · snack lamible · cepillo · moño |
-| Ene 2027 | Verano y vacaciones | Juguete refrescante o para agua · snacks hidratantes · bolsas · bálsamo para patas · bandana | Juguete con catnip · pelota · snack lamible · kit dental · sorpresa |
-| Feb 2027 | Amor perruno / gatuno | Peluche corazón · cuerda roja · 2 snacks · kit dental · bandana | Corazón con catnip · repuesto de varita · snack · toallitas · sorpresa |
+| Ene 2027 | New Year, New Habits | Tapete olfativo o juguete dispensador · kit dental · snacks bajos en calorías · bolsas · bandana | Rascador de cartón · pelota con catnip · snack funcional · kit dental · sorpresa |
+| Feb 2027 | Puppy Love / Cat Crush | Peluche corazón · cuerda roja · 2 snacks · bálsamo para patas · bandana de San Valentín | Corazón con catnip · repuesto de varita · snack lamible · toallitas · sorpresa |
+| Mar 2027 | Spring Adventures | Juguete para exterior · snacks · toallitas · bolsas · bandana | Juguete con plumas · catnip · snack · cepillo · sorpresa |
 
-Cada caja: valor en tienda ≥ 1.6× el precio · costo de productos ≤ CLP 8.500 (perro) / 7.500 (gato) · peso ≤ 1.5 kg.
-
-### 3.5 Dónde comprar
-- **Chile:** distribuidores mayoristas de mascotas en Santiago, marcas chilenas de snacks con registro **SAG**, talleres de bandanas y grabado láser local.
-- **EE. UU.:** mayoristas (Faire, distribuidores) e importación consolidada al 3PL. AutoDS sirve aquí para investigar productos y para una tienda a la carta.
-- **México (fase 3):** mayoristas en CDMX y GDL; snacks de marcas con registro SENASICA.
+Cada caja: valor en tienda ≥ 1.6× el precio · costo de productos ≤ US$10 (perro) / US$8 (gato) · peso ≤ 3 lb.
 
 ---
 
 ## 4. Operación
 
-**Modelo:** inventario propio + armado de cajas (*kitting*) en un **3PL de cada país**. Es lo que permite
-operar como nómada: nada depende de dónde estés.
+**Modelo:** inventario propio + armado de cajas en un **3PL** de cada país. Nada depende de dónde vivas.
 
-| País | 3PL a cotizar | Paquetería |
+| País | 3PL a cotizar | Abastecimiento |
 |---|---|---|
-| 🇨🇱 Chile | Amplifica (partner de Shopify) · Blue Express Fulfillment | Blue Express, Starken, Chilexpress (vía el 3PL) |
-| 🇺🇸 EE. UU. | ShipMonk · ShipBob | USPS Ground Advantage (vía el 3PL) |
-| 🇲🇽 México | Cubbo · Melonn · 99minutos | Skydropx, Envia.com, 99minutos |
+| 🇺🇸 EE. UU. | ShipMonk · ShipBob (bodega en un estado sin sales tax, si conviene) | Mayoristas en EE. UU.; marcas hechas en EE. UU. o México |
+| 🇲🇽 México | Cubbo · Melonn · 99minutos | Mayoristas en CDMX y GDL |
+| 🇨🇱 Chile | Amplifica · Blue Express Fulfillment | Mayoristas en Santiago; snacks con registro SAG |
 
 **Calendario mensual:** día 1 cobro y corte · días 1–3 lista de armado por perfil · días 4–8 armado ·
 días 8–10 despacho · día 15 avance del tema siguiente · día 25 recordatorio para saltar o cambiar.
 
-**AutoDS:** no arma cajas ni tiene almacén en Chile ni en México. Útil solo para investigar productos y,
-más adelante, para una tienda a la carta en EE. UU. **Recomendación: cancelar antes del 29-oct y
-reactivarlo al lanzar EE. UU.**
+---
+
+## 5. Economía por caja (EE. UU., con PayPal) *(supuestos)*
+
+| Club Dog mensual | US$ |
+|---|---|
+| Precio (sales tax aparte donde aplique) | 39.99 |
+| Productos | –10.00 |
+| Empaque | –2.00 |
+| Armado en el 3PL | –3.50 |
+| Envío USPS (2–3 lb) | –9.00 |
+| PayPal (~5–6% + 30¢) + Shopify (2%) | –3.30 |
+| Apps | –0.40 |
+| **Margen de contribución** | **≈ 11.80 (29%)** |
+
+Con Shopify Payments (vía la dirección de Miami, si cumple los requisitos) el margen subiría a ~33%.
+**Metas:** retención ≥ 6 meses · CAC máximo ≈ US$25 · cancelación < 10% mensual · ≥ 30% de prepagos ·
+≥ 25% de pedidos con un extra.
 
 ---
 
-## 5. Economía por caja *(supuestos)*
+## 6. Pagos: PayPal por fases
 
-| Club Perro mensual | 🇨🇱 Chile (CLP) | 🇲🇽 México (MXN) | 🇺🇸 EE. UU. (USD) |
+| Fase | Moneda de cobro | Suscripción mensual | Notas |
 |---|---|---|---|
-| Precio | 29.990 | 649 | 39.99 |
-| Ingreso neto (sin IVA) | 25.202 | 559.50 | 39.99 (sales tax aparte) |
-| Productos | –8.500 | –170 | –10.00 |
-| Empaque y tarjeta | –1.800 | –35 | –2.00 |
-| Armado (3PL) | –1.500 | –25 | –3.50 |
-| Despacho | –3.800 | –120 | –9.00 |
-| Comisión de pago | –1.050 | –26 | –1.80 |
-| Apps | –300 | –5 | –0.40 |
-| **Margen de contribución** | **≈8.250 (33%)** | **≈178 (32%)** | **≈13.30 (33%)** |
+| 🇺🇸 EE. UU. | USD | Shopify Subscriptions + PayPal (requiere **transacciones de referencia** aprobadas por PayPal) | Comisión de Shopify del 2% por usar una pasarela externa en el plan Basic |
+| 🇲🇽 México | USD (PayPal convierte al cliente) | Igual | Sin Shopify Payments no se puede cobrar en MXN en el checkout |
+| 🇨🇱 Chile | USD (PayPal no acepta CLP) | Igual | Alternativas: Shopify Payments con CLP, o una tienda chilena con Flow |
 
-Un extra por pedido (por ejemplo, la placa) suma ~70–80% de margen sin costo de envío.
-**Metas:** retención ≥ 6 meses · CAC máximo ≈ CLP 17.000 / MXN 350 / US$27 · cancelación < 10% mensual ·
-≥ 30% de prepagos · ≥ 25% de pedidos con un extra.
-
----
-
-## 6. Configuración de Shopify
-
-### 6.1 Tienda Chile (esta)
-- [x] Mercado Chile creado y activo · México en borrador.
-- [x] Español agregado y publicado · textos de producto adaptados a Chile.
-- [x] Políticas chilenas redactadas (`docs/politicas-chile/`).
-- [ ] *(Tú)* Moneda CLP · zona horaria Santiago · idioma predeterminado español · nombre, razón social y RUT.
-- [ ] *(Tú)* Pegar las políticas · activar Flow, Mercado Pago o Khipu · app de boleta electrónica SII.
-- [ ] *(Yo)* Cargar precios en CLP · páginas (Inicio, Cómo funciona, FAQ) · automatización Flow → Shopify con n8n.
-- [ ] Fotos reales del prototipo, peso por variante y campos de personalización de la placa.
-
-### 6.2 Tienda Global (nueva, a nombre de la LLC)
-- [ ] Shopify Payments US · Shopify Subscriptions (mensual con fecha fija el día 1) · Shopify Tax.
-- [ ] Mercado EE. UU. (USD, inglés y español) · lista de espera para México.
-- [ ] *(Yo)* Copiar catálogo, colecciones y textos, traducidos al inglés.
-
-### 6.3 Apps sugeridas
-
-| Necesidad | Chile | EE. UU. / México |
-|---|---|---|
-| Pagos | Flow · Mercado Pago · Khipu | Shopify Payments · PayPal |
-| Suscripciones | Flow Suscripciones + n8n | Shopify Subscriptions → Recharge o Loop al escalar |
-| Comprobantes | e-Boletas, Bsale u OpenFactura | Shopify Tax · CFDI (México) |
-| Email y SMS | Klaviyo (o Shopify Email) | Igual |
-| WhatsApp | WhatsApp Business | Igual |
-| Reseñas | Judge.me | Igual |
+**Mejora futura (sección 6 de la guía de fase 1):** Shopify Payments EE. UU. con la dirección de Miami
+resolvería el cobro en MXN y CLP, quitaría el 2% de Shopify y permitiría pagar con tarjeta, Apple Pay y
+Google Pay. Requiere EIN, banco en EE. UU. a nombre de la SpA y una oficina física (no virtual).
 
 ---
 
 ## 7. Legal y cumplimiento
 
-**Chile (SpA):** IVA 19% y boleta electrónica · Ley 19.496 del consumidor: **retracto de 10 días** en
-compras a distancia y **garantía legal de 6 meses** · información clara de la suscripción · nueva ley de
-datos personales (Ley 21.719, con entrada en vigor escalonada: verificar la fecha) · marca en INAPI.
+**EE. UU. (fase 1):** leyes estatales de renovación automática (California, Nueva York y otras): términos
+claros antes del pago, consentimiento, correo de confirmación, **cancelación en línea** y aviso de cambios
+de precio (incluidos en `docs/politicas-usa/`) · sales tax en el estado del 3PL · privacidad (CCPA) · el
+convenio Chile–EE. UU. evita la doble tributación ⚖️.
 
-**EE. UU. (LLC):** leyes estatales de renovación automática (CA, NY y otras): consentimiento explícito,
-cancelación en línea y recordatorios · sales tax con Shopify Tax · Form 5472 + 1120 *pro forma* · marca en USPTO.
+**México (fase 2):** vender desde inventario en México exige un contribuyente mexicano (filial) ⚖️; la
+alternativa es despachar desde el 3PL de EE. UU. con impuestos pagados · PROFECO · aviso de privacidad.
 
-**México (filial, fase 3):** RFC, CFDI 4.0, aviso de privacidad, términos claros (PROFECO), marca en IMPI.
-
-Detalle y puntos para validar con tu contador: [`docs/estructura-paises-y-pagos.md`](docs/estructura-paises-y-pagos.md).
+**Chile (fase 3):** IVA 19% y boleta electrónica · Ley 19.496 (retracto de 10 días, garantía de 6 meses) ·
+políticas listas en `docs/politicas-chile/`.
 
 ---
 
 ## 8. Mercados y ciudades
 
-| País | Ciudades y zonas foco | Contexto |
+| País | Foco | Contexto |
 |---|---|---|
-| 🇨🇱 Chile | Santiago oriente (Las Condes, Vitacura, Providencia, Ñuñoa, Lo Barnechea, La Reina), Viña del Mar y Concón, Concepción | ~2.7 millones de hogares con gasto recurrente en mascotas; gasto promedio de ~CLP 60.000/mes (CNC 2026). Santiago concentra la demanda, así que la logística es barata |
-| 🇺🇸 EE. UU. | NY, LA, Miami, Chicago, Boston · Seattle y SF (mayor gasto) · Houston, San Antonio, Dallas, San Diego, Phoenix (ángulo latino) | Mercado más grande y más competido (BarkBox, Meowbox) |
+| 🇺🇸 EE. UU. | NY, LA, Miami, Chicago, Boston · Seattle y SF (mayor gasto en mascotas) · Houston, San Antonio, Dallas, San Diego, Phoenix (público latino, tienda en español) | Mercado más grande y competido; BarkBox cobra ~US$35 + US$5 de envío al mes |
 | 🇲🇽 México | CDMX (Roma, Condesa, Polanco, Del Valle), Monterrey (San Pedro), Guadalajara (Zapopan) | Gasto de MXN 1,600–2,900 al mes por familia; ~70% de las compras son para perros |
+| 🇨🇱 Chile | Santiago oriente, Viña del Mar y Concón, Concepción | ~2.7 millones de hogares con gasto recurrente en mascotas; ~CLP 60.000 al mes |
 
 ---
 
-## 9. Marketing
+## 9. Marketing (EE. UU.)
 
-**Pre-lanzamiento en Chile (2–3 semanas):** lista de espera con 30% de descuento en la primera caja ·
-contenido en Instagram y TikTok con el prototipo · micro-influencers de mascotas en Santiago · alianzas con
-veterinarias, peluquerías caninas y refugios.
+**Pre-lanzamiento (nov–dic):** lista de espera con 30% de descuento en la primera caja · contenido de
+*unboxing* en Instagram y TikTok · micro-influencers de mascotas en NY, LA y Miami (incluidos creadores
+latinos) · alianzas con refugios.
 
-**Pagado:** Meta + TikTok con videos de *unboxing* segmentados por comuna · Google Search ("caja para
-perros", "regalo para perro") · temporadas: Black Friday Chile (fines de nov) y Cyber Day, Navidad,
-Fiestas Patrias, Día del Perro.
+**Pagado:** Meta + TikTok segmentados por ciudad e idioma (anuncios en inglés y en español) · Google
+Search ("dog subscription box", "cat subscription box", "dog gift") · temporadas: Año Nuevo, San Valentín,
+National Dog Day (26 ago), Black Friday.
 
-**Retención:** flujos de email y WhatsApp (bienvenida → perfil → despacho → avance del tema → reseña →
-oferta antes de cancelar) · referidos · galería #MiCajaDelMes · extras sugeridos antes de cada cobro.
+**Retención:** flujos de email (bienvenida → perfil → envío → avance del tema → reseña → oferta antes de
+cancelar) · referidos · galería #MyMonthlyBox · extras sugeridos antes de cada cobro.
 
 ---
 
@@ -224,41 +195,38 @@ oferta antes de cancelar) · referidos · galería #MiCajaDelMes · extras suger
 
 | Fase | Fechas | Entregables |
 |---|---|---|
-| **0. Base** | 26 oct–2 nov 2026 | ✅ Catálogo y estructura · ajustes de la tienda Chile en el admin · AutoDS cancelado · LLC iniciada |
-| **1. Chile: producto** | 2–15 nov | Proveedores en Santiago · muestras · prototipo · fotos reales · cotizaciones de 3PL |
-| **2. Chile: tienda lista** | 9–20 nov | Precios en CLP · pagos · boletas · Flow Suscripciones + n8n · páginas · lista de espera |
-| **3. Chile: preventa Navidad** | ~20 nov–10 dic | Caja Navideña y regalos para Black Friday y Navidad · despachos desde el 7 dic |
-| **4. Chile: lanzamiento del club** | dic 2026–ene 2027 | Primeras cajas mensuales · reseñas · ajustes |
-| **5. EE. UU.: preparación** | nov 2026–feb 2027 | LLC, EIN, banco, Shopify Payments, 3PL, tienda Global en inglés |
-| **6. EE. UU.: lanzamiento** | mar 2027 | Lanzamiento suave en NY, LA, Miami, Chicago y Boston + segmento latino · lista de espera México |
-| **7. México** | 2º trimestre 2027 | Filial mexicana, Shopify Payments MX, 3PL y lanzamiento en CDMX, MTY y GDL |
-| **8. Escala** | 2º semestre 2027 | Recharge o Loop · líneas nuevas (cachorro, senior, premium) · evaluar Shopify Plus para unificar tiendas |
+| **1a. Tienda lista para EE. UU.** | 26 oct–1 nov 2026 | ✅ Configuración · ⏳ moneda USD, PayPal y transacciones de referencia, Subscriptions, políticas, marca, AutoDS cancelado |
+| **1b. Producto y operación** | 2–30 nov | Proveedores en EE. UU. · muestras · 3PL · sales tax · fotos reales · páginas · lista de espera |
+| **1c. Prueba de temporada (opcional)** | dic 2026 | Holiday Box o regalos si el inventario llega antes del ~5 dic · pedidos de prueba |
+| **1d. Lanzamiento EE. UU.** | **ene 2027** | Club en vivo · anuncios en las 5 ciudades foco + público latino |
+| **2. México** | 2º trimestre 2027 | Definir cobro (USD con PayPal o MXN con Shopify Payments) e inventario (filial o despacho desde EE. UU.) · activar mercado México |
+| **3. Chile** | 2º semestre 2027 | Definir cobro (USD, Shopify Payments con CLP o tienda con Flow) · 3PL en Santiago · activar mercado Chile |
 
 ---
 
-## 11. Presupuesto inicial *(supuestos)*
+## 11. Presupuesto inicial EE. UU. *(supuestos)*
 
-| Concepto | Chile (CLP aprox.) |
+| Concepto | US$ aprox. |
 |---|---|
-| Shopify, apps y dominio (3 meses) | 150.000–300.000 |
-| Diseño de marca y empaque | 300.000–700.000 |
-| Cajas impresas (500 unidades) | 500.000–900.000 |
-| Inventario de la primera tanda (100 cajas + extras) | 1.000.000–1.300.000 |
-| Muestras y fotos o video | 300.000–600.000 |
-| Marca en INAPI | 100.000–200.000 |
-| Publicidad de lanzamiento (primer mes) | 800.000–1.500.000 |
-| **Total Chile** | **≈ 3,2–5,5 millones** |
-| LLC en EE. UU. (primer año, sin inventario) | ~US$1,000–2,500 |
+| Shopify, apps y dominio (3 meses) | 200–400 |
+| Diseño de marca y empaque | 500–1,500 |
+| Cajas impresas (500 unidades) | 800–1,500 |
+| Inventario de la primera tanda (100 cajas + extras) | 1,200–1,600 |
+| Configuración del 3PL y muestras | 300–800 |
+| Fotos y video (UGC) | 300–800 |
+| Publicidad de lanzamiento (primer mes) | 1,500–3,000 |
+| CPA de EE. UU. (asesoría inicial) | 300–800 |
+| **Total** | **≈ 5,100–10,400** |
 
 ---
 
-## 12. KPIs
+## 12. KPIs (EE. UU.)
 
-| KPI | Mes 3 (Chile) | Mes 6 (Chile + EE. UU.) |
+| KPI | Mes 3 | Mes 6 |
 |---|---|---|
-| Suscriptores activos | 150 | 400 CL + 150 EE. UU. |
+| Suscriptores activos | 150 | 500 |
 | Cancelación mensual | < 12% | < 10% |
-| CAC | < CLP 17.000 | < CLP 15.000 / US$27 |
+| CAC | < US$30 | < US$25 |
 | % prepagos | ≥ 25% | ≥ 30% |
 | % pedidos con un extra | ≥ 20% | ≥ 25% |
 | Calificación de la caja | ≥ 4.6/5 | ≥ 4.7/5 |
@@ -267,20 +235,22 @@ oferta antes de cancelar) · referidos · galería #MiCajaDelMes · extras suger
 
 ## 13. Decisiones pendientes
 1. **AutoDS:** cancelar antes del 29-oct (recomendado).
-2. **Iniciar la LLC** y elegir el servicio de constitución.
-3. **Nombre de marca** y dominio (válidos en los tres países).
-4. **Presupuesto** del lanzamiento en Chile.
-5. Validar con tu contador los puntos ⚖️ del documento de estructura.
+2. **Nombre de marca** y dominio.
+3. **Dirección de Miami:** ¿es una oficina física? ¿la SpA tiene EIN y banco en EE. UU.? (para evaluar Shopify Payments después del lanzamiento).
+4. **Presupuesto** del lanzamiento.
+5. Validar con un CPA los puntos ⚖️ (sales tax, convenio, establecimiento permanente).
 
 ---
 
-### Fuentes
-Ver [`docs/estructura-paises-y-pagos.md`](docs/estructura-paises-y-pagos.md) para las fuentes de pagos,
-estructura y Chile. Fuentes de mercado de México y EE. UU.:
-- [Gasto mensual en mascotas en México (El Imparcial, mar-2026)](https://www.elimparcial.com/dinero/2026/03/03/familias-mexicanas-destinan-casi-2900-pesos-al-mes-a-sus-mascotas-en-que-gastan-y-por-que-invierten-cada-vez-mas/)
+### Documentos relacionados
+- [`docs/fase-1-estados-unidos.md`](docs/fase-1-estados-unidos.md): paso a paso de la fase actual, comisiones de PayPal y la opción de Miami.
+- [`docs/estructura-paises-y-pagos.md`](docs/estructura-paises-y-pagos.md): análisis de estructuras alternativas (dos tiendas, LLC, filial mexicana) para optimizar más adelante.
+- [`docs/politicas-usa/`](docs/politicas-usa/) y [`docs/politicas-chile/`](docs/politicas-chile/): políticas para pegar en Shopify.
+
+### Fuentes de mercado
 - [Precios de BarkBox (My Subscription Addiction)](https://www.mysubscriptionaddiction.com/category/barkbox-reviews)
 - [Cajas de suscripción para gatos 2026](https://catsluvus.com/cat-subscription-boxes/best-cat-subscription-boxes-2026)
 - [Gasto en mascotas por área metropolitana en EE. UU. (Bank of America Institute)](https://institute.bankofamerica.com/economic-insights/us-pet-ownership.html)
-- [Impuesto de 33.5% a paquetes de China en México (Uno TV)](https://www.unotv.com/negocios/compras-en-shein-y-temu-pagaran-nuevo-impuesto-de-33-5-debo-declararlo-al-sat/)
+- [Gasto mensual en mascotas en México (El Imparcial, mar-2026)](https://www.elimparcial.com/dinero/2026/03/03/familias-mexicanas-destinan-casi-2900-pesos-al-mes-a-sus-mascotas-en-que-gastan-y-por-que-invierten-cada-vez-mas/)
+- [Gasto en mascotas en Chile (CNC, ago-2026)](https://chocale.cl/2026/08/gasto-en-mascotas-sube-un-63-en-los-hogares-de-chile/)
 - [Suspensión del de minimis en EE. UU. (ST&R)](https://www.strtrade.com/trade-news-resources/str-trade-report/trade-report/february/de-minimis-suspension-remains-in-place)
-- [Shopify Subscriptions: pasarelas compatibles](https://help.shopify.com/docs/apps/selling-strategies/subscriptions/contracts)

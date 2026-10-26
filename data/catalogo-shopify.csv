@@ -1,23 +1,23 @@
-shopify_product_id,producto,coleccion,variante,sku,precio_clp,precio_mxn,precio_usd,costo_objetivo_clp,estado,imagen
-15443418021950,Club Perro · Caja mensual,El Club · Suscripción mensual,Chico (hasta 10 kg),CLUB-PERRO-CH,29990,649,39.99,16950 (todo incluido),DRAFT,Provisional (Unsplash)
-15443418021950,Club Perro · Caja mensual,El Club · Suscripción mensual,Mediano (10–25 kg),CLUB-PERRO-MD,29990,649,39.99,16950 (todo incluido),DRAFT,Provisional (Unsplash)
-15443418021950,Club Perro · Caja mensual,El Club · Suscripción mensual,Grande (más de 25 kg),CLUB-PERRO-GR,29990,649,39.99,16950 (todo incluido),DRAFT,Provisional (Unsplash)
-15443418153022,Club Gato · Caja mensual,El Club · Suscripción mensual,Gatito (menos de 1 año),CLUB-GATO-GT,26990,579,32.99,15550 (todo incluido),DRAFT,Provisional (Unsplash)
-15443418153022,Club Gato · Caja mensual,El Club · Suscripción mensual,Adulto (1–7 años),CLUB-GATO-AD,26990,579,32.99,15550 (todo incluido),DRAFT,Provisional (Unsplash)
-15443418153022,Club Gato · Caja mensual,El Club · Suscripción mensual,Senior (más de 7 años),CLUB-GATO-SR,26990,579,32.99,15550 (todo incluido),DRAFT,Provisional (Unsplash)
-15443418382398,Regala el Club Perro · Pago único,Regala el Club,1 caja / Chico·Mediano·Grande,REG-PERRO-1-CH/MD/GR,32990,699,44.99,16950 por caja,DRAFT,Provisional (Unsplash)
-15443418382398,Regala el Club Perro · Pago único,Regala el Club,3 meses / Chico·Mediano·Grande,REG-PERRO-3-CH/MD/GR,85490,1857,113.97,16950 por caja,DRAFT,Provisional (Unsplash)
-15443418382398,Regala el Club Perro · Pago único,Regala el Club,6 meses / Chico·Mediano·Grande,REG-PERRO-6-CH/MD/GR,163990,3534,215.94,16950 por caja,DRAFT,Provisional (Unsplash)
-15443418579006,Regala el Club Gato · Pago único,Regala el Club,1 caja / Gatito·Adulto·Senior,REG-GATO-1-GT/AD/SR,29990,629,36.99,15550 por caja,DRAFT,Provisional (Unsplash)
-15443418579006,Regala el Club Gato · Pago único,Regala el Club,3 meses / Gatito·Adulto·Senior,REG-GATO-3-GT/AD/SR,76990,1650,94.47,15550 por caja,DRAFT,Provisional (Unsplash)
-15443418579006,Regala el Club Gato · Pago único,Regala el Club,6 meses / Gatito·Adulto·Senior,REG-GATO-6-GT/AD/SR,147990,3150,179.94,15550 por caja,DRAFT,Provisional (Unsplash)
-15443418710078,Caja Navideña · Edición limitada,Edición limitada,Perro chico (hasta 10 kg),NAV26-PERRO-CH,36990,799,44.99,20000 (todo incluido),DRAFT,Provisional (Unsplash)
-15443418710078,Caja Navideña · Edición limitada,Edición limitada,Perro mediano o grande,NAV26-PERRO-MG,36990,799,44.99,20000 (todo incluido),DRAFT,Provisional (Unsplash)
-15443418710078,Caja Navideña · Edición limitada,Edición limitada,Gato,NAV26-GATO,32990,699,39.99,18000 (todo incluido),DRAFT,Provisional (Unsplash)
-15443418906686,Placa de identificación grabada,Añade a tu caja,Hueso·Círculo·Corazón,ADD-PLACA-HUESO/CIRCULO/CORAZON,8990,199,14.99,1600,DRAFT,Pendiente foto real
-15443419004990,Bolsas biodegradables · 8 rollos + dispensador,Añade a tu caja,Única,ADD-BOLSAS-8R,6990,149,9.99,1900,DRAFT,Pendiente foto real
-15443419103294,Juguete extra resistente · masticadores fuertes,Añade a tu caja,Mediano·Grande,ADD-JUGRES-MD/GR,11990,249,16.99,3800,DRAFT,Pendiente foto real
-15443419201598,Kit dental · cepillo de dedo + pasta enzimática,Añade a tu caja,Perro·Gato,ADD-DENTAL-PERRO/GATO,7990,169,11.99,2100,DRAFT,Pendiente foto real
-15443419299902,Bandana temática del mes,Añade a tu caja,Chica·Mediana·Grande,ADD-BANDANA-CH/MD/GR,6990,149,9.99,1200,DRAFT,Pendiente foto real
-15443419398206,Varita con plumas + 3 repuestos,Añade a tu caja,Única,ADD-VARITA-3R,6490,139,9.99,1400,DRAFT,Pendiente foto real
-15443419496510,Toallitas para patas y pelaje · 100 piezas,Añade a tu caja,Única,ADD-TOALLITAS-100,5490,119,8.99,1600,DRAFT,Pendiente foto real
+shopify_product_id,producto_en (principal),producto_es (traducción),coleccion,variante,sku,precio_clp,precio_mxn,precio_usd,costo_objetivo_clp,estado,imagen
+15443418021950,Club Dog · Monthly Box,Club Perro · Caja mensual,El Club · Suscripción mensual,Chico (hasta 10 kg),CLUB-PERRO-CH,29990,649,39.99,16950 (todo incluido),DRAFT,Provisional (Unsplash)
+15443418021950,Club Dog · Monthly Box,Club Perro · Caja mensual,El Club · Suscripción mensual,Mediano (10–25 kg),CLUB-PERRO-MD,29990,649,39.99,16950 (todo incluido),DRAFT,Provisional (Unsplash)
+15443418021950,Club Dog · Monthly Box,Club Perro · Caja mensual,El Club · Suscripción mensual,Grande (más de 25 kg),CLUB-PERRO-GR,29990,649,39.99,16950 (todo incluido),DRAFT,Provisional (Unsplash)
+15443418153022,Club Cat · Monthly Box,Club Gato · Caja mensual,El Club · Suscripción mensual,Gatito (menos de 1 año),CLUB-GATO-GT,26990,579,32.99,15550 (todo incluido),DRAFT,Provisional (Unsplash)
+15443418153022,Club Cat · Monthly Box,Club Gato · Caja mensual,El Club · Suscripción mensual,Adulto (1–7 años),CLUB-GATO-AD,26990,579,32.99,15550 (todo incluido),DRAFT,Provisional (Unsplash)
+15443418153022,Club Cat · Monthly Box,Club Gato · Caja mensual,El Club · Suscripción mensual,Senior (más de 7 años),CLUB-GATO-SR,26990,579,32.99,15550 (todo incluido),DRAFT,Provisional (Unsplash)
+15443418382398,Gift the Club Dog · One-time Payment,Regala el Club Perro · Pago único,Regala el Club,1 caja / Chico·Mediano·Grande,REG-PERRO-1-CH/MD/GR,32990,699,44.99,16950 por caja,DRAFT,Provisional (Unsplash)
+15443418382398,Gift the Club Dog · One-time Payment,Regala el Club Perro · Pago único,Regala el Club,3 meses / Chico·Mediano·Grande,REG-PERRO-3-CH/MD/GR,85490,1857,113.97,16950 por caja,DRAFT,Provisional (Unsplash)
+15443418382398,Gift the Club Dog · One-time Payment,Regala el Club Perro · Pago único,Regala el Club,6 meses / Chico·Mediano·Grande,REG-PERRO-6-CH/MD/GR,163990,3534,215.94,16950 por caja,DRAFT,Provisional (Unsplash)
+15443418579006,Gift the Club Cat · One-time Payment,Regala el Club Gato · Pago único,Regala el Club,1 caja / Gatito·Adulto·Senior,REG-GATO-1-GT/AD/SR,29990,629,36.99,15550 por caja,DRAFT,Provisional (Unsplash)
+15443418579006,Gift the Club Cat · One-time Payment,Regala el Club Gato · Pago único,Regala el Club,3 meses / Gatito·Adulto·Senior,REG-GATO-3-GT/AD/SR,76990,1650,94.47,15550 por caja,DRAFT,Provisional (Unsplash)
+15443418579006,Gift the Club Cat · One-time Payment,Regala el Club Gato · Pago único,Regala el Club,6 meses / Gatito·Adulto·Senior,REG-GATO-6-GT/AD/SR,147990,3150,179.94,15550 por caja,DRAFT,Provisional (Unsplash)
+15443418710078,Holiday Box · Limited Edition,Caja Navideña · Edición limitada,Edición limitada,Perro chico (hasta 10 kg),NAV26-PERRO-CH,36990,799,44.99,20000 (todo incluido),DRAFT,Provisional (Unsplash)
+15443418710078,Holiday Box · Limited Edition,Caja Navideña · Edición limitada,Edición limitada,Perro mediano o grande,NAV26-PERRO-MG,36990,799,44.99,20000 (todo incluido),DRAFT,Provisional (Unsplash)
+15443418710078,Holiday Box · Limited Edition,Caja Navideña · Edición limitada,Edición limitada,Gato,NAV26-GATO,32990,699,39.99,18000 (todo incluido),DRAFT,Provisional (Unsplash)
+15443418906686,Engraved Pet ID Tag,Placa de identificación grabada,Añade a tu caja,Hueso·Círculo·Corazón,ADD-PLACA-HUESO/CIRCULO/CORAZON,8990,199,14.99,1600,DRAFT,Pendiente foto real
+15443419004990,Waste Bags · 8 Rolls + Leash Dispenser,Bolsas biodegradables · 8 rollos + dispensador,Añade a tu caja,Única,ADD-BOLSAS-8R,6990,149,9.99,1900,DRAFT,Pendiente foto real
+15443419103294,Heavy-Duty Chew Toy · Power Chewers,Juguete extra resistente · masticadores fuertes,Añade a tu caja,Mediano·Grande,ADD-JUGRES-MD/GR,11990,249,16.99,3800,DRAFT,Pendiente foto real
+15443419201598,Dental Kit · Finger Brush + Enzymatic Toothpaste,Kit dental · cepillo de dedo + pasta enzimática,Añade a tu caja,Perro·Gato,ADD-DENTAL-PERRO/GATO,7990,169,11.99,2100,DRAFT,Pendiente foto real
+15443419299902,Monthly Theme Bandana,Bandana temática del mes,Añade a tu caja,Chica·Mediana·Grande,ADD-BANDANA-CH/MD/GR,6990,149,9.99,1200,DRAFT,Pendiente foto real
+15443419398206,Feather Wand + 3 Refills,Varita con plumas + 3 repuestos,Añade a tu caja,Única,ADD-VARITA-3R,6490,139,9.99,1400,DRAFT,Pendiente foto real
+15443419496510,Paw & Coat Wipes · 100 Count,Toallitas para patas y pelaje · 100 piezas,Añade a tu caja,Única,ADD-TOALLITAS-100,5490,119,8.99,1600,DRAFT,Pendiente foto real

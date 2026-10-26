@@ -2,7 +2,31 @@
 
 Registro de todos los cambios en la tienda (Shopify, AutoDS y configuración). El más reciente va primero.
 
+## 2026-10-26 (3) — Configuración para EE. UU. primero, con PayPal
+
+### Decisión del dueño
+Una sola tienda, a nombre de la SpA chilena, cobrando con **PayPal**. Secuencia **EE. UU. → México → Chile**.
+La dirección fiscal de Miami **no se usa por ahora** (no es necesaria con PayPal; se evaluará para Shopify Payments).
+Guía: [`docs/fase-1-estados-unidos.md`](docs/fase-1-estados-unidos.md).
+
+### Shopify
+| Cambio | Detalle |
+|---|---|
+| Mercado creado | **Estados Unidos** (`gid://shopify/Market/63897501758`, handle `us`), activo, impuesto sumado en el checkout |
+| Mercado modificado | **Chile** → borrador (fase 3). México sigue en borrador (fase 2) |
+| Envíos | Perfil general: eliminadas las zonas heredadas de AutoDS "Domestic" (México: 150/0/195 MXN) e "International" (360 MXN). Creada la zona **"Estados Unidos (48 estados + DC)"** con **"Free standard shipping" (3–7 business days)** a US$0 |
+| Productos (12) | Títulos, descripciones, handles, tipos y opciones **en inglés**; **precios en USD** (Club Dog 39.99, Club Cat 32.99, etc.; ver `data/catalogo-shopify.csv`) |
+| Colecciones (4) | En inglés: The Club · Monthly Subscription (`the-club`), Gift the Club (`gift-the-club`), Limited Edition (`limited-edition`), Add to Your Box (`add-to-your-box`) |
+| Traducciones | **Español** registrado para los 12 productos y las 4 colecciones (título, descripción, handle y tipo), adaptado a EE. UU. (envío, libras). Las opciones de variante siguen solo en inglés |
+| Texto "eco" | Se quitó "biodegradables/compostables" de las bolsas (en EE. UU. requiere certificación) |
+
+### Pendiente en el admin (no se puede por API)
+- Moneda de la tienda **MXN → USD** (los precios ya están en dólares).
+- Políticas en inglés: [`docs/politicas-usa/`](docs/politicas-usa/) (falta el permiso `write_legal_policies`).
+- PayPal Business + transacciones de referencia · instalar Shopify Subscriptions.
+
 ## 2026-10-26 (2) — Estructura por países y conversión a tienda Chile
+*(Reemplazado por la entrada (3): el mercado Chile quedó en borrador y los textos pasaron a inglés.)*
 
 ### Decisión
 - Estructura: **1 marca, 2 entidades, 2 tiendas**. Esta tienda = **tienda Chile** (SpA chilena);

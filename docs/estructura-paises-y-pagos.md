@@ -1,5 +1,10 @@
 # Estructura por países, entidades y pagos
 
+> **Decisión vigente (26-oct-2026, más tarde ese día):** el dueño eligió **una sola tienda**, a nombre de la
+> **SpA chilena**, cobrando con **PayPal**, con la secuencia **EE. UU. → México → Chile**. Ver
+> [`fase-1-estados-unidos.md`](fase-1-estados-unidos.md). Este documento queda como **referencia de
+> optimizaciones futuras** (Shopify Payments vía Miami o LLC, tienda chilena en CLP, filial mexicana).
+
 **Situación:** dueño chileno, empresa chilena (SpA), nómada digital (hoy en México, cambia seguido).
 **Objetivo:** vender en Chile, México y Estados Unidos de la forma más optimizada posible.
 **Fecha:** 26-oct-2026 · *No es asesoría legal ni tributaria: valida los puntos marcados con ⚖️ con un contador.*

@@ -5,20 +5,23 @@ Shopify y AutoDS.
 
 | | |
 |---|---|
-| Esta tienda | `mcgsp1-yj.myshopify.com` → **tienda Chile** (SpA chilena, CLP) |
-| Tienda futura | Tienda Global a nombre de una LLC en EE. UU. (USD; México en fase 3) |
+| Tienda | `mcgsp1-yj.myshopify.com` · una sola tienda · SpA chilena |
+| Cobro | PayPal (USD) |
+| Secuencia | 🇺🇸 EE. UU. (lanzamiento ene 2027) → 🇲🇽 México → 🇨🇱 Chile |
+| Idiomas | Inglés (principal) + español |
+| Modelo | Suscripción mensual de cajas temáticas (Club Dog y Club Cat) + regalos + extras |
 | Proveedor conectado | AutoDS (tienda `5917626`): recomendación, cancelar antes del 29-oct |
-| Modelo | Suscripción mensual de cajas temáticas (Club Perro y Club Gato) + regalos + extras |
-| Secuencia | 🇨🇱 Chile (nov 2026) → 🇺🇸 EE. UU. (mar 2027) → 🇲🇽 México (2º trim. 2027) |
 
 ## Documentos
 
-- [`PLAN.md`](PLAN.md): plan maestro (productos y precios por país, selección de productos, operación, economía, Shopify, legal, marketing y hoja de ruta).
-- [`docs/estructura-paises-y-pagos.md`](docs/estructura-paises-y-pagos.md): entidades, tiendas, pagos e impuestos por país.
-- [`docs/politicas-chile/`](docs/politicas-chile/): términos, suscripción, devoluciones y despacho (para pegar en Shopify).
+- [`PLAN.md`](PLAN.md): plan maestro.
+- [`docs/fase-1-estados-unidos.md`](docs/fase-1-estados-unidos.md): **fase actual**, con el paso a paso, comisiones y la opción de Miami.
+- [`docs/politicas-usa/`](docs/politicas-usa/): Terms, Subscription, Refund y Shipping (para pegar en Shopify).
+- [`docs/politicas-chile/`](docs/politicas-chile/): políticas para la fase 3.
+- [`docs/estructura-paises-y-pagos.md`](docs/estructura-paises-y-pagos.md): estructuras alternativas para optimizar más adelante.
 - [`CHANGELOG.md`](CHANGELOG.md): bitácora de todos los cambios en la tienda.
 - [`docs/auditoria-2026-10-26.md`](docs/auditoria-2026-10-26.md): estado de la tienda antes de empezar.
-- [`data/catalogo-shopify.csv`](data/catalogo-shopify.csv): catálogo con IDs, SKU y precios en CLP, MXN y USD.
+- [`data/catalogo-shopify.csv`](data/catalogo-shopify.csv): catálogo con IDs, SKU y precios en USD, MXN y CLP.
 - [`data/eliminados-autods-2026-10-26.csv`](data/eliminados-autods-2026-10-26.csv): productos eliminados.
 
 ## Regla del repo
