@@ -2,6 +2,57 @@
 
 Registro de todos los cambios en la tienda (Shopify, AutoDS y configuración). El más reciente va primero.
 
+## 2026-10-26 (4) — Tienda lista para EE. UU.: páginas, menús, envíos y tienda a la carta
+
+### Configuración
+| Cambio | Detalle |
+|---|---|
+| Moneda | **USD** (cambiada por el dueño en el admin) |
+| Envíos | Tarifa gratis corregida a USD. **Gratis desde $30** ("Free standard shipping") y **$5.99** por debajo ("Standard shipping") |
+| Pesos | Peso por variante en los 12 productos del Club y extras (cajas 2–3.5 lb; extras 0.1–0.8 lb) |
+| SEO | Título y descripción SEO en Club Dog, Club Cat y los dos regalos |
+
+### Páginas (en inglés; reemplazan las plantillas vacías de AutoDS y usan la plantilla estándar de Horizon)
+| Página | Handle | Acción |
+|---|---|---|
+| About Us | `about-us` | Contenido nuevo |
+| FAQ | `faqs` | 11 preguntas (precio, cobros, pausa, alergias, regalos, pagos, envíos, daños, español) |
+| How It Works | `how-it-works` | **Creada** |
+| Subscription Terms | `subscription-terms` | **Creada** (términos de renovación automática para EE. UU.) |
+| Refund Policy | `return-policy` | Política de reembolsos |
+| Shipping Policy | `shipping-policy` | Política de envíos (actualizada con el umbral de $30) |
+| Terms of Service | `terms-and-conditions` | Términos |
+| Track Order | `track-order` | **Despublicada** (dependía de una app de AutoDS) |
+
+### Menús
+- **Principal:** Club Dog · Club Cat · Gift the Club · Shop (Shop for Dogs, Shop for Cats, Add to Your Box) · How It Works · FAQ.
+- **Pie de página:** How It Works · FAQ · About Us · Contact · Shipping Policy · Refund Policy · Subscription Terms · Terms of Service · Your Privacy Choices · Search.
+
+### Colecciones nuevas (automáticas por etiqueta)
+| ID | Colección | Regla |
+|---|---|---|
+| 512782532670 | Shop for Dogs (`shop-for-dogs`) | etiqueta `shop-dog` |
+| 512782565438 | Shop for Cats (`shop-for-cats`) | etiqueta `shop-cat` |
+
+Los 7 extras quedaron etiquetados `a-la-carte` + `shop-dog` y/o `shop-cat`.
+
+### Tienda a la carta (dropshipping con AutoDS) — ver `docs/tienda-a-la-carta.md`
+Importados desde CJdropshipping (bodega en EE. UU.) y pasados de inmediato a **BORRADOR**, con títulos y descripciones reescritos:
+
+| Shopify ID | Producto | Precio | Costo proveedor |
+|---|---|---|---|
+| 15445481357374 | Christmas Tree Cat Scratching Post · 31.5 in | $39.99 | $16.97 (envío gratis) |
+| 15445481455678 | Cat Scratch Pad with Interactive Balls | $34.99 | $16.27 (envío gratis) |
+| 15445482274878 | Stainless Steel Grooming Comb for Cats & Dogs | $16.99 (2-pack $24.99) | $1.99–7.72 + envío |
+| 15445482635326 | Heavy-Duty Rope Leash · 6 ft, Reflective | $17.99 | $6.29 (envío gratis) |
+
+Intento fallido: arnés + correa, cama redonda de felpa y túnel de fieltro (proveedores privados de AutoDS,
+error `SupplierProductDoesntExist` al usar el ID de la tienda del proveedor). Se reintentó con el ID de AutoDS.
+
+### No aplicado
+- Código **WELCOME30** (30% en la primera caja): Shopify no permite descuentos de suscripción hasta que
+  esté instalada una app de suscripciones. Crear después de instalar Shopify Subscriptions.
+
 ## 2026-10-26 (3) — Configuración para EE. UU. primero, con PayPal
 
 ### Decisión del dueño

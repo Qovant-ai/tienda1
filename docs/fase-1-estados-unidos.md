@@ -13,7 +13,7 @@
 | Mercados | **Estados Unidos activo** (impuesto sumado en el checkout) · México y Chile en borrador |
 | Idioma | Inglés como idioma principal (ideal para EE. UU.) · **español publicado** como segundo idioma (público latino; México y Chile después) |
 | Catálogo | 12 productos y 4 colecciones **en inglés**, con traducción completa al español · precios en USD · todo en borrador |
-| Envíos | Zona única: **48 estados contiguos + DC**, envío gratis (3–7 días hábiles). Se eliminaron las tarifas heredadas de AutoDS (150 y 360 MXN, que con USD habrían quedado en US$150 y US$360) |
+| Envíos | Zona única: **48 estados contiguos + DC**. **Gratis desde $30**; $5.99 por debajo. Se eliminaron las tarifas heredadas de AutoDS (150 y 360 MXN) |
 | Zona horaria | America/New_York ✅ |
 | Políticas | Redactadas en inglés en [`politicas-usa/`](politicas-usa/) (para pegar; el conector no puede escribirlas) |
 
@@ -30,7 +30,9 @@
 6. **Pegar las 4 políticas** de `docs/politicas-usa/` en *Configuración → Políticas* y completar los
    datos entre corchetes. Generar la política de privacidad con la app gratuita de Shopify para cumplir
    con la ley de privacidad de California (CCPA).
-7. **AutoDS:** cancelar antes del jueves 29-oct (no arma cajas; puedes reactivarlo después).
+7. **AutoDS:** mantenerlo. La tienda a la carta (correas, camas, rascadores) hace los pedidos automáticos con AutoDS.
+   Elige el plan más barato antes del 29-oct y revisa en *Settings → Pricing* que la regla de precios no
+   baje los precios que cargué (recomendado: costo × 2.2 como mínimo, o desactivar el ajuste automático de precio).
 
 ## 3. Operación en EE. UU.
 

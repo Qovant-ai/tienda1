@@ -16,10 +16,11 @@
 | 1 | Eliminar los 10 productos de AutoDS y crear el catálogo del club | ✅ |
 | 2 | Publicar el tema Horizon | ✅ (por ti) |
 | 3 | Configurar la tienda para EE. UU.: mercado, envíos, catálogo en inglés y USD, traducción al español | ✅ |
-| 4 | **Moneda de la tienda → USD** | ⏳ Tú, en el admin |
+| 4 | **Moneda de la tienda → USD** | ✅ Hecho (por ti) |
 | 5 | **PayPal Business + transacciones de referencia** (necesarias para suscripciones) | ⏳ Tú: es lo más lento, pídelo ya |
 | 6 | Shopify Subscriptions · políticas en inglés · marca | ⏳ Tú |
-| 7 | **AutoDS: cancelar antes del 29-oct 00:16 UTC** | ⏳ Tú |
+| 7 | **AutoDS: mantenerlo** (lo necesita la tienda a la carta) y elegir el plan más barato antes del 29-oct 00:16 UTC | ⏳ Tú |
+| 8 | Páginas, menús, envíos ($30+ gratis), pesos y SEO · tienda a la carta con productos ganadores | ✅ Hecho (ver `docs/tienda-a-la-carta.md`) |
 
 ---
 
@@ -58,7 +59,9 @@ cargados los precios en **USD**.
 | Paw & Coat Wipes / Toallitas · 100 | 8.99 | 119 | 5.490 |
 
 **Opciones de compra:** mensual con renovación automática · regalo o prepago de 1, 3 o 6 meses (pago
-único) · edición limitada · extras que viajan dentro de la caja.
+único) · edición limitada · extras que viajan dentro de la caja · **artículos por separado (tienda a la carta)**: correas, arneses, camas, rascadores, túneles y cepillos, elegidos por demanda y margen. Detalle: [`docs/tienda-a-la-carta.md`](docs/tienda-a-la-carta.md).
+
+**Envío:** gratis en pedidos de $30+ (todas las cajas califican); $5.99 por debajo.
 
 ---
 
@@ -234,7 +237,7 @@ cancelar) · referidos · galería #MyMonthlyBox · extras sugeridos antes de ca
 ---
 
 ## 13. Decisiones pendientes
-1. **AutoDS:** cancelar antes del 29-oct (recomendado).
+1. **AutoDS:** mantener el plan más barato que cubra ~20 productos y pedidos automáticos (la tienda a la carta depende de él). Decidir antes del 29-oct.
 2. **Nombre de marca** y dominio.
 3. **Dirección de Miami:** ¿es una oficina física? ¿la SpA tiene EIN y banco en EE. UU.? (para evaluar Shopify Payments después del lanzamiento).
 4. **Presupuesto** del lanzamiento.
