@@ -2,6 +2,18 @@
 
 Registro de todos los cambios en la tienda (Shopify, AutoDS y configuración). El más reciente va primero.
 
+## 2026-10-26 (9) — Tema v2 publicado y revisión
+
+- El dueño publicó **"Pawlet Club v2"** (`189339795518`, ahora MAIN). "Pawlet Club" (`189338452030`) quedó
+  sin publicar.
+- Revisión por API: los archivos del tema publicado coinciden con los de `theme/`; los 8 productos usan la
+  plantilla estándar, están disponibles y tienen stock; todas las colecciones y páginas enlazadas están
+  publicadas. No se pudo ver la tienda: la red de este entorno bloquea `mcgsp1-yj.myshopify.com`.
+- Peine: opción "quantity" (1Pcs / 2Pcs) renombrada a **"Pack"** (1 comb / 2 combs) y "Color" a
+  **"Style"** (incluye la variante "Set"). Descripción y traducciones al español actualizadas.
+- Pendiente en el editor de temas (la API no permite editar el tema publicado): texto del pie de página,
+  que todavía habla solo de cajas mensuales.
+
 ## 2026-10-26 (8) — Catálogo limpio y rediseño para vender (tema "Pawlet Club v2")
 
 Pedido del dueño: "que se vea dónde están los productos, intuitivo y profesional" y "todo lo que tiene que

@@ -7,7 +7,7 @@ Creada el 26-oct-2026.
 |---|---|
 | ID del tema | `gid://shopify/OnlineStoreTheme/189339795518` |
 | Origen | "Pawlet Club" (`189338452030`, publicado) |
-| Estado | **Sin publicar.** Se revisa en *Tienda online → Temas → Pawlet Club v2 → Vista previa* y se publica desde ahí |
+| Estado | **Publicado** (26-oct-2026). La API no permite editar el tema publicado: los cambios se hacen en el editor o en una copia |
 
 Esta carpeta guarda **solo los archivos modificados o nuevos**, con el mismo contenido que se subió al tema.
 
