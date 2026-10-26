@@ -9,22 +9,22 @@ Estado real de la tienda y las herramientas al empezar el proyecto (antes de cua
 | Dominio | `mcgsp1-yj.myshopify.com` (sin dominio propio) | Dominio `.com` de la marca |
 | Nombre de la tienda | `bys-user-store-1140213` (nombre genérico de AutoDS "Build Your Store") | Nombre de la marca |
 | Plan | Basic | OK para empezar |
-| Moneda | MXN | OK (agregar USD al abrir EE. UU.) |
-| Impuestos incluidos en el precio | Sí | OK para México |
-| **País del negocio** | **Chile** (Merced 838 A, Santiago) | País donde se cobrará: define qué pasarelas hay (ver abajo) |
-| **Zona horaria** | **America/New_York** | America/Mexico_City |
-| Ubicación de inventario | Santiago, Chile | Almacén o 3PL en México |
-| Mercados | Solo "Mexico" (principal) | México + Estados Unidos |
+| Moneda | MXN | CLP |
+| Impuestos incluidos en el precio | Sí | OK (en Chile los precios llevan IVA incluido) |
+| **País del negocio** | **Chile** (Merced 838 A, Santiago) | Chile: correcto para la tienda Chile (ver `docs/estructura-paises-y-pagos.md`) |
+| **Zona horaria** | **America/New_York** | America/Santiago |
+| Ubicación de inventario | Santiago, Chile | 3PL en Santiago |
+| Mercados | Solo "Mexico" (principal) | Chile (EE. UU. y México en otra tienda) |
 | Tema activo | "Build Your Store Theme" (de AutoDS) | **Horizon** (ya instalado, sin publicar) |
 | Políticas | Solo privacidad | + Términos de suscripción, Envíos, Reembolsos |
-| Billeteras digitales | Ninguna activa | Shop Pay, Apple Pay, Google Pay |
+| Billeteras digitales | Ninguna activa | Según la pasarela (Shop Pay requiere Shopify Payments: solo en la tienda Global) |
 | Canales | Tienda online, Shop, POS | OK |
 
 ### Hallazgo crítico: país = Chile
 **Shopify Payments no parece estar disponible para negocios en Chile** (verificar en *Configuración → Pagos*).
 Sin Shopify Payments, las suscripciones solo pueden cobrarse con PayPal Express (o Stripe/Authorize.net
 en casos limitados). Además, la tienda opera en MXN para México con una dirección de Chile.
-**Hay que decidir desde qué país y con qué entidad se va a cobrar** (ver `PLAN.md`, sección 5.2).
+**Resuelto:** esta tienda queda como tienda Chile y una LLC en EE. UU. operará la tienda Global (ver `docs/estructura-paises-y-pagos.md`).
 
 ## 2. AutoDS
 

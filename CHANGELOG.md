@@ -2,7 +2,29 @@
 
 Registro de todos los cambios en la tienda (Shopify, AutoDS y configuración). El más reciente va primero.
 
-## 2026-10-26
+## 2026-10-26 (2) — Estructura por países y conversión a tienda Chile
+
+### Decisión
+- Estructura: **1 marca, 2 entidades, 2 tiendas**. Esta tienda = **tienda Chile** (SpA chilena);
+  una **LLC en EE. UU.** operará la tienda Global (EE. UU. y, después, México vía filial).
+  Detalle: [`docs/estructura-paises-y-pagos.md`](docs/estructura-paises-y-pagos.md).
+- Tema **Horizon** publicado (por el dueño).
+
+### Shopify
+| Cambio | Detalle |
+|---|---|
+| Mercado creado | **Chile** (`gid://shopify/Market/63897370686`, handle `cl`), activo |
+| Mercado modificado | **México** (`gid://shopify/Market/63857557566`) → borrador |
+| Idioma | Español (`es`) agregado y publicado. El predeterminado sigue en inglés (solo se cambia en el admin) |
+| Descripciones | Club Perro, Club Gato, Regala Perro, Regala Gato y Caja Navideña adaptadas a Chile (despacho a Chile continental, marcas locales, medios de pago) |
+
+### No aplicado (falta permiso o requiere el admin)
+- Políticas: el conector no tiene el permiso `write_legal_policies`. Textos listos en
+  [`docs/politicas-chile/`](docs/politicas-chile/) para pegarlos en *Configuración → Políticas*.
+- Moneda (MXN → CLP), zona horaria e idioma predeterminado: solo desde el admin.
+- Precios en CLP: preparados en `data/catalogo-shopify.csv`; se cargan después del cambio de moneda.
+
+## 2026-10-26 (1) — Auditoría y catálogo inicial
 
 ### Auditoría
 - Revisión inicial de Shopify y AutoDS → [`docs/auditoria-2026-10-26.md`](docs/auditoria-2026-10-26.md).
