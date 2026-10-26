@@ -31,20 +31,24 @@ En EE. UU., **los artículos baratos ($5–10) casi no dejan margen con dropship
 $5–7 de envío por unidad. Funcionan los artículos de **$17–40 con envío gratis del proveedor**. Los artículos
 baratos conviene comprarlos al por mayor y guardarlos en el 3PL junto con las cajas (como los extras).
 
-## 3. Selección importada (en borrador para revisión)
+## 3. Selección importada (8 artículos, todos en borrador para revisión)
 
-| Producto | Proveedor | Costo (+ envío) | Entrega | Precio | Margen bruto aprox.* |
-|---|---|---|---|---|---|
-| Correa retráctil 16.5 ft | Proveedor privado (The Perfect Part) | $9.91 (envío gratis) | 4–6 días | $24.99 | ~52% |
-| Correa de cuerda 6 ft reforzada, reflectante | CJdropshipping | $6.29 (envío gratis) | 5 días | $17.99 | ~56% |
-| Arnés anti-tirones + correa 5 ft (perros grandes) | Proveedor privado (Jackson Qin) | $12.95 (envío gratis) | 6–8 días | $29.99 | ~49% |
-| Cama redonda de felpa para gato o perro pequeño | Proveedor privado (A. Nouri) | $9.78–20.57 + $7.29 | 4–6 días | $34.99–49.99 según talla | ~40–45% |
-| Rascador "árbol de Navidad" 31.5" | CJdropshipping | $16.97 (envío gratis) | 7 días | $39.99 | ~49% |
-| Rascador cuadrado de sisal con bolas | CJdropshipping | $16.27 (envío gratis) | 5 días | $34.99 | ~46% |
-| Túnel de fieltro para gato | Proveedor privado (A. Nouri) | $7.24–11.27 + $7.29 | 4–6 días | $29.99 | ~35–40% |
-| Cepillo/peine de acero para pelo | CJdropshipping | $1.99 + $6.10 | 7–8 días | $16.99 | ~45% |
+| Shopify ID | Producto (título en la tienda) | Proveedor | Costo (+ envío) | Entrega | Precio | Margen bruto aprox.* |
+|---|---|---|---|---|---|---|
+| 15445490696254 | Retractable Dog Leash · 16.5 ft | Privado (The Perfect Part) | $9.91 (envío gratis) | 4–6 días | $24.99 | ~52% |
+| 15445482635326 | Heavy-Duty Rope Leash · 6 ft, Reflective | CJdropshipping | $6.29 (envío gratis) | 5 días | $17.99 | ~56% |
+| 15445490499646 | No-Pull Harness + 5 ft Leash Set · Large Dogs | Privado (Jackson Qin) | $12.95 (envío gratis) | 6–8 días | $29.99 | ~49% |
+| 15445488009278 | Calming Plush Cave Bed for Cats & Small Dogs | Privado (A. Nouri) | S $9.78–11.02 · M $12.74–13.98 · L $20.15–20.57, + $7.29 | 4–6 días | S $34.99 · M $42.99 · L $52.99 | ~39–42% |
+| 15445481357374 | Christmas Tree Cat Scratching Post · 31.5 in | CJdropshipping | $16.97 (envío gratis) | 7 días | $39.99 | ~49% |
+| 15445481455678 | Cat Scratch Pad with Interactive Balls | CJdropshipping | $16.27 (envío gratis) | 5 días | $34.99 | ~46% |
+| 15445487943742 | Collapsible Cat Tunnel & Hideout | Privado (A. Nouri) | 24 in $7.24–8.62 · 35 in $9.87–11.27, + $7.29 | 4–6 días | 24 in $29.99 · 35 in $34.99 | ~38% |
+| 15445482274878 | Stainless Steel Grooming Comb for Cats & Dogs | CJdropshipping | $1.99 + $6.10 (2 peines: $7.72 + envío) | 7–8 días | $16.99 (2 peines $24.99) | ~45% |
 
-\* Después de las comisiones de PayPal (~5–6% + 30¢) y Shopify (2%). Sin publicidad.
+\* Con el costo más alto de cada talla, después de las comisiones de PayPal (~5–6% + 30¢) y Shopify (2%). Sin publicidad.
+
+**Precios y regla de AutoDS:** al importar, AutoDS cargó la cama a $395–645 por su regla de precios. Se corrigió
+a mano en Shopify. Antes de publicar, revisar en AutoDS *Settings → Pricing* que la regla no vuelva a cambiar
+estos precios (desactivar el ajuste automático de precio o usar costo × 2.2 como mínimo).
 
 ### Descartados
 | Producto | Motivo |

@@ -198,7 +198,7 @@ cancelar) · referidos · galería #MyMonthlyBox · extras sugeridos antes de ca
 
 | Fase | Fechas | Entregables |
 |---|---|---|
-| **1a. Tienda lista para EE. UU.** | 26 oct–1 nov 2026 | ✅ Configuración · ⏳ moneda USD, PayPal y transacciones de referencia, Subscriptions, políticas, marca, AutoDS cancelado |
+| **1a. Tienda lista para EE. UU.** | 26 oct–1 nov 2026 | ✅ Configuración · ⏳ PayPal y transacciones de referencia, Subscriptions, políticas, marca, plan de AutoDS |
 | **1b. Producto y operación** | 2–30 nov | Proveedores en EE. UU. · muestras · 3PL · sales tax · fotos reales · páginas · lista de espera |
 | **1c. Prueba de temporada (opcional)** | dic 2026 | Holiday Box o regalos si el inventario llega antes del ~5 dic · pedidos de prueba |
 | **1d. Lanzamiento EE. UU.** | **ene 2027** | Club en vivo · anuncios en las 5 ciudades foco + público latino |

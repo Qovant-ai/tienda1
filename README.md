@@ -10,7 +10,7 @@ Shopify y AutoDS.
 | Secuencia | 🇺🇸 EE. UU. (lanzamiento ene 2027) → 🇲🇽 México → 🇨🇱 Chile |
 | Idiomas | Inglés (principal) + español |
 | Modelo | Suscripción mensual de cajas temáticas (Club Dog y Club Cat) + regalos + extras |
-| Proveedor conectado | AutoDS (tienda `5917626`): recomendación, cancelar antes del 29-oct |
+| Proveedor conectado | AutoDS (tienda `5917626`): mantenerlo (tienda a la carta); elegir plan antes del 29-oct |
 
 ## Documentos
 

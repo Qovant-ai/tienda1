@@ -46,8 +46,19 @@ Importados desde CJdropshipping (bodega en EE. UU.) y pasados de inmediato a **B
 | 15445482274878 | Stainless Steel Grooming Comb for Cats & Dogs | $16.99 (2-pack $24.99) | $1.99–7.72 + envío |
 | 15445482635326 | Heavy-Duty Rope Leash · 6 ft, Reflective | $17.99 | $6.29 (envío gratis) |
 
-Intento fallido: arnés + correa, cama redonda de felpa y túnel de fieltro (proveedores privados de AutoDS,
-error `SupplierProductDoesntExist` al usar el ID de la tienda del proveedor). Se reintentó con el ID de AutoDS.
+Desde proveedores privados de AutoDS (bodega en EE. UU.). El primer intento falló con
+`SupplierProductDoesntExist` (se usó el ID de la tienda del proveedor); funcionó con el ID de AutoDS:
+
+| Shopify ID | Producto | Precio | Costo proveedor |
+|---|---|---|---|
+| 15445488009278 | Calming Plush Cave Bed for Cats & Small Dogs | S $34.99 · M $42.99 · L $52.99 | $9.78–20.57 + $7.29 envío |
+| 15445487943742 | Collapsible Cat Tunnel & Hideout | 24 in $29.99 · 35 in $34.99 | $7.24–11.27 + $7.29 envío |
+| 15445490499646 | No-Pull Harness + 5 ft Leash Set · Large Dogs | $29.99 | $12.95 (envío gratis) |
+| 15445490696254 | Retractable Dog Leash · 16.5 ft | $24.99 | $9.91 (envío gratis) |
+
+En los 8: título, descripción, handle y tipo en inglés, proveedor "Club Mascotas", etiquetas `shop-dog`/`shop-cat`,
+traducción al español y opciones legibles (tallas en pulgadas y cm; "Bliue" → "Blue", "Grey" → "Gray").
+AutoDS había cargado la cama a $395–645 (regla de precios de AutoDS); se corrigió a mano.
 
 ### No aplicado
 - Código **WELCOME30** (30% en la primera caja): Shopify no permite descuentos de suscripción hasta que

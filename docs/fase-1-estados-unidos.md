@@ -19,8 +19,7 @@
 
 ## 2. Lo que te toca a ti (en este orden)
 
-1. **Moneda de la tienda → USD** (*Configuración → Detalles de la tienda*). Los precios ya están cargados
-   en dólares; hasta que hagas el cambio, la tienda los muestra como pesos mexicanos.
+1. ✅ **Moneda de la tienda → USD** (hecho).
 2. **Nombre de la tienda** y datos de la empresa (razón social de la SpA).
 3. **PayPal Business** a nombre de la SpA → conectarlo en *Configuración → Pagos*.
 4. **Pedir a PayPal las "transacciones de referencia"** (*reference transactions*). Sin esa aprobación,
@@ -62,7 +61,7 @@ Con Shopify Payments el cobro costaría ~US$1.46 (2.9% + 30¢) y el margen subir
 
 | Semana | Entregables |
 |---|---|
-| 26 oct–1 nov | Moneda USD · PayPal + transacciones de referencia · Shopify Subscriptions · políticas · marca · AutoDS cancelado |
+| 26 oct–1 nov | Moneda USD · PayPal + transacciones de referencia · Shopify Subscriptions · políticas · marca · plan de AutoDS (antes del 29-oct) |
 | 2–15 nov | Proveedores mayoristas en EE. UU. · muestras · cotizaciones de 3PL · registro de sales tax (si aplica) |
 | 16–30 nov | Contrato con el 3PL · primer inventario · fotos reales · páginas (Inicio, How it works, FAQ) · lista de espera |
 | Dic 2026 | *(Opcional)* Holiday Box si el inventario llega al 3PL antes del ~5 de diciembre · pruebas de pedido y de suscripción |
