@@ -9,22 +9,22 @@ Estado real de la tienda y las herramientas al empezar el proyecto (antes de cua
 | Dominio | `mcgsp1-yj.myshopify.com` (sin dominio propio) | Dominio `.com` de la marca |
 | Nombre de la tienda | `bys-user-store-1140213` (nombre genérico de AutoDS "Build Your Store") | Nombre de la marca |
 | Plan | Basic | OK para empezar |
-| Moneda | MXN | CLP |
-| Impuestos incluidos en el precio | Sí | OK (en Chile los precios llevan IVA incluido) |
-| **País del negocio** | **Chile** (Merced 838 A, Santiago) | Chile: correcto para la tienda Chile (ver `docs/estructura-paises-y-pagos.md`) |
-| **Zona horaria** | **America/New_York** | America/Santiago |
-| Ubicación de inventario | Santiago, Chile | 3PL en Santiago |
-| Mercados | Solo "Mexico" (principal) | Chile (EE. UU. y México en otra tienda) |
-| Tema activo | "Build Your Store Theme" (de AutoDS) | **Horizon** (ya instalado, sin publicar) |
+| Moneda | MXN | USD (fase 1: EE. UU.) |
+| Impuestos incluidos en el precio | Sí | EE. UU.: impuesto sumado en el checkout (ya configurado en el mercado) |
+| **País del negocio** | **Chile** (Merced 838 A, Santiago) | Chile (SpA): correcto para cobrar con PayPal |
+| **Zona horaria** | **America/New_York** | OK para la fase 1 (EE. UU.) |
+| Ubicación de inventario | Santiago, Chile | 3PL en EE. UU. |
+| Mercados | Solo "Mexico" (principal) | EE. UU. activo; México y Chile en borrador |
+| Tema activo | "Build Your Store Theme" (de AutoDS) | **Horizon** (publicado por el dueño) |
 | Políticas | Solo privacidad | + Términos de suscripción, Envíos, Reembolsos |
-| Billeteras digitales | Ninguna activa | Según la pasarela (Shop Pay requiere Shopify Payments: solo en la tienda Global) |
+| Billeteras digitales | Ninguna activa | Con PayPal no aplican; Shop Pay, Apple Pay y Google Pay requieren Shopify Payments |
 | Canales | Tienda online, Shop, POS | OK |
 
 ### Hallazgo crítico: país = Chile
 **Shopify Payments no parece estar disponible para negocios en Chile** (verificar en *Configuración → Pagos*).
 Sin Shopify Payments, las suscripciones solo pueden cobrarse con PayPal Express (o Stripe/Authorize.net
 en casos limitados). Además, la tienda opera en MXN para México con una dirección de Chile.
-**Resuelto:** esta tienda queda como tienda Chile y una LLC en EE. UU. operará la tienda Global (ver `docs/estructura-paises-y-pagos.md`).
+**Resuelto:** una sola tienda a nombre de la SpA, cobrando con PayPal en USD, empezando por EE. UU. (ver `docs/fase-1-estados-unidos.md`).
 
 ## 2. AutoDS
 
