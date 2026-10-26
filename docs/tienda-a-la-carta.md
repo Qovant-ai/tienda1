@@ -31,7 +31,7 @@ En EE. UU., **los artículos baratos ($5–10) casi no dejan margen con dropship
 $5–7 de envío por unidad. Funcionan los artículos de **$17–40 con envío gratis del proveedor**. Los artículos
 baratos conviene comprarlos al por mayor y guardarlos en el 3PL junto con las cajas (como los extras).
 
-## 3. Selección importada (8 artículos, todos en borrador para revisión)
+## 3. Selección publicada (8 artículos, activos en la tienda online desde el 26-oct)
 
 | Shopify ID | Producto (título en la tienda) | Proveedor | Costo (+ envío) | Entrega | Precio | Margen bruto aprox.* |
 |---|---|---|---|---|---|---|

@@ -2,6 +2,19 @@
 
 Registro de todos los cambios en la tienda (Shopify, AutoDS y configuración). El más reciente va primero.
 
+## 2026-10-26 (7) — Tienda a la carta publicada
+
+- El dueño confirma que **mantiene AutoDS** (pedidos automáticos de la tienda a la carta).
+- Los **8 artículos dropship** pasan a **ACTIVO** y se publican en el canal **Tienda online**
+  (`gid://shopify/Publication/228083990590`): rascador árbol de Navidad, rascador con pelotas, peine,
+  correa de cuerda, túnel, cama cueva, arnés + correa y correa retráctil. Precios verificados sin cambios.
+- El rascador árbol de Navidad usaba una plantilla de producto propia de AutoDS
+  (`product.31-5in-christmas-tree-cat`); ahora usa la plantilla estándar del tema.
+- Siguen en **borrador**: Club Dog, Club Cat, los 2 regalos, Holiday Box y los 7 extras (faltan
+  suscripciones, aprobación de PayPal e inventario).
+- Pendiente antes de vender: completar en las políticas el correo de soporte y la razón social de la SpA,
+  y quitar la contraseña de la tienda cuando se decida abrir.
+
 ## 2026-10-26 (6) — Logo, paleta y página de inicio de Pawlet Club
 
 ### Identidad (ver [`brand/README.md`](brand/README.md))
