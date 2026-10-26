@@ -20,8 +20,8 @@
 ## 2. Lo que te toca a ti (en este orden)
 
 1. ✅ **Moneda de la tienda → USD** (hecho).
-2. **Nombre de la tienda** y datos de la empresa (razón social de la SpA).
-3. **PayPal Business** a nombre de la SpA → conectarlo en *Configuración → Pagos*.
+2. **Nombre de la tienda → Pawlet Club** y datos de la empresa (razón social de la SpA).
+3. ✅ **PayPal conectado** (hecho).
 4. **Pedir a PayPal las "transacciones de referencia"** (*reference transactions*). Sin esa aprobación,
    PayPal no permite cobros automáticos y las suscripciones no funcionan. PayPal revisa la cuenta (puede
    pedir información del negocio). Es el paso con más espera: hazlo ya.

@@ -2,6 +2,22 @@
 
 Registro de todos los cambios en la tienda (Shopify, AutoDS y configuración). El más reciente va primero.
 
+## 2026-10-26 (5) — Marca Pawlet Club y PayPal
+
+### Marca
+- Nombre elegido por el dueño: **Pawlet Club** (*paw* + *-let*, "patita"). No se encontró una marca "Pawlet"
+  registrada en EE. UU. (búsqueda web; falta confirmar en USPTO). Dominio sugerido: `pawletclub.com` (disponible
+  al 26-oct, sin comprar).
+- Shopify: proveedor de los **20 productos** cambiado de "Club Mascotas" a **"Pawlet Club"**. Título SEO de
+  Club Dog, Club Cat y los dos regalos terminado en "| Pawlet Club".
+- Pendiente: nombre de la tienda (solo en el admin), marca en páginas y políticas, logo.
+- Logo: 9 propuestas en un lienzo privado de Claude (3 rondas: conceptos, variaciones de la patita-caja,
+  patitas y huellas). Falta elegir.
+
+### Pagos
+- **PayPal conectado** por el dueño. Siguiente paso: pedir a PayPal las transacciones de referencia
+  (necesarias para cobrar la suscripción cada mes) e instalar Shopify Subscriptions.
+
 ## 2026-10-26 (4) — Tienda lista para EE. UU.: páginas, menús, envíos y tienda a la carta
 
 ### Configuración

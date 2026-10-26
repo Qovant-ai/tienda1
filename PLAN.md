@@ -33,7 +33,7 @@
 **tienda bilingüe** que atiende también a la comunidad latina de EE. UU. (BarkBox y Meowbox no lo hacen) ·
 donación a refugios · pausar, saltar o cancelar en 2 clics · línea Senior.
 
-**Marca:** pendiente (proveedor provisional "Club Mascotas"). Debe funcionar en inglés y en español:
+**Marca:** **Pawlet Club** (elegida el 26-oct). Debe funcionar en inglés y en español:
 *Pawsito Club*, *Colita Box*, *Huellita Club*, *Bigotes & Colitas*.
 
 ---
