@@ -2,6 +2,38 @@
 
 Registro de todos los cambios en la tienda (Shopify, AutoDS y configuración). El más reciente va primero.
 
+## 2026-10-26 (6) — Logo, paleta y página de inicio de Pawlet Club
+
+### Identidad (ver [`brand/README.md`](brand/README.md))
+- Logo elegido: **huella grande y chica** (propuesta 8) con la **paleta 1**: azul noche `#1B2B48`, durazno
+  `#FF9F6E`, crema `#FFF3EA`. Tipografía **Rubik**.
+- Archivos en `brand/logo/` (SVG con texto en trazos + PNG). Subidos a Shopify Files:
+  `pawlet-logo-horizontal.png`, `pawlet-logo-horizontal-white.png`, `pawlet-favicon.png`, `pawlet-icon.png`.
+- Fotos de Unsplash subidas para la portada y la franja de regalo (`photo-1599194921977-…`,
+  `photo-1686419682443-…`). Una tercera foto se subió y se borró porque mostraba una caja de otra marca.
+
+### Tema nuevo "Pawlet Club" (sin publicar) — ver [`theme/README.md`](theme/README.md)
+- Copia de Helio: `gid://shopify/OnlineStoreTheme/189338452030`.
+- `settings_data.json`: logo, logo blanco, favicon, Rubik, paleta de marca, botones redondeados.
+- Encabezado blanco sin transparencia; pie de página con boletín (durazno) y columnas de enlaces (azul).
+- **Página de inicio nueva** con 7 secciones propias: portada, cómo funciona, planes Club Dog/Club Cat,
+  qué trae cada caja, tienda a la carta, regalo y preguntas frecuentes. Pasó Theme Check sin errores.
+
+### Menús
+| Menú | Cambio |
+|---|---|
+| `footer-club` "Pawlet Club" | **Creado**: Club Dog, Club Cat, Gift the Club, Shop for Dogs, Shop for Cats, About Us |
+| `footer` "Help" | Renombrado y reordenado: How It Works, FAQ, Contact, las 4 políticas y Your Privacy Choices |
+
+### Páginas con la marca
+About Us (incluye el significado de "Pawlet"), Terms of Service ("Pawlet Club is a brand operated by…"),
+Refund Policy, Subscription Terms y Shipping Policy. Mismos cambios en `docs/politicas-usa/`.
+
+### Pendiente (dueño)
+- **Publicar el tema "Pawlet Club"** (la API no permite publicarlo).
+- Nombre de la tienda → "Pawlet Club" y comprar `pawletclub.com`.
+- Activar los productos cuando estén listas las suscripciones.
+
 ## 2026-10-26 (5) — Marca Pawlet Club y PayPal
 
 ### Marca

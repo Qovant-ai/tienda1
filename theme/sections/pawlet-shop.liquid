@@ -1,0 +1,313 @@
+{% comment %}
+  Section contract.
+  Large linked tiles for the Pawlet Club à-la-carte shop (Shop for Dogs, Shop for Cats,
+  Add to Your Box). Each block links to a collection or a custom URL.
+  @example
+  <!-- Theme editor: add "Pawlet shop tiles" and pick a collection for each tile -->
+{% endcomment %}
+{% render 'pawlet-styles' %}
+{%- liquid
+  assign s = section.settings
+-%}
+<section
+  class="pc-section pc-shop"
+  style="--pc-shop-bg: {{ s.background_color }};"
+  {% if s.heading != blank %}
+    aria-labelledby="PcShopTitle-{{ section.id }}"
+  {% endif %}
+>
+  <div class="pc-container">
+    {% if s.eyebrow != blank or s.heading != blank or s.text != blank %}
+      <div class="pc-head">
+        {% if s.eyebrow != blank %}
+          <p class="pc-eyebrow">{% render 'pawlet-icon', icon: 'paw' %}{{ s.eyebrow | escape }}</p>
+        {% endif %}
+        {% if s.heading != blank %}
+          <h2 id="PcShopTitle-{{ section.id }}" class="pc-title">{{ s.heading | escape }}</h2>
+        {% endif %}
+        {% if s.text != blank %}
+          <div class="pc-lead">{{ s.text }}</div>
+        {% endif %}
+      </div>
+    {% endif %}
+
+    <div class="pc-shop__grid">
+      {% for block in section.blocks %}
+        {%- liquid
+          assign b = block.settings
+          assign tile_url = b.link
+          if tile_url == blank and b.collection != blank
+            assign tile_url = b.collection.url
+          endif
+          assign tile_title = b.title
+          if tile_title == blank and b.collection != blank
+            assign tile_title = b.collection.title
+          endif
+        -%}
+        <a class="pc-tile pc-tile--{{ b.style }}" href="{{ tile_url | default: routes.all_products_collection_url }}" {{ block.shopify_attributes }}>
+          <span class="pc-tile__art">{% render 'pawlet-icon', icon: b.icon %}</span>
+          <span class="pc-tile__body">
+            <span class="pc-tile__title">{{ tile_title | escape }}</span>
+            {% if b.text != blank %}
+              <span class="pc-tile__text">{{ b.text | escape }}</span>
+            {% endif %}
+            {% if b.link_label != blank %}
+              <span class="pc-tile__cta">{{ b.link_label | escape }}{% render 'pawlet-icon', icon: 'arrow' %}</span>
+            {% endif %}
+          </span>
+        </a>
+      {% endfor %}
+    </div>
+  </div>
+</section>
+
+{% stylesheet %}
+  .pc-shop {
+    background: var(--pc-shop-bg, var(--pc-cream));
+  }
+
+  .pc-shop__grid {
+    display: grid;
+    gap: 1.25rem;
+  }
+
+  .pc-tile {
+    --pc-paw-big: currentColor;
+    --pc-paw-small: var(--pc-peach);
+
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    min-width: 0;
+    min-height: 19rem;
+    padding: 1.75rem;
+    overflow: hidden;
+    border-radius: 2rem;
+    color: var(--pc-navy);
+    text-decoration: none;
+    transition: transform 0.25s var(--ease-out-cubic), box-shadow 0.25s ease;
+  }
+
+  .pc-tile:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 18px 36px rgb(27 43 72 / 0.14);
+  }
+
+  .pc-tile:focus-visible {
+    outline: 3px solid var(--pc-navy);
+    outline-offset: 3px;
+  }
+
+  .pc-tile--navy {
+    --pc-paw-small: #ffffff;
+
+    background: var(--pc-navy);
+    color: #ffffff;
+  }
+
+  .pc-tile--peach {
+    --pc-paw-small: #ffffff;
+
+    background: var(--pc-peach);
+  }
+
+  .pc-tile--white {
+    background: #ffffff;
+  }
+
+  .pc-tile__art {
+    position: absolute;
+    inset-block-start: 1.25rem;
+    inset-inline-end: 1.25rem;
+    width: 9rem;
+    height: 9rem;
+    opacity: 0.9;
+    transition: transform 0.35s var(--ease-out-cubic);
+  }
+
+  .pc-tile--navy .pc-tile__art {
+    color: var(--pc-peach);
+  }
+
+  .pc-tile:hover .pc-tile__art {
+    transform: rotate(-8deg) scale(1.05);
+  }
+
+  .pc-tile__art .pc-svg {
+    width: 100%;
+    height: 100%;
+  }
+
+  .pc-tile__body {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+
+  .pc-tile__title {
+    font-family: var(--font-heading--family);
+    font-size: clamp(1.625rem, 2.6vw, 2rem);
+    font-weight: var(--font-heading--weight);
+    line-height: 1.1;
+    letter-spacing: -0.02em;
+  }
+
+  .pc-tile__text {
+    max-width: 22rem;
+    line-height: 1.5;
+  }
+
+  .pc-tile__cta {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.375rem;
+    margin-block-start: 0.5rem;
+    font-weight: 500;
+  }
+
+  .pc-tile__cta .pc-svg {
+    width: 1.125rem;
+    height: 1.125rem;
+    transition: transform 0.2s var(--ease-out-cubic);
+  }
+
+  .pc-tile:hover .pc-tile__cta .pc-svg {
+    transform: translateX(4px);
+  }
+
+  @media screen and (min-width: 750px) {
+    .pc-shop__grid {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .pc-tile:first-child {
+      grid-row: span 2;
+      min-height: 26rem;
+    }
+
+    .pc-tile:first-child .pc-tile__art {
+      width: 13rem;
+      height: 13rem;
+    }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .pc-tile,
+    .pc-tile__art,
+    .pc-tile__cta .pc-svg {
+      transition: none;
+    }
+
+    .pc-tile:hover,
+    .pc-tile:hover .pc-tile__art,
+    .pc-tile:hover .pc-tile__cta .pc-svg {
+      transform: none;
+    }
+  }
+{% endstylesheet %}
+
+{% schema %}
+{
+  "name": "Pawlet shop tiles",
+  "tag": "div",
+  "class": "pc-shopify-section",
+  "settings": [
+    {
+      "type": "color",
+      "id": "background_color",
+      "label": "Background",
+      "default": "#fff3ea"
+    },
+    {
+      "type": "text",
+      "id": "eyebrow",
+      "label": "Eyebrow",
+      "default": "Shop à la carte"
+    },
+    {
+      "type": "text",
+      "id": "heading",
+      "label": "Heading",
+      "default": "Beds, leashes, toys and more"
+    },
+    {
+      "type": "richtext",
+      "id": "text",
+      "label": "Text"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "tile",
+      "name": "Tile",
+      "settings": [
+        {
+          "type": "collection",
+          "id": "collection",
+          "label": "Collection"
+        },
+        {
+          "type": "url",
+          "id": "link",
+          "label": "Custom link",
+          "info": "Overrides the collection link."
+        },
+        {
+          "type": "text",
+          "id": "title",
+          "label": "Title",
+          "info": "Leave empty to use the collection title."
+        },
+        {
+          "type": "textarea",
+          "id": "text",
+          "label": "Text"
+        },
+        {
+          "type": "text",
+          "id": "link_label",
+          "label": "Link label",
+          "default": "Shop now"
+        },
+        {
+          "type": "select",
+          "id": "icon",
+          "label": "Illustration",
+          "options": [
+            { "value": "paws", "label": "Big and little paw" },
+            { "value": "paw", "label": "Paw" },
+            { "value": "box", "label": "Box" },
+            { "value": "gift", "label": "Gift" },
+            { "value": "heart", "label": "Heart" }
+          ],
+          "default": "paws"
+        },
+        {
+          "type": "select",
+          "id": "style",
+          "label": "Tile style",
+          "options": [
+            { "value": "navy", "label": "Navy" },
+            { "value": "peach", "label": "Peach" },
+            { "value": "white", "label": "White" }
+          ],
+          "default": "navy"
+        }
+      ]
+    }
+  ],
+  "max_blocks": 4,
+  "presets": [
+    {
+      "name": "Pawlet shop tiles",
+      "blocks": [
+        { "type": "tile", "settings": { "title": "Shop for Dogs", "style": "navy", "icon": "paws" } },
+        { "type": "tile", "settings": { "title": "Shop for Cats", "style": "peach", "icon": "paw" } },
+        { "type": "tile", "settings": { "title": "Add to Your Box", "style": "white", "icon": "box" } }
+      ]
+    }
+  ]
+}
+{% endschema %}

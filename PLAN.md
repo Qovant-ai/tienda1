@@ -17,10 +17,11 @@
 | 2 | Publicar el tema Horizon | ✅ (por ti) |
 | 3 | Configurar la tienda para EE. UU.: mercado, envíos, catálogo en inglés y USD, traducción al español | ✅ |
 | 4 | **Moneda de la tienda → USD** | ✅ Hecho (por ti) |
-| 5 | **PayPal Business + transacciones de referencia** (necesarias para suscripciones) | ⏳ Tú: es lo más lento, pídelo ya |
-| 6 | Shopify Subscriptions · políticas en inglés · marca | ⏳ Tú |
+| 5 | **PayPal Business + transacciones de referencia** (necesarias para suscripciones) | ✅ PayPal conectado · ⏳ Tú: pedir las transacciones de referencia |
+| 6 | Shopify Subscriptions · políticas en inglés | ⏳ Tú |
 | 7 | **AutoDS: mantenerlo** (lo necesita la tienda a la carta) y elegir el plan más barato antes del 29-oct 00:16 UTC | ⏳ Tú |
 | 8 | Páginas, menús, envíos ($30+ gratis), pesos y SEO · tienda a la carta con productos ganadores | ✅ Hecho (ver `docs/tienda-a-la-carta.md`) |
+| 9 | Marca **Pawlet Club**: logo, paleta, tema y página de inicio | ✅ Hecho · ⏳ Tú: publicar el tema "Pawlet Club", cambiar el nombre de la tienda y comprar el dominio |
 
 ---
 
@@ -33,8 +34,8 @@
 **tienda bilingüe** que atiende también a la comunidad latina de EE. UU. (BarkBox y Meowbox no lo hacen) ·
 donación a refugios · pausar, saltar o cancelar en 2 clics · línea Senior.
 
-**Marca:** **Pawlet Club** (elegida el 26-oct). Debe funcionar en inglés y en español:
-*Pawsito Club*, *Colita Box*, *Huellita Club*, *Bigotes & Colitas*.
+**Marca:** **Pawlet Club** (elegida el 26-oct): logo de huella grande y chica, azul noche y durazno.
+Guía: [`brand/README.md`](brand/README.md).
 
 ---
 

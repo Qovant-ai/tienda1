@@ -1,0 +1,219 @@
+{% doc %}
+  Style owner for the Pawlet Club home sections. Outputs the brand color tokens
+  (read from the theme color palette) and the shared component CSS.
+
+  @example
+  {% render 'pawlet-styles' %}
+{% enddoc %}
+{% style %}
+  :root {
+    --pc-navy: {{ settings.color_palette.color7 | default: '#1b2b48' }};
+    --pc-peach: {{ settings.color_palette.color5 | default: '#ff9f6e' }};
+    --pc-cream: {{ settings.color_palette.color4 | default: '#fff3ea' }};
+    --pc-peach-soft: {{ settings.color_palette.color6 | default: '#ffe7d6' }};
+    --pc-ink-soft: {{ settings.color_palette.color1 | default: '#3b4a66' }};
+    --pc-line: {{ settings.color_palette.color3 | default: '#e7dfd6' }};
+  }
+{% endstyle %}
+
+{% stylesheet %}
+  .pc-section {
+    position: relative;
+    overflow: hidden;
+    padding-block: clamp(3.5rem, 8vw, 6.5rem);
+    color: var(--pc-navy);
+    font-family: var(--font-body--family);
+  }
+
+  .pc-section *,
+  .pc-section *::before,
+  .pc-section *::after {
+    box-sizing: border-box;
+  }
+
+  .pc-container {
+    position: relative;
+    width: 100%;
+    max-width: 76rem;
+    margin-inline: auto;
+    padding-inline: clamp(1.25rem, 4vw, 2.5rem);
+  }
+
+  .pc-head {
+    max-width: 46rem;
+    margin: 0 auto clamp(2.5rem, 5vw, 3.5rem);
+    text-align: center;
+  }
+
+  .pc-eyebrow {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    margin: 0 0 1rem;
+    font-family: var(--font-subheading--family);
+    font-size: 0.8125rem;
+    font-weight: 500;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--pc-navy);
+  }
+
+  .pc-eyebrow .pc-svg {
+    width: 1.1rem;
+    height: 1.1rem;
+    color: var(--pc-peach);
+  }
+
+  .pc-title {
+    margin: 0 0 1rem;
+    font-family: var(--font-heading--family);
+    font-weight: var(--font-heading--weight);
+    font-size: clamp(2rem, 4.2vw, 3.25rem);
+    line-height: 1.08;
+    letter-spacing: -0.025em;
+    color: var(--pc-navy);
+    text-wrap: balance;
+  }
+
+  .pc-lead {
+    max-width: 36em;
+    margin: 0;
+    font-size: clamp(1.0625rem, 1.4vw, 1.1875rem);
+    line-height: 1.6;
+    color: var(--pc-ink-soft);
+  }
+
+  .pc-head .pc-lead {
+    margin-inline: auto;
+  }
+
+  .pc-lead p {
+    margin: 0;
+  }
+
+  .pc-lead p + p {
+    margin-block-start: 0.75em;
+  }
+
+  .pc-actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.75rem;
+  }
+
+  .pc-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    min-height: 3.25rem;
+    padding: 0.875rem 1.75rem;
+    border: 2px solid transparent;
+    border-radius: 999px;
+    font-family: var(--font-accent--family);
+    font-size: 1rem;
+    font-weight: 500;
+    line-height: 1;
+    text-decoration: none;
+    transition: transform 0.2s var(--ease-out-cubic), box-shadow 0.2s ease, background-color 0.2s ease, color 0.2s ease;
+  }
+
+  .pc-btn .pc-svg {
+    width: 1.125rem;
+    height: 1.125rem;
+  }
+
+  .pc-btn--primary {
+    background: var(--pc-navy);
+    color: #ffffff;
+  }
+
+  .pc-btn--primary:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 10px 24px rgb(27 43 72 / 0.22);
+  }
+
+  .pc-btn--peach {
+    background: var(--pc-peach);
+    color: var(--pc-navy);
+  }
+
+  .pc-btn--peach:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 10px 24px rgb(255 159 110 / 0.45);
+  }
+
+  .pc-btn--outline {
+    border-color: currentColor;
+    background: transparent;
+    color: var(--pc-navy);
+  }
+
+  .pc-btn--outline:hover {
+    background: var(--pc-navy);
+    border-color: var(--pc-navy);
+    color: #ffffff;
+  }
+
+  .pc-btn--light {
+    background: #ffffff;
+    color: var(--pc-navy);
+  }
+
+  .pc-btn--light:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 10px 24px rgb(0 0 0 / 0.18);
+  }
+
+  .pc-btn:focus-visible,
+  .pc-link:focus-visible {
+    outline: 3px solid var(--pc-peach);
+    outline-offset: 3px;
+  }
+
+  .pc-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.375rem;
+    font-weight: 500;
+    color: var(--pc-navy);
+    text-decoration: underline;
+    text-decoration-color: var(--pc-peach);
+    text-decoration-thickness: 2px;
+    text-underline-offset: 0.25em;
+  }
+
+  .pc-link .pc-svg {
+    width: 1rem;
+    height: 1rem;
+    transition: transform 0.2s var(--ease-out-cubic);
+  }
+
+  .pc-link:hover .pc-svg {
+    transform: translateX(3px);
+  }
+
+  .pc-svg {
+    display: block;
+    flex-shrink: 0;
+  }
+
+  .pc-paw-deco {
+    position: absolute;
+    z-index: 0;
+    color: var(--pc-peach);
+    pointer-events: none;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .pc-btn,
+    .pc-link .pc-svg {
+      transition: none;
+    }
+
+    .pc-btn:hover,
+    .pc-link:hover .pc-svg {
+      transform: none;
+    }
+  }
+{% endstylesheet %}

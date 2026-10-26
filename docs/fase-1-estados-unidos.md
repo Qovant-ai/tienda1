@@ -20,7 +20,7 @@
 ## 2. Lo que te toca a ti (en este orden)
 
 1. ✅ **Moneda de la tienda → USD** (hecho).
-2. **Nombre de la tienda → Pawlet Club** y datos de la empresa (razón social de la SpA).
+2. **Nombre de la tienda → Pawlet Club** y datos de la empresa (razón social de la SpA). **Publicar el tema "Pawlet Club"**.
 3. ✅ **PayPal conectado** (hecho).
 4. **Pedir a PayPal las "transacciones de referencia"** (*reference transactions*). Sin esa aprobación,
    PayPal no permite cobros automáticos y las suscripciones no funcionan. PayPal revisa la cuenta (puede

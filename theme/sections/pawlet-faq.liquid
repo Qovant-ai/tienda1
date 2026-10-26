@@ -1,0 +1,261 @@
+{% comment %}
+  Section contract.
+  Pawlet Club FAQ accordion built on native details/summary. Each block is one
+  question with a rich-text answer; an optional link points to the full FAQ page.
+  @example
+  <!-- Theme editor: add "Pawlet FAQ" and edit the question blocks -->
+{% endcomment %}
+{% render 'pawlet-styles' %}
+{%- liquid
+  assign s = section.settings
+-%}
+<section
+  class="pc-section pc-faq"
+  style="--pc-faq-bg: {{ s.background_color }};"
+  {% if s.heading != blank %}
+    aria-labelledby="PcFaqTitle-{{ section.id }}"
+  {% endif %}
+>
+  <div class="pc-container pc-faq__grid">
+    <div class="pc-faq__intro">
+      {% if s.eyebrow != blank %}
+        <p class="pc-eyebrow">{% render 'pawlet-icon', icon: 'chat' %}{{ s.eyebrow | escape }}</p>
+      {% endif %}
+      {% if s.heading != blank %}
+        <h2 id="PcFaqTitle-{{ section.id }}" class="pc-title">{{ s.heading | escape }}</h2>
+      {% endif %}
+      {% if s.text != blank %}
+        <div class="pc-lead">{{ s.text }}</div>
+      {% endif %}
+      {% if s.link_label != blank and s.link != blank %}
+        <p class="pc-faq__more">
+          <a class="pc-link" href="{{ s.link }}">{{ s.link_label | escape }}{% render 'pawlet-icon', icon: 'arrow' %}</a>
+        </p>
+      {% endif %}
+    </div>
+
+    {% if section.blocks.size > 0 %}
+      <div class="pc-faq__list">
+        {% for block in section.blocks %}
+          <details class="pc-faq__item" {{ block.shopify_attributes }}{% if forloop.first and s.open_first %} open{% endif %}>
+            <summary class="pc-faq__question">
+              <span>{{ block.settings.question | escape }}</span>
+              <span class="pc-faq__toggle" aria-hidden="true"></span>
+            </summary>
+            <div class="pc-faq__answer">{{ block.settings.answer }}</div>
+          </details>
+        {% endfor %}
+      </div>
+    {% endif %}
+  </div>
+</section>
+
+{% stylesheet %}
+  .pc-faq {
+    background: var(--pc-faq-bg, #ffffff);
+  }
+
+  .pc-faq__grid {
+    display: grid;
+    gap: clamp(2rem, 5vw, 4rem);
+    align-items: start;
+  }
+
+  .pc-faq__intro,
+  .pc-faq__list {
+    min-width: 0;
+  }
+
+  .pc-faq__more {
+    margin: 1.5rem 0 0;
+  }
+
+  .pc-faq__list {
+    display: grid;
+    gap: 0.75rem;
+  }
+
+  .pc-faq__item {
+    border-radius: 1.25rem;
+    background: var(--pc-cream);
+    transition: background-color 0.2s ease;
+  }
+
+  .pc-faq__item[open] {
+    background: var(--pc-peach-soft);
+  }
+
+  .pc-faq__question {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+    padding: 1.25rem 1.5rem;
+    font-family: var(--font-heading--family);
+    font-size: 1.125rem;
+    font-weight: var(--font-heading--weight);
+    line-height: 1.35;
+    color: var(--pc-navy);
+    cursor: pointer;
+    list-style: none;
+  }
+
+  .pc-faq__question::-webkit-details-marker {
+    display: none;
+  }
+
+  .pc-faq__question:focus-visible {
+    outline: 3px solid var(--pc-peach);
+    outline-offset: 2px;
+    border-radius: 1.25rem;
+  }
+
+  .pc-faq__toggle {
+    position: relative;
+    flex-shrink: 0;
+    width: 2rem;
+    height: 2rem;
+    border-radius: 50%;
+    background: var(--pc-navy);
+  }
+
+  .pc-faq__toggle::before,
+  .pc-faq__toggle::after {
+    content: '';
+    position: absolute;
+    inset-block-start: 50%;
+    inset-inline-start: 50%;
+    width: 0.75rem;
+    height: 2px;
+    border-radius: 2px;
+    background: #ffffff;
+    transform: translate(-50%, -50%);
+    transition: transform 0.2s var(--ease-out-cubic);
+  }
+
+  .pc-faq__toggle::after {
+    transform: translate(-50%, -50%) rotate(90deg);
+  }
+
+  .pc-faq__item[open] .pc-faq__toggle::after {
+    transform: translate(-50%, -50%) rotate(0deg);
+  }
+
+  .pc-faq__answer {
+    padding: 0 1.5rem 1.375rem;
+    line-height: 1.6;
+    color: var(--pc-ink-soft);
+  }
+
+  .pc-faq__answer p {
+    margin: 0;
+  }
+
+  .pc-faq__answer p + p {
+    margin-block-start: 0.75em;
+  }
+
+  .pc-faq__answer a {
+    color: var(--pc-navy);
+  }
+
+  @media screen and (min-width: 990px) {
+    .pc-faq__grid {
+      grid-template-columns: minmax(0, 0.8fr) minmax(0, 1.2fr);
+    }
+
+    .pc-faq__intro {
+      position: sticky;
+      inset-block-start: 7rem;
+    }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .pc-faq__item,
+    .pc-faq__toggle::before,
+    .pc-faq__toggle::after {
+      transition: none;
+    }
+  }
+{% endstylesheet %}
+
+{% schema %}
+{
+  "name": "Pawlet FAQ",
+  "tag": "div",
+  "class": "pc-shopify-section",
+  "settings": [
+    {
+      "type": "color",
+      "id": "background_color",
+      "label": "Background",
+      "default": "#ffffff"
+    },
+    {
+      "type": "text",
+      "id": "eyebrow",
+      "label": "Eyebrow",
+      "default": "Questions"
+    },
+    {
+      "type": "text",
+      "id": "heading",
+      "label": "Heading",
+      "default": "Good questions, honest answers"
+    },
+    {
+      "type": "richtext",
+      "id": "text",
+      "label": "Text"
+    },
+    {
+      "type": "text",
+      "id": "link_label",
+      "label": "Link label",
+      "default": "See all FAQs"
+    },
+    {
+      "type": "url",
+      "id": "link",
+      "label": "Link"
+    },
+    {
+      "type": "checkbox",
+      "id": "open_first",
+      "label": "Open the first question",
+      "default": true
+    }
+  ],
+  "blocks": [
+    {
+      "type": "question",
+      "name": "Question",
+      "settings": [
+        {
+          "type": "text",
+          "id": "question",
+          "label": "Question",
+          "default": "Question"
+        },
+        {
+          "type": "richtext",
+          "id": "answer",
+          "label": "Answer",
+          "default": "<p>Answer</p>"
+        }
+      ]
+    }
+  ],
+  "max_blocks": 12,
+  "presets": [
+    {
+      "name": "Pawlet FAQ",
+      "blocks": [
+        { "type": "question" },
+        { "type": "question" },
+        { "type": "question" }
+      ]
+    }
+  ]
+}
+{% endschema %}

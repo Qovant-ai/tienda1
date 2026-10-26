@@ -1,0 +1,410 @@
+{% comment %}
+  Section contract.
+  Subscription plan cards for Pawlet Club (Club Dog, Club Cat). Each block links to a
+  product; the price comes from the product, with a text fallback while it is unpublished.
+  @example
+  <!-- Theme editor: add "Pawlet plans" and pick the Club Dog and Club Cat products -->
+{% endcomment %}
+{% render 'pawlet-styles' %}
+{%- liquid
+  assign s = section.settings
+-%}
+<section
+  class="pc-section pc-plans"
+  style="--pc-plans-bg: {{ s.background_color }};"
+  {% if s.heading != blank %}
+    aria-labelledby="PcPlansTitle-{{ section.id }}"
+  {% endif %}
+>
+  <div class="pc-container">
+    {% if s.eyebrow != blank or s.heading != blank or s.text != blank %}
+      <div class="pc-head">
+        {% if s.eyebrow != blank %}
+          <p class="pc-eyebrow">{% render 'pawlet-icon', icon: 'paw' %}{{ s.eyebrow | escape }}</p>
+        {% endif %}
+        {% if s.heading != blank %}
+          <h2 id="PcPlansTitle-{{ section.id }}" class="pc-title">{{ s.heading | escape }}</h2>
+        {% endif %}
+        {% if s.text != blank %}
+          <div class="pc-lead">{{ s.text }}</div>
+        {% endif %}
+      </div>
+    {% endif %}
+
+    <div class="pc-plans__grid">
+      {% for block in section.blocks %}
+        {%- liquid
+          assign b = block.settings
+          assign plan_product = b.product
+          assign plan_title = b.title
+          if plan_title == blank and plan_product != blank
+            assign plan_title = plan_product.title
+          endif
+          assign plan_url = b.link
+          if plan_url == blank and plan_product != blank
+            assign plan_url = plan_product.url
+          endif
+          if plan_product != blank and plan_product.price > 0
+            assign plan_price = plan_product.price | money
+          else
+            assign plan_price = b.price_fallback
+          endif
+          assign button_class = 'pc-btn--primary'
+          if b.style == 'navy'
+            assign button_class = 'pc-btn--peach'
+          endif
+          assign features = b.features | newline_to_br | split: '<br />'
+        -%}
+        <article class="pc-plan pc-plan--{{ b.style }}" {{ block.shopify_attributes }}>
+          {% render 'pawlet-icon', icon: 'paw', class: 'pc-plan__deco' %}
+
+          <div class="pc-plan__top">
+            <span class="pc-plan__icon">{% render 'pawlet-icon', icon: 'paws' %}</span>
+            {% if b.badge != blank %}
+              <span class="pc-plan__badge">{{ b.badge | escape }}</span>
+            {% endif %}
+          </div>
+
+          {% if plan_title != blank %}
+            <h3 class="pc-plan__title">{{ plan_title | escape }}</h3>
+          {% endif %}
+          {% if b.tagline != blank %}
+            <p class="pc-plan__tagline">{{ b.tagline | escape }}</p>
+          {% endif %}
+
+          {% if plan_price != blank %}
+            <p class="pc-plan__price">
+              {% if b.price_prefix != blank %}<span>{{ b.price_prefix | escape }}</span>{% endif %}
+              <strong>{{ plan_price }}</strong>
+              {% if b.price_suffix != blank %}<span>{{ b.price_suffix | escape }}</span>{% endif %}
+            </p>
+          {% endif %}
+
+          {% if b.features != blank %}
+            <ul class="pc-plan__features" role="list">
+              {% for feature in features %}
+                {%- assign feature_text = feature | strip -%}
+                {% if feature_text != blank %}
+                  <li>{% render 'pawlet-icon', icon: 'check' %}<span>{{ feature_text | escape }}</span></li>
+                {% endif %}
+              {% endfor %}
+            </ul>
+          {% endif %}
+
+          {% if b.button_label != blank and plan_url != blank %}
+            <a class="pc-btn {{ button_class }}" href="{{ plan_url }}">
+              {{ b.button_label | escape }}
+              {% render 'pawlet-icon', icon: 'arrow' %}
+            </a>
+          {% endif %}
+        </article>
+      {% endfor %}
+    </div>
+
+    {% if s.note != blank %}
+      <div class="pc-plans__note">{{ s.note }}</div>
+    {% endif %}
+  </div>
+</section>
+
+{% stylesheet %}
+  .pc-plans {
+    background: var(--pc-plans-bg, var(--pc-cream));
+  }
+
+  .pc-plans__grid {
+    display: grid;
+    gap: 1.5rem;
+    max-width: 62rem;
+    margin-inline: auto;
+  }
+
+  .pc-plan {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    min-width: 0;
+    padding: clamp(1.75rem, 3.5vw, 2.75rem);
+    overflow: hidden;
+    border-radius: 2rem;
+  }
+
+  .pc-plan > :not(.pc-plan__deco) {
+    position: relative;
+    z-index: 1;
+  }
+
+  .pc-plan--navy {
+    --pc-paw-big: var(--pc-peach);
+    --pc-paw-small: #ffffff;
+
+    background: var(--pc-navy);
+    color: #ffffff;
+  }
+
+  .pc-plan--peach {
+    --pc-paw-big: var(--pc-navy);
+    --pc-paw-small: #ffffff;
+
+    background: var(--pc-peach);
+    color: var(--pc-navy);
+  }
+
+  .pc-plan--white {
+    --pc-paw-big: var(--pc-navy);
+    --pc-paw-small: var(--pc-peach);
+
+    background: #ffffff;
+    color: var(--pc-navy);
+  }
+
+  .pc-plan__deco {
+    position: absolute;
+    z-index: 0;
+    inset-inline-end: -2.5rem;
+    inset-block-end: -2.5rem;
+    width: 12rem;
+    opacity: 0.1;
+    transform: rotate(-18deg);
+  }
+
+  .pc-plan__top {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 1rem;
+  }
+
+  .pc-plan__icon {
+    display: block;
+    width: 3.75rem;
+    height: 3.75rem;
+  }
+
+  .pc-plan__badge {
+    padding: 0.4rem 0.875rem;
+    border-radius: 999px;
+    background: #ffffff;
+    color: var(--pc-navy);
+    font-size: 0.75rem;
+    font-weight: 600;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+  }
+
+  .pc-plan--white .pc-plan__badge {
+    background: var(--pc-cream);
+  }
+
+  .pc-plan__title {
+    margin: 0;
+    font-family: var(--font-heading--family);
+    font-size: clamp(1.875rem, 3.2vw, 2.375rem);
+    font-weight: var(--font-heading--weight);
+    line-height: 1.1;
+    letter-spacing: -0.02em;
+  }
+
+  .pc-plan__tagline {
+    margin: 0;
+    font-size: 1.0625rem;
+    line-height: 1.5;
+  }
+
+  .pc-plan__price {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: baseline;
+    gap: 0.375rem;
+    margin: 0.25rem 0 0;
+  }
+
+  .pc-plan__price strong {
+    font-family: var(--font-heading--family);
+    font-size: 2.75rem;
+    font-weight: var(--font-heading--weight);
+    line-height: 1;
+    letter-spacing: -0.02em;
+  }
+
+  .pc-plan__features {
+    display: grid;
+    gap: 0.625rem;
+    margin: 0.5rem 0 1.25rem;
+    padding: 0;
+    list-style: none;
+  }
+
+  .pc-plan__features li {
+    display: flex;
+    align-items: flex-start;
+    gap: 0.625rem;
+    line-height: 1.45;
+  }
+
+  .pc-plan__features .pc-svg {
+    width: 1.25rem;
+    height: 1.25rem;
+    margin-block-start: 0.1rem;
+  }
+
+  .pc-plan--navy .pc-plan__features .pc-svg {
+    color: var(--pc-peach);
+  }
+
+  .pc-plan .pc-btn {
+    align-self: flex-start;
+    margin-block-start: auto;
+  }
+
+  .pc-plans__note {
+    max-width: 40rem;
+    margin: 2.5rem auto 0;
+    text-align: center;
+    color: var(--pc-ink-soft);
+  }
+
+  .pc-plans__note p {
+    margin: 0;
+  }
+
+  .pc-plans__note a {
+    color: var(--pc-navy);
+    font-weight: 500;
+    text-decoration-color: var(--pc-peach);
+    text-decoration-thickness: 2px;
+    text-underline-offset: 0.25em;
+  }
+
+  @media screen and (min-width: 750px) {
+    .pc-plans__grid {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+  }
+{% endstylesheet %}
+
+{% schema %}
+{
+  "name": "Pawlet plans",
+  "tag": "div",
+  "class": "pc-shopify-section",
+  "settings": [
+    {
+      "type": "color",
+      "id": "background_color",
+      "label": "Background",
+      "default": "#fff3ea"
+    },
+    {
+      "type": "text",
+      "id": "eyebrow",
+      "label": "Eyebrow",
+      "default": "Choose your Club"
+    },
+    {
+      "type": "text",
+      "id": "heading",
+      "label": "Heading",
+      "default": "One box, made for your pet"
+    },
+    {
+      "type": "richtext",
+      "id": "text",
+      "label": "Text",
+      "default": "<p>5 to 6 goodies every month, picked for your pet's profile. Free shipping and no commitment.</p>"
+    },
+    {
+      "type": "richtext",
+      "id": "note",
+      "label": "Note below the plans"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "plan",
+      "name": "Plan",
+      "settings": [
+        {
+          "type": "product",
+          "id": "product",
+          "label": "Product"
+        },
+        {
+          "type": "text",
+          "id": "title",
+          "label": "Title",
+          "info": "Leave empty to use the product title."
+        },
+        {
+          "type": "text",
+          "id": "tagline",
+          "label": "Tagline"
+        },
+        {
+          "type": "text",
+          "id": "badge",
+          "label": "Badge"
+        },
+        {
+          "type": "text",
+          "id": "price_prefix",
+          "label": "Text before price",
+          "default": "From"
+        },
+        {
+          "type": "text",
+          "id": "price_fallback",
+          "label": "Price shown when the product isn't available",
+          "default": "$39.99"
+        },
+        {
+          "type": "text",
+          "id": "price_suffix",
+          "label": "Text after price",
+          "default": "/ month"
+        },
+        {
+          "type": "textarea",
+          "id": "features",
+          "label": "Features",
+          "info": "One per line."
+        },
+        {
+          "type": "text",
+          "id": "button_label",
+          "label": "Button label",
+          "default": "Join the Club"
+        },
+        {
+          "type": "url",
+          "id": "link",
+          "label": "Button link",
+          "info": "Leave empty to link to the product."
+        },
+        {
+          "type": "select",
+          "id": "style",
+          "label": "Card style",
+          "options": [
+            { "value": "navy", "label": "Navy" },
+            { "value": "peach", "label": "Peach" },
+            { "value": "white", "label": "White" }
+          ],
+          "default": "navy"
+        }
+      ]
+    }
+  ],
+  "max_blocks": 3,
+  "presets": [
+    {
+      "name": "Pawlet plans",
+      "blocks": [
+        { "type": "plan", "settings": { "title": "Club Dog", "style": "navy", "price_fallback": "$39.99" } },
+        { "type": "plan", "settings": { "title": "Club Cat", "style": "peach", "price_fallback": "$32.99" } }
+      ]
+    }
+  ]
+}
+{% endschema %}

@@ -1,11 +1,13 @@
-# tienda1 — Club mensual para perros y gatos
+# tienda1 — Pawlet Club, club mensual para perros y gatos
 
 Repositorio de trabajo de la tienda online: plan, decisiones y registro de cada cambio hecho en
 Shopify y AutoDS.
 
 | | |
 |---|---|
+| Marca | **Pawlet Club** · logo, paleta y tipografía en [`brand/`](brand/README.md) |
 | Tienda | `mcgsp1-yj.myshopify.com` · una sola tienda · SpA chilena |
+| Tema | "Pawlet Club" (copia de Helio, **sin publicar**): ver [`theme/`](theme/README.md) |
 | Cobro | PayPal (USD) |
 | Secuencia | 🇺🇸 EE. UU. (lanzamiento ene 2027) → 🇲🇽 México → 🇨🇱 Chile |
 | Idiomas | Inglés (principal) + español |
@@ -15,6 +17,8 @@ Shopify y AutoDS.
 ## Documentos
 
 - [`PLAN.md`](PLAN.md): plan maestro.
+- [`brand/README.md`](brand/README.md): guía de marca y archivos del logo.
+- [`theme/README.md`](theme/README.md): cambios del tema y de la página de inicio.
 - [`docs/fase-1-estados-unidos.md`](docs/fase-1-estados-unidos.md): **fase actual**, con el paso a paso, comisiones y la opción de Miami.
 - [`docs/politicas-usa/`](docs/politicas-usa/): Terms, Subscription, Refund y Shipping (para pegar en Shopify).
 - [`docs/politicas-chile/`](docs/politicas-chile/): políticas para la fase 3.

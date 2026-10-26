@@ -1,0 +1,262 @@
+{% comment %}
+  Section contract.
+  Full-width promotional band for Pawlet Club (used for "Gift the Club"): photo on one
+  side, eyebrow, heading, text and a button on a navy background.
+  @example
+  <!-- Theme editor: add "Pawlet promo band", pick a photo and a link -->
+{% endcomment %}
+{% render 'pawlet-styles' %}
+{%- liquid
+  assign s = section.settings
+-%}
+<section
+  class="pc-section pc-band{% if s.image_position == 'right' %} pc-band--reverse{% endif %}"
+  style="--pc-band-bg: {{ s.background_color }};"
+  {% if s.heading != blank %}
+    aria-labelledby="PcBandTitle-{{ section.id }}"
+  {% endif %}
+>
+  {% render 'pawlet-icon', icon: 'paw', class: 'pc-paw-deco pc-band__deco' %}
+  <div class="pc-container pc-band__grid">
+    <div class="pc-band__media">
+      {% if s.image != blank %}
+        {{
+          s.image
+          | image_url: width: 1200
+          | image_tag:
+            widths: '480, 720, 960, 1200',
+            sizes: '(min-width: 990px) 30rem, 92vw',
+            loading: 'lazy',
+            class: 'pc-band__img'
+        }}
+      {% else %}
+        {{ 'lifestyle-2' | placeholder_svg_tag: 'pc-band__img pc-band__placeholder' }}
+      {% endif %}
+      <span class="pc-band__sticker">{% render 'pawlet-icon', icon: 'gift' %}</span>
+    </div>
+
+    <div class="pc-band__copy">
+      {% if s.eyebrow != blank %}
+        <p class="pc-eyebrow pc-band__eyebrow">{% render 'pawlet-icon', icon: 'paw' %}{{ s.eyebrow | escape }}</p>
+      {% endif %}
+      {% if s.heading != blank %}
+        <h2 id="PcBandTitle-{{ section.id }}" class="pc-title pc-band__title">{{ s.heading | escape }}</h2>
+      {% endif %}
+      {% if s.text != blank %}
+        <div class="pc-lead pc-band__text">{{ s.text }}</div>
+      {% endif %}
+      {%- capture band_points -%}
+        {%- for i in (1..3) -%}
+          {%- assign point_key = 'point_' | append: i -%}
+          {%- assign point = s[point_key] -%}
+          {%- if point != blank -%}
+            <li>{% render 'pawlet-icon', icon: 'check' %}<span>{{ point | escape }}</span></li>
+          {%- endif -%}
+        {%- endfor -%}
+      {%- endcapture -%}
+      {% if band_points != blank %}
+        <ul class="pc-band__points" role="list">{{ band_points }}</ul>
+      {% endif %}
+      {% if s.button_label != blank and s.button_link != blank %}
+        <div class="pc-actions">
+          <a class="pc-btn pc-btn--peach" href="{{ s.button_link }}">
+            {{ s.button_label | escape }}
+            {% render 'pawlet-icon', icon: 'arrow' %}
+          </a>
+        </div>
+      {% endif %}
+    </div>
+  </div>
+</section>
+
+{% stylesheet %}
+  .pc-band {
+    background: var(--pc-band-bg, var(--pc-navy));
+    color: #ffffff;
+  }
+
+  .pc-band__grid {
+    display: grid;
+    gap: clamp(2.5rem, 6vw, 5rem);
+    align-items: center;
+  }
+
+  .pc-band__media {
+    position: relative;
+    justify-self: center;
+    width: min(100%, 30rem);
+  }
+
+  .pc-band__img {
+    display: block;
+    width: 100%;
+    aspect-ratio: 4 / 5;
+    object-fit: cover;
+    border-radius: 2rem 2rem 14rem 14rem;
+  }
+
+  .pc-band__placeholder {
+    background: rgb(255 255 255 / 0.08);
+    fill: rgb(255 255 255 / 0.4);
+  }
+
+  .pc-band__sticker {
+    position: absolute;
+    inset-block-start: 1.5rem;
+    inset-inline-end: -1rem;
+    display: grid;
+    place-items: center;
+    width: 5.5rem;
+    height: 5.5rem;
+    border-radius: 50%;
+    background: var(--pc-peach);
+    color: var(--pc-navy);
+    transform: rotate(10deg);
+    box-shadow: 0 12px 28px rgb(0 0 0 / 0.25);
+  }
+
+  .pc-band__sticker .pc-svg {
+    width: 2.25rem;
+    height: 2.25rem;
+  }
+
+  .pc-band__copy {
+    position: relative;
+    z-index: 1;
+    min-width: 0;
+  }
+
+  .pc-band .pc-eyebrow,
+  .pc-band .pc-title,
+  .pc-band .pc-lead {
+    color: #ffffff;
+  }
+
+  .pc-band__text {
+    margin-block-end: 1.5rem;
+  }
+
+  .pc-band__points {
+    display: grid;
+    gap: 0.75rem;
+    margin: 0 0 2rem;
+    padding: 0;
+    list-style: none;
+  }
+
+  .pc-band__points li {
+    display: flex;
+    align-items: flex-start;
+    gap: 0.625rem;
+    line-height: 1.45;
+  }
+
+  .pc-band__points .pc-svg {
+    width: 1.25rem;
+    height: 1.25rem;
+    margin-block-start: 0.1rem;
+    color: var(--pc-peach);
+  }
+
+  .pc-band__deco {
+    inset-block-end: -3rem;
+    inset-inline-end: -2rem;
+    width: 16rem;
+    opacity: 0.08;
+    color: #ffffff;
+    transform: rotate(-16deg);
+  }
+
+  @media screen and (min-width: 990px) {
+    .pc-band__grid {
+      grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.1fr);
+    }
+
+    .pc-band--reverse .pc-band__media {
+      order: 2;
+    }
+  }
+{% endstylesheet %}
+
+{% schema %}
+{
+  "name": "Pawlet promo band",
+  "tag": "div",
+  "class": "pc-shopify-section",
+  "settings": [
+    {
+      "type": "color",
+      "id": "background_color",
+      "label": "Background",
+      "default": "#1b2b48"
+    },
+    {
+      "type": "image_picker",
+      "id": "image",
+      "label": "Image"
+    },
+    {
+      "type": "select",
+      "id": "image_position",
+      "label": "Image position",
+      "options": [
+        { "value": "left", "label": "Left" },
+        { "value": "right", "label": "Right" }
+      ],
+      "default": "left"
+    },
+    {
+      "type": "text",
+      "id": "eyebrow",
+      "label": "Eyebrow",
+      "default": "Gift the Club"
+    },
+    {
+      "type": "text",
+      "id": "heading",
+      "label": "Heading",
+      "default": "The gift that wags (and purrs) for months"
+    },
+    {
+      "type": "richtext",
+      "id": "text",
+      "label": "Text",
+      "default": "<p>Give a dog or cat lover 1, 3 or 6 months of happy boxes with a single payment.</p>"
+    },
+    {
+      "type": "text",
+      "id": "point_1",
+      "label": "Point 1",
+      "default": "No automatic renewal"
+    },
+    {
+      "type": "text",
+      "id": "point_2",
+      "label": "Point 2",
+      "default": "Ship straight to them, with a gift message"
+    },
+    {
+      "type": "text",
+      "id": "point_3",
+      "label": "Point 3",
+      "default": "Save up to 10% on 6 months"
+    },
+    {
+      "type": "text",
+      "id": "button_label",
+      "label": "Button label",
+      "default": "Give the Club"
+    },
+    {
+      "type": "url",
+      "id": "button_link",
+      "label": "Button link"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Pawlet promo band"
+    }
+  ]
+}
+{% endschema %}

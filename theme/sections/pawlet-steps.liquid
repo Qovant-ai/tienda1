@@ -1,0 +1,250 @@
+{% comment %}
+  Section contract.
+  "How it works" steps for the Pawlet Club subscription. Each block is one numbered step
+  with an icon, a title and a short description.
+  @example
+  <!-- Theme editor: add "Pawlet steps" and edit or reorder the step blocks -->
+{% endcomment %}
+{% render 'pawlet-styles' %}
+{%- liquid
+  assign s = section.settings
+  assign columns = section.blocks.size
+  if columns > 4
+    assign columns = 4
+  elsif columns < 1
+    assign columns = 1
+  endif
+-%}
+<section
+  class="pc-section pc-steps"
+  style="--pc-steps-bg: {{ s.background_color }}; --pc-steps-card: {{ s.card_color }}; --pc-steps-columns: {{ columns }};"
+  {% if s.heading != blank %}
+    aria-labelledby="PcStepsTitle-{{ section.id }}"
+  {% endif %}
+>
+  <div class="pc-container">
+    {% if s.eyebrow != blank or s.heading != blank or s.text != blank %}
+      <div class="pc-head">
+        {% if s.eyebrow != blank %}
+          <p class="pc-eyebrow">{% render 'pawlet-icon', icon: 'paw' %}{{ s.eyebrow | escape }}</p>
+        {% endif %}
+        {% if s.heading != blank %}
+          <h2 id="PcStepsTitle-{{ section.id }}" class="pc-title">{{ s.heading | escape }}</h2>
+        {% endif %}
+        {% if s.text != blank %}
+          <div class="pc-lead">{{ s.text }}</div>
+        {% endif %}
+      </div>
+    {% endif %}
+
+    {% if section.blocks.size > 0 %}
+      <ol class="pc-steps__list" role="list">
+        {% for block in section.blocks %}
+          <li class="pc-steps__item" {{ block.shopify_attributes }}>
+            <div class="pc-steps__icon">
+              {% render 'pawlet-icon', icon: block.settings.icon %}
+              <span class="pc-steps__num" aria-hidden="true">{{ forloop.index }}</span>
+            </div>
+            {% if block.settings.title != blank %}
+              <h3 class="pc-steps__title">{{ block.settings.title | escape }}</h3>
+            {% endif %}
+            {% if block.settings.text != blank %}
+              <p class="pc-steps__text">{{ block.settings.text | escape }}</p>
+            {% endif %}
+          </li>
+        {% endfor %}
+      </ol>
+    {% endif %}
+
+    {% if s.link_label != blank and s.link != blank %}
+      <p class="pc-steps__more">
+        <a class="pc-link" href="{{ s.link }}">{{ s.link_label | escape }}{% render 'pawlet-icon', icon: 'arrow' %}</a>
+      </p>
+    {% endif %}
+  </div>
+</section>
+
+{% stylesheet %}
+  .pc-steps {
+    background: var(--pc-steps-bg, #ffffff);
+  }
+
+  .pc-steps__list {
+    display: grid;
+    gap: 1.25rem;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+  }
+
+  .pc-steps__item {
+    position: relative;
+    min-width: 0;
+    padding: 2rem 1.5rem 1.75rem;
+    border-radius: 1.5rem;
+    background: var(--pc-steps-card, var(--pc-cream));
+  }
+
+  .pc-steps__icon {
+    position: relative;
+    display: grid;
+    place-items: center;
+    width: 3.5rem;
+    height: 3.5rem;
+    margin-block-end: 1.25rem;
+    border-radius: 1.125rem;
+    background: var(--pc-navy);
+    color: #ffffff;
+  }
+
+  .pc-steps__icon .pc-svg {
+    width: 1.625rem;
+    height: 1.625rem;
+  }
+
+  .pc-steps__num {
+    position: absolute;
+    inset-block-start: -0.5rem;
+    inset-inline-end: -0.5rem;
+    display: grid;
+    place-items: center;
+    width: 1.625rem;
+    height: 1.625rem;
+    border-radius: 50%;
+    background: var(--pc-peach);
+    color: var(--pc-navy);
+    font-size: 0.8125rem;
+    font-weight: 600;
+  }
+
+  .pc-steps__title {
+    margin: 0 0 0.5rem;
+    font-family: var(--font-heading--family);
+    font-size: 1.25rem;
+    font-weight: var(--font-heading--weight);
+    line-height: 1.25;
+    color: var(--pc-navy);
+  }
+
+  .pc-steps__text {
+    margin: 0;
+    line-height: 1.55;
+    color: var(--pc-ink-soft);
+  }
+
+  .pc-steps__more {
+    margin: 2.5rem 0 0;
+    text-align: center;
+  }
+
+  @media screen and (min-width: 750px) {
+    .pc-steps__list {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+  }
+
+  @media screen and (min-width: 990px) {
+    .pc-steps__list {
+      grid-template-columns: repeat(var(--pc-steps-columns, 4), minmax(0, 1fr));
+    }
+  }
+{% endstylesheet %}
+
+{% schema %}
+{
+  "name": "Pawlet steps",
+  "tag": "div",
+  "class": "pc-shopify-section",
+  "settings": [
+    {
+      "type": "color",
+      "id": "background_color",
+      "label": "Background",
+      "default": "#ffffff"
+    },
+    {
+      "type": "color",
+      "id": "card_color",
+      "label": "Card background",
+      "default": "#fff3ea"
+    },
+    {
+      "type": "text",
+      "id": "eyebrow",
+      "label": "Eyebrow",
+      "default": "How it works"
+    },
+    {
+      "type": "text",
+      "id": "heading",
+      "label": "Heading",
+      "default": "Four easy steps to a happier pet"
+    },
+    {
+      "type": "richtext",
+      "id": "text",
+      "label": "Text"
+    },
+    {
+      "type": "text",
+      "id": "link_label",
+      "label": "Link label",
+      "default": "See how the Club works"
+    },
+    {
+      "type": "url",
+      "id": "link",
+      "label": "Link"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "step",
+      "name": "Step",
+      "settings": [
+        {
+          "type": "select",
+          "id": "icon",
+          "label": "Icon",
+          "options": [
+            { "value": "paw", "label": "Paw" },
+            { "value": "box", "label": "Box" },
+            { "value": "truck", "label": "Truck" },
+            { "value": "pause", "label": "Pause" },
+            { "value": "heart", "label": "Heart" },
+            { "value": "gift", "label": "Gift" },
+            { "value": "chat", "label": "Chat" },
+            { "value": "star", "label": "Star" },
+            { "value": "sparkle", "label": "Sparkle" }
+          ],
+          "default": "paw"
+        },
+        {
+          "type": "text",
+          "id": "title",
+          "label": "Title",
+          "default": "Step title"
+        },
+        {
+          "type": "textarea",
+          "id": "text",
+          "label": "Text",
+          "default": "Describe this step in one or two sentences."
+        }
+      ]
+    }
+  ],
+  "max_blocks": 6,
+  "presets": [
+    {
+      "name": "Pawlet steps",
+      "blocks": [
+        { "type": "step", "settings": { "icon": "paw", "title": "Tell us about your pet" } },
+        { "type": "step", "settings": { "icon": "box", "title": "We build their box" } },
+        { "type": "step", "settings": { "icon": "truck", "title": "Delivered every month" } },
+        { "type": "step", "settings": { "icon": "pause", "title": "You stay in control" } }
+      ]
+    }
+  ]
+}
+{% endschema %}
