@@ -1,0 +1,127 @@
+{% comment %}
+  Section contract.
+  Slim bar for visitors browsing from a country the store doesn't sell to. Shopify
+  shows every product as "Unavailable" to them, so the bar explains that orders ship
+  to the US and switches the store to the US with one click. Hidden for US visitors.
+  @example
+  <!-- Theme editor: header group → add "Pawlet ship-to notice" -->
+{% endcomment %}
+{%- liquid
+  assign s = section.settings
+  assign target = s.country_code | strip | upcase | default: 'US'
+  assign target_available = false
+  for country in localization.available_countries
+    if country.iso_code == target
+      assign target_available = true
+    endif
+  endfor
+  assign show_bar = false
+  if target_available and localization.country.iso_code != target
+    assign show_bar = true
+  endif
+  if request.design_mode and target_available
+    assign show_bar = true
+  endif
+  assign is_es = false
+  if request.locale.iso_code contains 'es'
+    assign is_es = true
+  endif
+-%}
+{% if show_bar %}
+  <div class="pc-ship-bar">
+    {% form 'localization', class: 'pc-ship-bar__form' %}
+      <input type="hidden" name="country_code" value="{{ target }}">
+      <p class="pc-ship-bar__text">
+        {%- if is_es -%}{{ s.text_es | escape }}{%- else -%}{{ s.text | escape }}{%- endif -%}
+      </p>
+      <button type="submit" class="pc-ship-bar__btn">
+        {%- if is_es -%}{{ s.button_es | escape }}{%- else -%}{{ s.button | escape }}{%- endif -%}
+      </button>
+    {% endform %}
+  </div>
+{% endif %}
+
+{% stylesheet %}
+  .pc-ship-bar {
+    background: #1b2b48;
+    color: #ffffff;
+  }
+
+  .pc-ship-bar__form {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem 1rem;
+    max-width: 75rem;
+    margin: 0 auto;
+    padding: 0.625rem 1rem;
+    font-size: 0.875rem;
+    line-height: 1.4;
+    text-align: center;
+  }
+
+  .pc-ship-bar__text {
+    margin: 0;
+  }
+
+  .pc-ship-bar__btn {
+    padding: 0.4rem 0.9rem;
+    border: 0;
+    border-radius: 999px;
+    background: #ff9f6e;
+    color: #1b2b48;
+    font: inherit;
+    font-weight: 600;
+    cursor: pointer;
+  }
+
+  .pc-ship-bar__btn:focus-visible {
+    outline: 2px solid #ffffff;
+    outline-offset: 2px;
+  }
+{% endstylesheet %}
+
+{% schema %}
+{
+  "name": "Pawlet ship-to notice",
+  "tag": "div",
+  "settings": [
+    {
+      "type": "text",
+      "id": "country_code",
+      "label": "Country we ship to (ISO code)",
+      "default": "US"
+    },
+    {
+      "type": "text",
+      "id": "text",
+      "label": "Text",
+      "default": "We ship to US addresses only. Shopping from another country? Switch to US delivery to buy."
+    },
+    {
+      "type": "text",
+      "id": "button",
+      "label": "Button",
+      "default": "Shop with US delivery"
+    },
+    {
+      "type": "text",
+      "id": "text_es",
+      "label": "Text (Spanish)",
+      "default": "Enviamos solo a direcciones en EE. UU. ¿Compras desde otro país? Cambia a envío a EE. UU. para comprar."
+    },
+    {
+      "type": "text",
+      "id": "button_es",
+      "label": "Button (Spanish)",
+      "default": "Comprar con envío a EE. UU."
+    }
+  ],
+  "presets": [
+    {
+      "name": "Pawlet ship-to notice"
+    }
+  ]
+}
+{% endschema %}

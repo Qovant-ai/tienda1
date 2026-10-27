@@ -77,11 +77,13 @@
           "settings": {
             "collection": "shop-for-dogs",
             "title": "Shop for Dogs",
-            "text": "Leashes, harnesses, beds and grooming",
+            "text": "Harnesses, leashes, cozy beds and grooming",
             "image": "",
             "link": "",
             "size": "large",
-            "button_label": "Shop dogs"
+            "button_label": "Shop dogs",
+            "style": "studio",
+            "card_color": "#dcebf7"
           }
         },
         "cat_cats": {
@@ -89,11 +91,13 @@
           "settings": {
             "collection": "shop-for-cats",
             "title": "Shop for Cats",
-            "text": "Scratchers, tunnels and cozy beds",
+            "text": "Tunnels, scratchers, play boxes and beds",
             "image": "",
             "link": "",
             "size": "large",
-            "button_label": "Shop cats"
+            "button_label": "Shop cats",
+            "style": "studio",
+            "card_color": "#ffe7d6"
           }
         },
         "cat_walk": {
@@ -105,7 +109,8 @@
             "image": "",
             "link": "",
             "size": "small",
-            "button_label": ""
+            "button_label": "",
+            "card_color": "#ddf1e6"
           }
         },
         "cat_play": {
@@ -117,7 +122,8 @@
             "image": "",
             "link": "",
             "size": "small",
-            "button_label": ""
+            "button_label": "",
+            "card_color": "#fff1c7"
           }
         },
         "cat_rest": {
@@ -129,7 +135,8 @@
             "image": "",
             "link": "",
             "size": "small",
-            "button_label": ""
+            "button_label": "",
+            "card_color": "#fde4e1"
           }
         },
         "cat_all": {
@@ -141,7 +148,8 @@
             "image": "",
             "link": "",
             "size": "small",
-            "button_label": ""
+            "button_label": "",
+            "card_color": "#1b2b48"
           }
         }
       },
@@ -343,7 +351,7 @@
       "type": "pawlet-gift",
       "settings": {
         "background_color": "#1b2b48",
-        "image": "shopify://shop_images/photo-1686419682443-5050ca21098d.jpg",
+        "image": "shopify://shop_images/pawlet-why.jpg",
         "image_position": "left",
         "eyebrow": "Why Pawlet Club",
         "heading": "Picked by pet people, for pet people",

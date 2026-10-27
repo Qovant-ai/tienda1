@@ -2,6 +2,52 @@
 
 Registro de todos los cambios en la tienda (Shopify, AutoDS y configuración). El más reciente va primero.
 
+## 2026-10-27 (12) — Lista para vender: envíos, páginas legales, imágenes nuevas y tema v4
+
+El dueño publicó el tema v3. Pedidos:
+- "Esas fotos no se ven bien, están cortadas y además son feas" (tarjetas de categoría y franja "Why").
+- "No hay nada disponible, asegúrate que todo queda 100% conectado y listo para vender."
+
+### Por qué decía "Unavailable"
+El único mercado activo es **Estados Unidos**. A quien entra desde otro país (el dueño, desde Chile) Shopify le
+muestra todo como "Unavailable"; en EE. UU. los productos están disponibles (stock 10 por variante en la
+ubicación de AutoDS; el Club no controla inventario). Arreglo: barra `pawlet-ship-notice` en el tema v4 que
+cambia la tienda a EE. UU. con un clic (ver `theme/README.md`).
+
+### Envíos
+- Los 44 artículos dropshipping estaban en el perfil **"AutoDS Free Shipping"** (envío gratis a todo el
+  mundo, en MXN). Se movieron al **perfil general** y se agregó la ubicación de AutoDS a su grupo: ahora todo
+  el carrito usa la misma regla (gratis desde $30, $5.99 si es menos, solo 48 estados + DC). El perfil de AutoDS
+  quedó vacío; si AutoDS importa productos nuevos ahí, hay que moverlos.
+
+### Páginas legales
+- Refund Policy, Shipping Policy, Terms of Service y Club Terms (inglés y español): se quitaron
+  `[SUPPORT EMAIL]`, `[COMPANY LEGAL NAME]` y `[ADDRESS]`. Contacto por el formulario de `/pages/contact`
+  y "Santiago, Chile".
+- Las **políticas de la tienda** (las que enlaza el checkout) no se pueden escribir por API (falta el permiso
+  `write_legal_policies`). Textos listos para pegar en `docs/politicas-usa/` (enlaces absolutos).
+
+### Imágenes (ver [`brand/scene-images/README.md`](brand/scene-images/README.md))
+- 17 imágenes nuevas, todas con mascotas y productos reales recortados sobre los colores de la marca.
+- Colecciones (ya visibles en la tienda): Shop for Dogs, Shop for Cats, Walk, Play & Scratch,
+  Sleep & Groom, Shop All, The Club y Gift the Club.
+- Club Dog, Club Cat, Gift the Club Dog y Gift the Club Cat: foto principal con la caja del Club, infografía
+  "qué trae cada caja" y, en el Club, los planes 1/3/6 meses. Se borraron las 4 fotos de stock anteriores.
+- Herramientas: `brand/tools/compose_scenes.py`, `render_scenes.js`, `make_club_box.py`.
+
+### Tema "Pawlet Club v4" (`189374595134`, sin publicar)
+- Tarjetas de categoría con el color de su imagen; las grandes en estilo "studio" (texto a la izquierda, sin
+  degradado; en celular y tablet la imagen va arriba).
+- "Why Pawlet Club": imagen nueva y los 3 puntos visibles (antes salían azul sobre azul).
+- Barra de envío a EE. UU. para visitantes de otros países.
+
+### AutoDS (revisado)
+- Tienda conectada, 8 productos activos, 44 variantes con stock, proveedores AutoDS Marketplace y CJ.
+- **Riesgo:** AutoDS tiene la tienda en **MXN** y guarda precios viejos de la cama ($395–$645). Si cambia el
+  precio del proveedor, AutoDS podría subir esos valores a Shopify. Cambiar la moneda de la tienda en AutoDS a
+  USD y revisar las reglas de precio.
+- La prueba de AutoDS (plan + Fulfilled by AutoDS) vence el **29-oct-2026**.
+
 ## 2026-10-27 (11) — El Club abre ahora, como plan prepagado
 
 Pedido del dueño: "¿por qué dice que se lanza en enero 2027? Quiero que esté todo listo para empezar ahora".

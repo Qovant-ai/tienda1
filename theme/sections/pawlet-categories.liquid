@@ -3,6 +3,9 @@
   Pawlet Club category cards. Large cards show a photo with the title on top; small
   cards show the photo above the title and product count. Each card links to a
   collection and uses its image unless a custom image is picked.
+  Cards can take a color that matches their image. Large "studio" cards suit images
+  with the subject on the right and a plain background: the copy sits on the left
+  without a gradient, and on phones and tablets the image moves above the copy.
   @example
   <!-- Theme editor: add "Pawlet categories" and pick a collection per card -->
 {% endcomment %}
@@ -54,8 +57,27 @@
           else
             assign image_sizes = '(min-width: 990px) 18rem, 46vw'
           endif
+          assign card_classes = 'pc-cat pc-cat--' | append: b.size
+          if cat_image == blank
+            assign card_classes = card_classes | append: ' pc-cat--solid'
+          endif
+          if b.size == 'large' and b.style == 'studio'
+            assign card_classes = card_classes | append: ' pc-cat--studio'
+          endif
+          if b.card_color != blank and b.card_color.alpha > 0
+            assign card_classes = card_classes | append: ' pc-cat--tinted'
+            if b.card_color.lightness < 45
+              assign card_classes = card_classes | append: ' pc-cat--dark'
+            endif
+          endif
         -%}
-        <li class="pc-cat pc-cat--{{ b.size }}{% if cat_image == blank %} pc-cat--solid{% endif %}" {{ block.shopify_attributes }}>
+        <li
+          class="{{ card_classes }}"
+          {% if b.card_color != blank and b.card_color.alpha > 0 %}
+            style="--pc-cat-card: {{ b.card_color }};"
+          {% endif %}
+          {{ block.shopify_attributes }}
+        >
           <a class="pc-cat__link" href="{{ cat_url | default: routes.all_products_collection_url }}">
             <span class="pc-cat__media">
               {% if cat_image != blank %}
@@ -297,6 +319,73 @@
     content: none;
   }
 
+  /* Tinted cards: the card takes the color of its image background. */
+  .pc-cat--tinted .pc-cat__link,
+  .pc-cat--tinted .pc-cat__media {
+    background: var(--pc-cat-card);
+  }
+
+  .pc-cat--dark .pc-cat__link {
+    color: #ffffff;
+  }
+
+  .pc-cat--dark .pc-cat__text {
+    color: rgb(255 255 255 / 0.8);
+  }
+
+  .pc-cat--dark .pc-cat__arrow {
+    background: var(--pc-peach);
+    color: var(--pc-navy);
+  }
+
+  /* Studio cards: subject on the right of the image, copy on the left, no gradient. */
+  .pc-cat--studio .pc-cat__media::after {
+    content: none;
+  }
+
+  .pc-cat--studio .pc-cat__img {
+    object-position: right bottom;
+  }
+
+  .pc-cat--studio .pc-cat__link {
+    justify-content: center;
+    color: var(--pc-navy);
+  }
+
+  .pc-cat--studio .pc-cat__body {
+    max-width: min(22rem, 46%);
+  }
+
+  .pc-cat--studio .pc-cat__text {
+    color: var(--pc-ink-soft);
+  }
+
+  .pc-cat--studio.pc-cat--dark .pc-cat__link {
+    color: #ffffff;
+  }
+
+  .pc-cat--studio.pc-cat--dark .pc-cat__text {
+    color: rgb(255 255 255 / 0.85);
+  }
+
+  @media screen and (max-width: 989px) {
+    .pc-cat--studio .pc-cat__link {
+      justify-content: flex-start;
+      min-height: 0;
+    }
+
+    .pc-cat--studio .pc-cat__media {
+      position: relative;
+      inset: auto;
+      aspect-ratio: 4 / 3;
+    }
+
+    .pc-cat--studio .pc-cat__body {
+      max-width: none;
+      padding-block-start: 0.5rem;
+    }
+  }
+
   @media screen and (min-width: 990px) {
     .pc-cats__grid {
       grid-template-columns: repeat(12, minmax(0, 1fr));
@@ -415,6 +504,22 @@
             { "value": "small", "label": "Small (4 per row)" }
           ],
           "default": "small"
+        },
+        {
+          "type": "select",
+          "id": "style",
+          "label": "Large card style",
+          "options": [
+            { "value": "photo", "label": "Photo with text on a gradient" },
+            { "value": "studio", "label": "Studio: text on the left, subject on the right" }
+          ],
+          "default": "photo"
+        },
+        {
+          "type": "color",
+          "id": "card_color",
+          "label": "Card color",
+          "info": "Use the background color of the image. Dark colors switch the text to white."
         },
         {
           "type": "text",

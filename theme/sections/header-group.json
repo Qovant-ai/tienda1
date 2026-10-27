@@ -2,6 +2,16 @@
   "type": "header",
   "name": "t:names.header",
   "sections": {
+    "ship_notice": {
+      "type": "pawlet-ship-notice",
+      "settings": {
+        "country_code": "US",
+        "text": "We ship to US addresses only. Shopping from another country? Switch to US delivery to buy.",
+        "button": "Shop with US delivery",
+        "text_es": "Enviamos solo a direcciones en EE. UU. ¿Compras desde otro país? Cambia a envío a EE. UU. para comprar.",
+        "button_es": "Comprar con envío a EE. UU."
+      }
+    },
     "header_section": {
       "type": "header",
       "blocks": {
@@ -72,6 +82,7 @@
     }
   },
   "order": [
+    "ship_notice",
     "header_section"
   ]
 }
