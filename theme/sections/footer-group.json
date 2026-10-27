@@ -35,7 +35,7 @@
           "type": "text",
           "name": "t:names.text",
           "settings": {
-            "text": "<p>Launch news, first-box offers and a sneak peek at each month's theme. No spam, unsubscribe anytime.</p>",
+            "text": "<p>New arrivals, member offers and a sneak peek at each month's Club box. No spam, unsubscribe anytime.</p>",
             "width": "fit-content",
             "max_width": "normal",
             "alignment": "center",
@@ -133,7 +133,7 @@
           "type": "text",
           "name": "t:names.text",
           "settings": {
-            "text": "<p><strong>Pawlet Club</strong></p><p>Monthly boxes of toys, treats and care for dogs and cats. Picked for your pet, delivered to your door. Hablamos español.</p>",
+            "text": "<p><strong>Pawlet Club</strong></p><p>Hand-picked favorites for dogs and cats, shipped from US warehouses, plus monthly Club boxes. Hablamos español.</p>",
             "width": "fit-content",
             "max_width": "narrow",
             "alignment": "left",

@@ -1,13 +1,15 @@
-# Tema "Pawlet Club v2"
+# Tema "Pawlet Club v3"
 
-Copia del tema publicado "Pawlet Club" (familia Horizon 4.3.0), con la tienda y los productos al frente.
-Creada el 26-oct-2026.
+Copia de "Pawlet Club v2" (familia Horizon 4.3.0) con el Club abierto: sin "Launching January 2027" ni
+lista de espera. Creada el 27-oct-2026.
 
-| | |
-|---|---|
-| ID del tema | `gid://shopify/OnlineStoreTheme/189339795518` |
-| Origen | "Pawlet Club" (`189338452030`, publicado) |
-| Estado | **Publicado** (26-oct-2026). La API no permite editar el tema publicado: los cambios se hacen en el editor o en una copia |
+| Tema | ID | Estado |
+|---|---|---|
+| **Pawlet Club v3** | `gid://shopify/OnlineStoreTheme/189348905022` | **Sin publicar: falta que el dueño lo publique** |
+| Pawlet Club v2 | `gid://shopify/OnlineStoreTheme/189339795518` | Publicado (26-oct-2026) |
+| Pawlet Club | `gid://shopify/OnlineStoreTheme/189338452030` | Sin publicar (v1) |
+
+La API no permite editar el tema publicado: los cambios se hacen en el editor o en una copia nueva.
 
 Esta carpeta guarda **solo los archivos modificados o nuevos**, con el mismo contenido que se subió al tema.
 
@@ -21,10 +23,10 @@ Esta carpeta guarda **solo los archivos modificados o nuevos**, con el mismo con
    Shop All.
 4. "Our best sellers": grilla con los 8 productos (compra rápida en computador y celular).
 5. "Why Pawlet Club": franja azul con foto.
-6. El Club: tarjetas de Club Dog y Club Cat con el sello "Launching January 2027" y **lista de espera**.
-   El correo crea un cliente con las etiquetas `newsletter, club-waitlist` (filtrar en *Clientes*).
-   Cuando los productos del Club se activen, los botones llevan solos al producto.
-7. Preguntas frecuentes.
+6. El Club ("Now open"): tarjetas de Club Dog y Club Cat con el precio del producto ("desde" el plan de
+   1 mes) y botón al producto. Planes prepagados de 1, 3 o 6 meses, sin renovación automática.
+   La lista de espera sigue disponible en la sección (*Show waitlist form*), apagada.
+7. Preguntas frecuentes (incluye cómo funciona el Club).
 
 **Producto** (`templates/product.json`): galería con miniaturas, título y precio, variantes con botones,
 botón de compra, beneficios (`pawlet-product-perks`), descripción, acordeón de envío / devoluciones / ayuda
@@ -37,7 +39,7 @@ botón de compra, beneficios (`pawlet-product-perks`), descripción, acordeón d
 | Archivo | Qué es |
 |---|---|
 | `config/settings_data.json` | Logo, colores, Rubik y compra rápida también en celular |
-| `sections/header-group.json`, `sections/footer-group.json` | Encabezado y pie (sin cambios en v2) |
+| `sections/header-group.json`, `sections/footer-group.json` | Encabezado y pie. v3: texto de marca y del boletín sin "launch" |
 | `templates/index.json` | Página de inicio |
 | `templates/product.json` | Página de producto |
 | `templates/collection.json` | Página de colección |
@@ -46,7 +48,7 @@ botón de compra, beneficios (`pawlet-product-perks`), descripción, acordeón d
 | `sections/pawlet-hero.liquid` | Portada |
 | `sections/pawlet-trust.liquid` | Barra de confianza (hasta 4 promesas) |
 | `sections/pawlet-categories.liquid` | Tarjetas de categoría: usan la imagen de la colección y muestran cuántos productos tiene |
-| `sections/pawlet-plans.liquid` | Planes del Club con lista de espera |
+| `sections/pawlet-plans.liquid` | Planes del Club (lista de espera opcional mientras un plan no está a la venta) |
 | `sections/pawlet-gift.liquid` | Franja con foto y puntos (se usa para "Why Pawlet Club") |
 | `sections/pawlet-faq.liquid` | Preguntas frecuentes |
 | `sections/pawlet-steps.liquid`, `pawlet-inside.liquid`, `pawlet-shop.liquid` | Secciones de la v1 (cómo funciona, qué trae la caja, mosaicos). Siguen disponibles en el editor |

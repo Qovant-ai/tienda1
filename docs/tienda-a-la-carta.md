@@ -1,13 +1,13 @@
 # Tienda a la carta (artículos por separado) — EE. UU.
 
-Además del Club (cajas, lanzamiento en enero de 2027) y los regalos, la tienda vende **artículos
+Además del Club (cajas mensuales prepagadas, a la venta desde el 27-oct-2026) y los regalos, la tienda vende **artículos
 individuales**: camas, correas, arneses, rascadores y artículos de aseo. Fecha: 26-oct-2026.
 
 ## 1. Dos tipos de artículo
 
 | Tipo | Cómo se despacha | Ejemplos | Ventaja |
 |---|---|---|---|
-| ~~Extras "Add to Your Box"~~ (inventario propio) | Desde el 3PL, dentro de la caja | Placa grabada, bolsas, kit dental, bandana, varita, toallitas, juguete resistente | **Eliminados el 26-oct** (sin inventario ni 3PL). Se pueden volver a crear cuando se lance el Club |
+| ~~Extras "Add to Your Box"~~ (inventario propio) | Desde el 3PL, dentro de la caja | Placa grabada, bolsas, kit dental, bandana, varita, toallitas, juguete resistente | **Eliminados el 26-oct** (sin inventario ni 3PL). Se pueden volver a crear cuando haya inventario en un 3PL |
 | **Shop (dropshipping con AutoDS)** | Directo del proveedor con bodega en EE. UU. | Correas, camas, rascadores, cepillos | Catálogo amplio sin inventario |
 
 ## 2. Cómo se eligieron los "ganadores"

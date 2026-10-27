@@ -369,7 +369,7 @@
             "price_prefix": "",
             "price_fallback": "$39.99",
             "price_suffix": "/ month",
-            "features": "2 toys matched to their chew style\n2 treats from trusted US brands\n1 care item + 1 monthly surprise\nFree shipping · skip or cancel anytime",
+            "features": "2 toys matched to their chew style\n2 treats from trusted US brands\n1 care item + 1 monthly surprise\nPrepay 3 or 6 months and save up to 10%",
             "button_label": "Start Club Dog",
             "link": "",
             "style": "navy"
@@ -385,7 +385,7 @@
             "price_prefix": "",
             "price_fallback": "$32.99",
             "price_suffix": "/ month",
-            "features": "2 toys: wands, catnip, balls and more\n2 treats, including lickable snacks\n1 care item + 1 monthly surprise\nFree shipping · skip or cancel anytime",
+            "features": "2 toys: wands, catnip, balls and more\n2 treats, including lickable snacks\n1 care item + 1 monthly surprise\nPrepay 3 or 6 months and save up to 9%",
             "button_label": "Start Club Cat",
             "link": "",
             "style": "peach"
@@ -398,12 +398,12 @@
       ],
       "settings": {
         "background_color": "#fff3ea",
-        "eyebrow": "Coming January 2027",
+        "eyebrow": "Now open",
         "heading": "The Pawlet Club monthly box",
-        "text": "<p>5 to 6 goodies every month, picked for your pet's size, age and play style. Free shipping, skip or cancel anytime.</p>",
+        "text": "<p>5 to 6 goodies every month, picked for your pet's size, age and play style. Choose 1, 3 or 6 months, pay once and get free shipping. No automatic renewal.</p>",
         "note": "",
-        "show_waitlist": true,
-        "soon_badge": "Launching January 2027",
+        "show_waitlist": false,
+        "soon_badge": "",
         "waitlist_card_button": "Join the waitlist",
         "waitlist_heading": "Be first in line",
         "waitlist_text": "<p>Join the waitlist and get a launch-day welcome offer for your first box. No spam, just the good stuff.</p>",
@@ -441,8 +441,8 @@
         "q_club": {
           "type": "question",
           "settings": {
-            "question": "When does the monthly Club launch?",
-            "answer": "<p>Club Dog ($39.99/month) and Club Cat ($32.99/month) launch in January 2027. Join the waitlist above and we'll email you on launch day.</p>"
+            "question": "How does the monthly Club work?",
+            "answer": "<p>Pick Club Dog (from $39.99/month) or Club Cat (from $32.99/month) and a plan of 1, 3 or 6 months. You pay once, upfront, with no automatic renewal. After you order we'll email you to ask about your pet, and boxes ship between the 8th and the 10th of each month.</p>"
           }
         },
         "q_spanish": {

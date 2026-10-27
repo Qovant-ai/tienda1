@@ -67,6 +67,11 @@ Con Shopify Payments el cobro costaría ~US$1.46 (2.9% + 30¢) y el margen subir
 | Dic 2026 | *(Opcional)* Holiday Box si el inventario llega al 3PL antes del ~5 de diciembre · pruebas de pedido y de suscripción |
 | **Ene 2027** | **Lanzamiento del Club en EE. UU.** ("New Year, New Box") · anuncios en NY, LA, Miami, Chicago y Boston + público latino |
 
+> **Cambio del 27-oct-2026:** el Club se abrió de inmediato como **plan prepagado** (1, 3 o 6 meses, pago único,
+> sin renovación automática; primeras cajas del 8 al 10 de noviembre). La suscripción con cobro mensual
+> automático se agrega cuando PayPal apruebe las transacciones de referencia y esté instalada Shopify
+> Subscriptions (pasos 4 y 5).
+
 ## 6. ¿Y la dirección fiscal de Miami?
 
 **No es necesaria para esta fase.** Con PayPal, la tienda funciona con la dirección chilena actual.

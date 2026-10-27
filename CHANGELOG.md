@@ -2,6 +2,44 @@
 
 Registro de todos los cambios en la tienda (Shopify, AutoDS y configuración). El más reciente va primero.
 
+## 2026-10-27 (11) — El Club abre ahora, como plan prepagado
+
+Pedido del dueño: "¿por qué dice que se lanza en enero 2027? Quiero que esté todo listo para empezar ahora".
+Decía enero porque el plan era una suscripción con cobro mensual automático, y eso no funciona todavía:
+PayPal no tiene activadas las transacciones de referencia (pasarela de suscripciones de PayPal
+**desactivada**) y no hay app de suscripciones. Solución: vender el Club ya, **prepagado**.
+
+### Productos
+| Producto | Cambio |
+|---|---|
+| Club Dog y Club Cat | Nueva opción **Plan** (1 month / 3 months / 6 months) → 9 variantes cada uno. Dog: $39.99 · $113.97 (antes $119.97) · $215.94 (antes $239.94). Cat: $32.99 · $94.47 (antes $98.97) · $179.94 (antes $197.94). SKU `-3M` / `-6M`. **Activos y publicados** |
+| Descripciones del Club | Pago único, **sin renovación automática**; después de comprar se pide por correo el perfil de la mascota; cajas del 8 al 10 de cada mes, pedido hasta el último día del mes anterior |
+| Gift the Club Dog / Cat | **Activos y publicados**; descripción nueva (mensaje de regalo respondiendo el correo de confirmación) |
+
+SEO y traducción al español de todo lo anterior (opción "Plan": 1 mes / 3 meses / 6 meses).
+
+### Colecciones, menús y páginas
+- `the-club` ("The Club · Monthly Boxes", es: "El Club · Cajas mensuales") y `gift-the-club`: publicadas,
+  con descripción, SEO e imagen.
+- Menú principal: Shop All, Dogs, Cats, **The Club** (Monthly boxes, Gift the Club, How it works), FAQ.
+  Pie: "Shop" (con The Club y Gift the Club) y "Help" (con Club Terms). 26 enlaces traducidos.
+- Páginas actualizadas en inglés y español: FAQ (sección del Club), How It Works, Shipping Policy (cajas
+  del 8 al 10), About Us, **Club Terms** (antes Subscription Terms: prepago, cancelación con reembolso de
+  los meses no enviados, regalos), Refund Policy (sección 3) y Terms of Service (sección 5).
+
+### Tema "Pawlet Club v3" (`189348905022`, sin publicar)
+Copia de v2. Inicio: el Club dice **"Now open"**, sin sello "Launching January 2027" ni lista de espera;
+tarjetas con "Prepay 3 or 6 months and save"; pregunta frecuente "How does the monthly Club work?". Pie:
+texto de marca y del boletín sin "launch". **Falta que el dueño lo publique.**
+
+### Pendiente (dueño)
+- Publicar el tema v3.
+- Para cobro mensual automático: pedir a PayPal las transacciones de referencia e instalar Shopify
+  Subscriptions.
+- Tener el contenido de las cajas para despachar del 8 al 10 de noviembre y escribir a cada comprador
+  para pedir el perfil de su mascota.
+- Completar `[SUPPORT EMAIL]`, `[COMPANY LEGAL NAME]` y `[ADDRESS]` en las páginas legales.
+
 ## 2026-10-27 (10) — Fotos de producto nuevas y textos corregidos
 
 Pedido del dueño: mejorar la presentación de los productos ("las fotos por defecto son horribles y nada
