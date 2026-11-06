@@ -1,0 +1,526 @@
+{
+  "sections": {
+    "hero": {
+      "type": "pawlet-hero",
+      "settings": {
+        "background_color": "#fff6f0",
+        "eyebrow": "Holiday gift guide 2026",
+        "heading": "Find the perfect gift for",
+        "heading_highlight": "everyone you love.",
+        "text": "<p>Shop by who you’re buying for: mom, dad, the kids, your partner, grandparents, best friends and even the dog. Every gift ships free from US warehouses.</p>",
+        "button_1_label": "Shop all gifts",
+        "button_1_link": "shopify://collections/gifts",
+        "button_2_label": "Gifts for Mom",
+        "button_2_link": "shopify://collections/gifts-for-mom",
+        "check_1": "Free US shipping on every order",
+        "check_2": "Arrives in 4–8 business days",
+        "check_3": "30-day returns",
+        "image": "shopify://shop_images/giftlist-hero.jpg",
+        "badge_top": "Shipping",
+        "badge_price": "$0",
+        "badge_bottom": "every US order"
+      }
+    },
+    "trust": {
+      "type": "pawlet-trust",
+      "blocks": {
+        "trust_shipping": {
+          "type": "item",
+          "settings": {
+            "icon": "truck",
+            "title": "Free US shipping",
+            "text": "On every order, no minimum"
+          }
+        },
+        "trust_returns": {
+          "type": "item",
+          "settings": {
+            "icon": "refresh",
+            "title": "30-day returns",
+            "text": "Easy returns, no fuss"
+          }
+        },
+        "trust_checkout": {
+          "type": "item",
+          "settings": {
+            "icon": "lock",
+            "title": "Secure checkout",
+            "text": "Pay safely with PayPal"
+          }
+        },
+        "trust_help": {
+          "type": "item",
+          "settings": {
+            "icon": "chat",
+            "title": "Real humans",
+            "text": "Support in English & español"
+          }
+        }
+      },
+      "block_order": [
+        "trust_shipping",
+        "trust_returns",
+        "trust_checkout",
+        "trust_help"
+      ],
+      "settings": {
+        "label": "Why shop with Gift List Co",
+        "background_color": "#ffffff",
+        "style": "bordered"
+      }
+    },
+    "categories": {
+      "type": "pawlet-categories",
+      "blocks": {
+        "for_daughter": {
+          "type": "category",
+          "settings": {
+            "collection": "gifts-for-daughter",
+            "title": "For Your Daughter",
+            "text": "",
+            "image": "shopify://shop_images/giftlist-for-daughter.jpg",
+            "link": "",
+            "size": "small",
+            "button_label": "",
+            "style": "photo",
+            "card_color": "#fce1ec"
+          }
+        },
+        "for_son": {
+          "type": "category",
+          "settings": {
+            "collection": "gifts-for-son",
+            "title": "For Your Son",
+            "text": "",
+            "image": "shopify://shop_images/giftlist-for-son.jpg",
+            "link": "",
+            "size": "small",
+            "button_label": "",
+            "style": "photo",
+            "card_color": "#dceafa"
+          }
+        },
+        "for_mom": {
+          "type": "category",
+          "settings": {
+            "collection": "gifts-for-mom",
+            "title": "For Mom",
+            "text": "",
+            "image": "shopify://shop_images/giftlist-for-mom.jpg",
+            "link": "",
+            "size": "small",
+            "button_label": "",
+            "style": "photo",
+            "card_color": "#ffe4dc"
+          }
+        },
+        "for_dad": {
+          "type": "category",
+          "settings": {
+            "collection": "gifts-for-dad",
+            "title": "For Dad",
+            "text": "",
+            "image": "shopify://shop_images/giftlist-for-dad.jpg",
+            "link": "",
+            "size": "small",
+            "button_label": "",
+            "style": "photo",
+            "card_color": "#e2e7ef"
+          }
+        },
+        "for_girlfriend": {
+          "type": "category",
+          "settings": {
+            "collection": "gifts-for-girlfriend",
+            "title": "For Your Girlfriend",
+            "text": "",
+            "image": "shopify://shop_images/giftlist-for-girlfriend.jpg",
+            "link": "",
+            "size": "small",
+            "button_label": "",
+            "style": "photo",
+            "card_color": "#fbe0e3"
+          }
+        },
+        "for_boyfriend": {
+          "type": "category",
+          "settings": {
+            "collection": "gifts-for-boyfriend",
+            "title": "For Your Boyfriend",
+            "text": "",
+            "image": "shopify://shop_images/giftlist-for-boyfriend.jpg",
+            "link": "",
+            "size": "small",
+            "button_label": "",
+            "style": "photo",
+            "card_color": "#dff0ea"
+          }
+        },
+        "for_grandma": {
+          "type": "category",
+          "settings": {
+            "collection": "gifts-for-grandma",
+            "title": "For Grandma",
+            "text": "",
+            "image": "shopify://shop_images/giftlist-for-grandma.jpg",
+            "link": "",
+            "size": "small",
+            "button_label": "",
+            "style": "photo",
+            "card_color": "#f3e6f5"
+          }
+        },
+        "for_grandpa": {
+          "type": "category",
+          "settings": {
+            "collection": "gifts-for-grandpa",
+            "title": "For Grandpa",
+            "text": "",
+            "image": "shopify://shop_images/giftlist-for-grandpa.jpg",
+            "link": "",
+            "size": "small",
+            "button_label": "",
+            "style": "photo",
+            "card_color": "#ece6dc"
+          }
+        },
+        "for_bestie_her": {
+          "type": "category",
+          "settings": {
+            "collection": "gifts-for-best-friend-her",
+            "title": "For Your Best Friend (Her)",
+            "text": "",
+            "image": "shopify://shop_images/giftlist-for-bestie-her.jpg",
+            "link": "",
+            "size": "small",
+            "button_label": "",
+            "style": "photo",
+            "card_color": "#ffe9d6"
+          }
+        },
+        "for_bestie_him": {
+          "type": "category",
+          "settings": {
+            "collection": "gifts-for-best-friend-him",
+            "title": "For Your Best Friend (Him)",
+            "text": "",
+            "image": "shopify://shop_images/giftlist-for-bestie-him.jpg",
+            "link": "",
+            "size": "small",
+            "button_label": "",
+            "style": "photo",
+            "card_color": "#e6e3f7"
+          }
+        },
+        "for_pet": {
+          "type": "category",
+          "settings": {
+            "collection": "gifts-for-pets",
+            "title": "For Your Pet",
+            "text": "",
+            "image": "shopify://shop_images/giftlist-for-pet.jpg",
+            "link": "",
+            "size": "small",
+            "button_label": "",
+            "style": "photo",
+            "card_color": "#fff1c7"
+          }
+        },
+        "all": {
+          "type": "category",
+          "settings": {
+            "collection": "gifts",
+            "title": "All Gifts",
+            "text": "",
+            "image": "shopify://shop_images/giftlist-all.jpg",
+            "link": "",
+            "size": "small",
+            "button_label": "",
+            "style": "photo",
+            "card_color": "#24203f"
+          }
+        }
+      },
+      "block_order": [
+        "for_daughter",
+        "for_son",
+        "for_mom",
+        "for_dad",
+        "for_girlfriend",
+        "for_boyfriend",
+        "for_grandma",
+        "for_grandpa",
+        "for_bestie_her",
+        "for_bestie_him",
+        "for_pet",
+        "all"
+      ],
+      "settings": {
+        "background_color": "#ffffff",
+        "eyebrow": "Shop by recipient",
+        "heading": "Who are you shopping for?",
+        "text": "<p>Pick a person and we’ll show you gifts they’ll actually use.</p>",
+        "product_label_one": "gift",
+        "product_label_other": "gifts"
+      }
+    },
+    "best_sellers": {
+      "settings": {
+        "collection": "gifts",
+        "max_products": 8,
+        "layout_type": "grid",
+        "carousel_on_mobile": false,
+        "columns": 4,
+        "mobile_columns": "2",
+        "columns_gap": 16,
+        "rows_gap": 32,
+        "icons_style": "arrow",
+        "icons_shape": "none",
+        "section_width": "page-width",
+        "gap": 32,
+        "padding-block-start": 72,
+        "padding-block-end": 72,
+        "background_color": "#fff6f0"
+      },
+      "blocks": {
+        "static-header": {
+          "type": "_product-list-content",
+          "name": "t:names.header",
+          "static": true,
+          "settings": {
+            "content_direction": "row",
+            "vertical_on_mobile": false,
+            "horizontal_alignment": "space-between",
+            "vertical_alignment": "flex-end",
+            "align_baseline": true,
+            "horizontal_alignment_flex_direction_column": "flex-start",
+            "vertical_alignment_flex_direction_column": "center",
+            "gap": 12,
+            "width": "fill",
+            "custom_width": 100,
+            "width_mobile": "fill",
+            "custom_width_mobile": 100,
+            "height": "fit",
+            "custom_height": 100,
+            "background_media": "none",
+            "video_position": "cover",
+            "background_image_position": "cover",
+            "border": "none",
+            "border_width": 1,
+            "border_opacity": 100,
+            "border_radius": 0,
+            "padding-block-start": 0,
+            "padding-block-end": 0,
+            "padding-inline-start": 0,
+            "padding-inline-end": 0
+          },
+          "blocks": {
+            "product_list_text": {
+              "type": "_product-list-text",
+              "name": "t:names.collection_title",
+              "settings": {
+                "text": "<h2>Best-selling gifts</h2>",
+                "type_preset": "h2",
+                "font": "var(--font-body--family)",
+                "font_size": "",
+                "line_height": "normal",
+                "letter_spacing": "normal",
+                "case": "none",
+                "wrap": "pretty",
+                "width": "fit-content",
+                "max_width": "normal",
+                "alignment": "left",
+                "padding-block-start": 0,
+                "padding-block-end": 0,
+                "padding-inline-start": 0,
+                "padding-inline-end": 0
+              }
+            },
+            "product_list_button": {
+              "type": "_product-list-button",
+              "name": "t:names.product_list_button",
+              "settings": {
+                "label": "Shop all gifts",
+                "open_in_new_tab": false,
+                "style_class": "button-secondary",
+                "width": "fit-content",
+                "custom_width": 100,
+                "width_mobile": "fit-content",
+                "custom_width_mobile": 100
+              }
+            }
+          },
+          "block_order": [
+            "product_list_text",
+            "product_list_button"
+          ]
+        },
+        "static-product-card": {
+          "type": "_product-card",
+          "name": "t:names.product_card",
+          "static": true,
+          "settings": {
+            "product_card_gap": 6,
+            "border": "none",
+            "border_width": 1,
+            "border_opacity": 100,
+            "border_radius": 0,
+            "padding-block-start": 0,
+            "padding-block-end": 0,
+            "padding-inline-start": 0,
+            "padding-inline-end": 0
+          },
+          "blocks": {
+            "product-card-gallery": {
+              "type": "_product-card-gallery",
+              "name": "t:names.product_card_media",
+              "settings": {
+                "image_ratio": "square",
+                "border": "none",
+                "border_width": 1,
+                "border_opacity": 100,
+                "border_radius": 16,
+                "padding-block-start": 0,
+                "padding-block-end": 0,
+                "padding-inline-start": 0,
+                "padding-inline-end": 0
+              }
+            },
+            "product_title": {
+              "type": "product-title",
+              "name": "t:names.product_title",
+              "settings": {
+                "width": "fit-content",
+                "max_width": "normal",
+                "alignment": "left",
+                "type_preset": "paragraph",
+                "font": "var(--font-body--family)",
+                "font_size": "1rem",
+                "line_height": "normal",
+                "letter_spacing": "normal",
+                "case": "none",
+                "wrap": "pretty",
+                "background": false,
+                "background_color": "#00000026",
+                "corner_radius": 0,
+                "padding-block-start": 8,
+                "padding-block-end": 0,
+                "padding-inline-start": 0,
+                "padding-inline-end": 0
+              }
+            },
+            "price": {
+              "type": "price",
+              "name": "t:names.product_price",
+              "settings": {
+                "show_sale_price_first": true,
+                "show_installments": false,
+                "show_tax_info": false,
+                "type_preset": "h6",
+                "width": "100%",
+                "alignment": "left",
+                "font": "var(--font-body--family)",
+                "font_size": "1rem",
+                "line_height": "normal",
+                "letter_spacing": "normal",
+                "case": "none",
+                "padding-block-start": 0,
+                "padding-block-end": 0,
+                "padding-inline-start": 0,
+                "padding-inline-end": 0
+              }
+            }
+          },
+          "block_order": [
+            "product-card-gallery",
+            "product_title",
+            "price"
+          ]
+        }
+      },
+      "block_order": [],
+      "type": "product-list"
+    },
+    "why": {
+      "type": "pawlet-gift",
+      "settings": {
+        "background_color": "#24203f",
+        "image": "shopify://shop_images/giftlist-why.jpg",
+        "image_position": "left",
+        "eyebrow": "Why Gift List Co",
+        "heading": "Gift-giving, solved",
+        "text": "<p>We pick gifts that are useful, well made and fairly priced, then sort them by who they’re for. Find the right one in minutes, not hours.</p>",
+        "point_1": "Gifts sorted by recipient, so you skip the endless scrolling",
+        "point_2": "Free US shipping on every order, from US warehouses",
+        "point_3": "30-day returns if it’s not quite right",
+        "button_label": "Shop all gifts",
+        "button_link": "shopify://collections/gifts",
+        "sticker_icon": "gift"
+      }
+    },
+    "faq": {
+      "type": "pawlet-faq",
+      "blocks": {
+        "q_shipping": {
+          "type": "question",
+          "settings": {
+            "question": "How long does shipping take?",
+            "answer": "<p>Orders ship from US warehouses and usually arrive in 4–8 business days. Shipping is free on every US order, and you’ll get tracking by email.</p>"
+          }
+        },
+        "q_gift": {
+          "type": "question",
+          "settings": {
+            "question": "Can I send a gift straight to them?",
+            "answer": "<p>Yes. At checkout, enter their name and address as the shipping address and we’ll deliver it to their door.</p>"
+          }
+        },
+        "q_returns": {
+          "type": "question",
+          "settings": {
+            "question": "What if they don’t love it?",
+            "answer": "<p>Return unused items within 30 days of delivery. If something arrives damaged, send us a photo and we’ll replace it or refund you.</p>"
+          }
+        },
+        "q_pay": {
+          "type": "question",
+          "settings": {
+            "question": "How do I pay?",
+            "answer": "<p>We accept PayPal. Your payment is processed securely by PayPal, and we never see your card details.</p>"
+          }
+        },
+        "q_spanish": {
+          "type": "question",
+          "settings": {
+            "question": "¿Hablan español?",
+            "answer": "<p>¡Sí! Escríbenos en español cuando quieras.</p>"
+          }
+        }
+      },
+      "block_order": [
+        "q_shipping",
+        "q_gift",
+        "q_returns",
+        "q_pay",
+        "q_spanish"
+      ],
+      "settings": {
+        "background_color": "#ffffff",
+        "eyebrow": "Questions",
+        "heading": "Good questions, honest answers",
+        "text": "<p>Everything you need to know before you order.</p>",
+        "link_label": "See all FAQs",
+        "link": "shopify://pages/faqs",
+        "open_first": true
+      }
+    }
+  },
+  "order": [
+    "hero",
+    "trust",
+    "categories",
+    "best_sellers",
+    "why",
+    "faq"
+  ]
+}

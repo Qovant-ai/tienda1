@@ -1,0 +1,16 @@
+{
+ "giftlist-for-daughter": {"size":[1000,1000],"bg":"#fce1ec","circle":[500,470,380],"items":[{"p":"P2","box":[300,560],"cx":330,"by":830},{"p":"P1","box":[460,430],"cx":650,"by":840}]},
+ "giftlist-for-son": {"size":[1000,1000],"bg":"#dceafa","circle":[500,470,380],"items":[{"p":"P6","box":[420,600],"cx":360,"by":830},{"p":"P9","box":[400,280],"cx":690,"by":840}]},
+ "giftlist-for-dad": {"size":[1000,1000],"bg":"#e2e7ef","circle":[500,470,380],"items":[{"p":"P10","box":[130,560],"cx":250,"by":840},{"p":"P5","box":[600,380],"cx":580,"by":820}]},
+ "giftlist-for-mom": {"size":[1000,1000],"bg":"#ffe4dc","circle":[500,470,380],"items":[{"p":"P11","box":[620,420],"cx":450,"by":690},{"p":"P3","box":[220,400],"cx":740,"by":850}]},
+ "giftlist-for-boyfriend": {"size":[1000,1000],"bg":"#dff0ea","circle":[500,470,380],"items":[{"p":"P4","box":[300,540],"cx":380,"by":830},{"p":"P10","box":[130,560],"cx":650,"by":840}]},
+ "giftlist-for-girlfriend": {"size":[1000,1000],"bg":"#fbe0e3","circle":[500,470,380],"items":[{"p":"P7","box":[420,580],"cx":410,"by":830},{"p":"P8","box":[290,290],"cx":720,"by":845}]},
+ "giftlist-for-grandpa": {"size":[1000,1000],"bg":"#ece6dc","circle":[500,470,380],"items":[{"p":"P5","box":[620,380],"cx":450,"by":700},{"p":"P4","box":[220,420],"cx":760,"by":850}]},
+ "giftlist-for-grandma": {"size":[1000,1000],"bg":"#f3e6f5","circle":[500,470,380],"items":[{"p":"P5","box":[580,360],"cx":440,"by":690},{"p":"P3","box":[220,400],"cx":750,"by":850}]},
+ "giftlist-for-pet": {"size":[1000,1000],"bg":"#fff1c7","circle":[500,470,380],"items":[{"p":"P12","box":[560,500],"cx":400,"by":790},{"p":"P13","box":[360,230],"cx":720,"by":850}]},
+ "giftlist-for-bestie-her": {"size":[1000,1000],"bg":"#ffe9d6","circle":[500,470,380],"items":[{"p":"P1","box":[440,420],"cx":380,"by":820},{"p":"P3","box":[220,400],"cx":720,"by":850}]},
+ "giftlist-for-bestie-him": {"size":[1000,1000],"bg":"#e6e3f7","circle":[500,470,380],"items":[{"p":"P6","box":[420,600],"cx":360,"by":830},{"p":"P4","box":[220,420],"cx":690,"by":850}]},
+ "giftlist-all": {"size":[1000,1000],"bg":"#24203f","circle":[500,470,390],"circle_color":"#ffffff","circle_mix":0.08,"shadow":0.35,"items":[{"p":"P5","box":[520,320],"cx":540,"by":600},{"p":"P6","box":[290,400],"cx":240,"by":800},{"p":"P7","box":[270,380],"cx":500,"by":860},{"p":"P1","box":[300,280],"cx":790,"by":860}]},
+ "giftlist-hero": {"size":[1120,1400],"bg":"#ffe4e1","circle":[560,700,470],"items":[{"p":"P6","box":[400,560],"cx":320,"by":900},{"p":"P5","box":[560,330],"cx":760,"by":800},{"p":"P3","box":[170,320],"cx":210,"by":1200},{"p":"P7","box":[330,470],"cx":540,"by":1180},{"p":"P1","box":[330,320],"cx":870,"by":1200}]},
+ "giftlist-why": {"size":[960,1200],"bg":"#fff6f0","circle":[480,600,420],"circle_color":"#f2675f","circle_mix":0.12,"items":[{"p":"P11","box":[560,380],"cx":480,"by":560},{"p":"P12","box":[500,440],"cx":400,"by":1030},{"p":"P8","box":[230,220],"cx":760,"by":1050}]}
+}

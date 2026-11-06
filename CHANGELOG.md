@@ -2,6 +2,43 @@
 
 Registro de todos los cambios en la tienda (Shopify, AutoDS y configuración). El más reciente va primero.
 
+## 2026-11-06 (13) — La tienda pasa a ser Gift List Co (regalos por destinatario)
+
+El dueño eligió "Gift List Co" y aprobó la lista de `docs/tienda-regalos.md`: "Vamos con Gift List Co, apruebo
+la lista, avanza".
+
+### Productos (AutoDS → Shopify)
+- 14 productos importados y activos, con pedido automático al proveedor. Títulos, descripciones, tipo,
+  proveedor "Gift List Co" y etiquetas por destinatario (`for-mom`, `for-dad`, …) escritos a mano.
+- Precios de la propuesta. Repuesto de papel de la impresora a $14,99 y pack de 2 rizadores a $39,99.
+- AutoDS los dejó en el perfil "AutoDS Free Shipping" (sin EE. UU.): se movieron al perfil general.
+- Los 12 productos de Pawlet Club (incluido el Club) quedaron **archivados**.
+
+### Envíos
+- Envío **gratis en todos los pedidos** a EE. UU. (antes: gratis desde $30, $5,99 bajo eso).
+
+### Colecciones, menú y páginas
+- 12 colecciones automáticas (11 destinatarios y "All Gifts" `gifts`), publicadas y con imagen.
+- Menú principal: Shop by recipient (11), All Gifts, FAQ y Contact. Pie: menú "Shop" y "Help" sin Club Terms.
+- About, FAQ, How It Works, Refund, Shipping y Terms reescritas para Gift List Co, en inglés y español.
+
+### Marca e imágenes
+- Logo, favicon y paleta nuevos (`brand/logo-giftlist/`).
+- 14 escenas con los productos recortados (`brand/gift-images/`): portada, franja y una tarjeta por
+  destinatario.
+
+### Tema "Gift List Co v1" (`189702766654`, sin publicar)
+- Ver [`theme-giftlist/README.md`](theme-giftlist/README.md).
+
+### Pendiente (dueño)
+- Publicar el tema "Gift List Co v1".
+- **Quitar la contraseña de la tienda** (Tienda online → Preferencias): hoy está activada y nadie de afuera
+  puede entrar ni comprar.
+- Cambiar el nombre de la tienda a "Gift List Co" (Configuración → Detalles de la tienda; la API no lo
+  permite) y comprar `giftlistco.com` (US$17).
+- Pegar las políticas de la tienda (checkout) con el nombre nuevo.
+- Opcional: filtros de precio y tipo en la app Search & Discovery.
+
 ## 2026-10-27 (12) — Lista para vender: envíos, páginas legales, imágenes nuevas y tema v4
 
 El dueño publicó el tema v3. Pedidos:

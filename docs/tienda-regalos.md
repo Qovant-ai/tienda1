@@ -1,6 +1,7 @@
 # Tienda de regalos: nombres, productos y filtros
 
-Propuesta del 5-nov-2026. Reemplaza el catálogo de mascotas y el Club si se aprueba. Mercado: EE. UU.
+Propuesta del 5-nov-2026, **aprobada el 6-nov-2026** con el nombre **Gift List Co**. Reemplaza el catálogo de
+mascotas y el Club (archivados). Mercado: EE. UU.
 Todos los productos salen de bodegas en EE. UU. (CJ o proveedores privados de AutoDS), con envío gratis al cliente.
 
 ## 1. Nombres (dominio revisado el 5-nov-2026)
@@ -50,21 +51,25 @@ Descartados por stock o margen: neceser con espejo LED (1 unidad por color), cá
 (6–10), juguetes de gato Gugxiom (10), pulsera magnética (sin proveedor en EE. UU.), pistolas de masaje y oso de rosas
 (margen bajo).
 
-## 3. Productos por destinatario
+## 3. Productos por destinatario (como quedó en la tienda)
 
 | Regalos para… | Productos |
 |---|---|
-| Tu hija | P1 impresora, P2 rizador, P6 proyector, P3 calentador rosado |
-| Tu hijo | P9 cámara, P6 proyector, P1 impresora |
-| Tu padre | P5 masajeador de cuello, P10 aspiradora auto, P4 calentador gris |
-| Tu madre | P3 calentador rosado, P11 masajeador de ojos, P5 masajeador de cuello |
-| Tu novio | P10 aspiradora auto, P4 calentador gris, P11 masajeador de ojos |
-| Tu novia | P7 rosa + collar, P8 espejo LED, P2 rizador |
-| Tu abuelo | P5 masajeador de cuello, P4 calentador gris, P11 masajeador de ojos |
+| Tu hija | P1 impresora, P2 rizador, P3 calentador rosado, P6 proyector, P9 cámara |
+| Tu hijo | P1 impresora, P6 proyector, P9 cámara |
+| Tu padre | P4 calentador gris, P5 masajeador de cuello, P10 aspiradora auto |
+| Tu madre | P3 calentador rosado, P5 masajeador de cuello, P11 masajeador de ojos |
+| Tu novio | P4 calentador gris, P10 aspiradora auto, P11 masajeador de ojos |
+| Tu novia | P2 rizador, P7 rosa + collar, P8 espejo LED |
+| Tu abuelo | P4 calentador gris, P5 masajeador de cuello, P11 masajeador de ojos |
 | Tu abuela | P3 calentador rosado, P5 masajeador de cuello, P11 masajeador de ojos |
 | Tu mascota (juguetes) | P12 puzzle, P13 pelota dispensadora, P14 lanzador de pelotas |
-| Tu mejor amiga | P2 rizador, P8 espejo LED, P1 impresora |
-| Tu mejor amigo | P10 aspiradora auto, P6 proyector, P4 calentador gris |
+| Tu mejor amiga | P1 impresora, P2 rizador, P3 calentador rosado |
+| Tu mejor amigo | P4 calentador gris, P6 proyector, P10 aspiradora auto |
+
+Cambios respecto de la propuesta: el espejo quedó solo para "novia" (el proveedor menciona un mensaje
+"To my beautiful wife" que no se pudo confirmar en las fotos) y a "mejor amiga" se sumó el calentador rosado; la
+cámara (rosada) también va en "hija".
 
 ## 4. Filtros
 
@@ -74,3 +79,38 @@ Descartados por stock o margen: neceser con espejo LED (1 unidad por color), cá
 - Menú "Shop by recipient" con las 11 colecciones y una portada con 11 tarjetas (foto + "Gifts for…").
 - Filtros dentro de cada colección: precio (menos de US$30, US$30–50, más de US$50) y tipo (relax, tecnología, belleza,
   mascotas).
+
+## 5. Estado en Shopify (6-nov-2026)
+
+- Los 14 productos están activos, con título, descripción, tipo, etiquetas y precio de Gift List Co. AutoDS
+  hace el pedido al proveedor automáticamente.
+  - Mini impresora: azul o rosada a $39,99; repuesto de papel (5 rollos, costo $6,30) a $14,99.
+  - Rizador: 1 set a $24,99; 2 sets (costo $19,68) a $39,99.
+  - El calentador rosado también viene en negro (el proveedor tiene 1 unidad).
+- **Envío gratis en todos los pedidos a EE. UU.** (se quitó el cobro de $5,99 bajo $30). Todos los productos
+  están en el perfil general, con la ubicación de AutoDS.
+- 12 colecciones (las 11 de destinatario y `gifts`), con su imagen, y menú "Shop by recipient".
+- Los 12 productos de Pawlet Club (incluido el Club) quedaron **archivados** (se pueden reactivar). Sus
+  colecciones siguen publicadas pero vacías y fuera del menú: la API no deja despublicarlas.
+- Tema "Gift List Co v1" listo para publicar (ver `theme-giftlist/README.md`).
+
+| Código | Producto en Shopify | ID |
+|---|---|---|
+| P1 | Mini Pocket Photo & Sticker Printer | 15471450751038 |
+| P2 | Heatless Satin Curler Set · Overnight Curls | 15471450685502 |
+| P3 | Rechargeable Pocket Hand Warmer & Power Bank | 15471450652734 |
+| P4 | Rechargeable Hand Warmer & 10,000 mAh Power Bank | 15471449505854 |
+| P5 | 3-in-1 Heated Neck & Shoulder Massager Pillow | 15471449440318 |
+| P6 | Astronaut Galaxy Star Projector with Remote & Timer | 15471449243710 |
+| P7 | Forever Rose with "I Love You" Necklace | 15471449276478 |
+| P8 | LED Travel Makeup Mirror · 1x/2x Compact | 15471449309246 |
+| P9 | Kids Digital Camera with 32GB Card | 15471449473086 |
+| P10 | Cordless Car Vacuum · 15,000 Pa Brushless | 15471449538622 |
+| P11 | Heated Eye Massager with Bluetooth Music | 15471449374782 |
+| P12 | Interactive Treat Puzzle Toy for Dogs | 15471449407550 |
+| P13 | Treat-Dispensing Ball for Dogs · Adjustable | 15471450718270 |
+| P14 | Tennis Ball Treat Machine for Dogs (2 Balls Included) | 15471449145406 |
+
+Cómo se importó en AutoDS: los productos de CJ entran con su **SKU de CJ** (`CJ…`, `buy_site_id` 15) o con el
+**ID del catálogo de AutoDS** (`buy_site_id` 27). El enlace de CJ (`product-detail.html?id=…`) no funciona.
+
